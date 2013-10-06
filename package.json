@@ -1,0 +1,8 @@
+{
+  "name": "hexo",
+  "version": "2.2.0",
+  "private": true,
+  "dependencies": {
+    "hexo-generator-feed": "0.0.10"
+  }
+}

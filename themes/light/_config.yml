@@ -1,0 +1,33 @@
+menu:
+  Home: /
+  Archives: /archives
+  ToDo: /todolist
+  RSS: /atom.xml
+
+widgets: 
+- search
+- category
+- tag
+- recent_posts
+- recent_comments
+- twitter_posts
+
+excerpt_link: Read More
+
+twitter:
+  username: MutsuGhost1
+  show_replies: false
+  tweet_count: 5
+
+addthis:
+  enable: true
+  pubid:
+  facebook: true
+  twitter: true
+  google: true
+  pinterest: true
+
+fancybox: true
+
+google_analytics: UA-44446906-1
+rss:
