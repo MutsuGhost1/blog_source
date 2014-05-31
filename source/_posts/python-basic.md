@@ -16,11 +16,11 @@ tags: [Python, Study Group]
 * Python Scope 概念
 * [其他](#others "其他")
     * [List Comprehesion](http://www.python.org/dev/peps/pep-0202/ "PEP202") 
-    * Lambda expression
+    * [Lambda expression](#lambda_exp "Lambda expression")
     * [Built-in Funtion map](#built_in_map "Built-in Funtion map")
-    * Built-in Funtion reduce
-    * Built-in Funtion filter
-    * Built-in Funtion zip
+    * [Built-in Funtion reduce](#built_in_reduce "Built-in Funtion reduce")
+    * [Built-in Funtion filter](#built_in_filter "Built-in Funtion filter")
+    * [Built-in Funtion zip](#built_in_zip "Built-in Funtion zip")
 <!--more-->
 ----------
 
@@ -472,6 +472,39 @@ Output:
 <a name=others></a>
 # *其它* #
 
+<a name=lambda_exp></a>
+## Lambda Expression ##
+Python 中使用 Lambda Expression 的語法可以一個建立 Annonymous Function 
+
+Ex:
+
+    f = lambda x: x ** x
+    print(f(1))
+    print(f(2))
+    print(f(3))
+    print(f(4))
+    print(f(5))
+     
+    g = lambda x, y: x * y
+    print(g(1, 6))
+    print(g(2, 7))
+    print(g(3, 8))
+    print(g(4, 9))
+    print(g(5, 10))
+
+Output:
+    
+    1
+    4
+    27
+    256
+    3125
+    6
+    14
+    24
+    36
+    50
+
 <a name=built_in_map></a>
 ## Built-in Function map ##
 在探討 map function 之前, 讓我們先回憶一下國中時候學過的數學函數,  
@@ -512,8 +545,52 @@ If additional iterable arguments are passed, function must take that many argume
 <a name=built_in_reduce></a>
 ## Built-in Function reduce ##
 
+> Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value
+
+Reduce 的 Pseudo Code, 類似下面這個範例:
+
+    def reduce(function, iterable, initializer=None):
+        it = iter(iterable)
+        
+        if initializer is None:
+        try:
+            initializer = next(it)
+        except StopIteration:
+            raise TypeError('reduce() of empty sequence with no initial value')
+        
+        accum_value = initializer
+        for x in it:
+            accum_value = function(accum_value, x)
+        return accum_value
+
+Ex:  
+
+* reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5)
+
 <a name=built_in_filter></a>
 ## Built-in Function filter ##
 
+> Construct a list from those elements of iterable for which function returns true. iterable may be either a sequence, a container which supports iteration, or an iterator. If iterable is a string or a tuple, the result also has that type; otherwise it is always a list. I**f function is None, the identity function is assumed**, that is, all elements of iterable that are false are removed.
+
+Ex:  
+
+* **filter(function, iterable)** is equivalent to **[item for item in iterable if function(item)]**
+
 <a name=built_in_zip></a>
 ## Built-in Function zip ##
+
+zip function 做的事情, 如下圖:
+
+![](http://MutsuGhost1.github.io/image/python_zip_function.PNG)
+
+Ex:
+    
+    >>> a = [1,2,3]
+    >>> b = [4,5,6]
+    >>> c = [4,5,6,7,8]      # 以短的為主
+    >>> zipped = zip(a,b)
+    [(1, 4), (2, 5), (3, 6)]
+    >>> zip(a,c)
+    [(1, 4), (2, 5), (3, 6)]
+    >>> zip(*zipped)         # unzip 回原來模樣
+    [(1, 2, 3), (4, 5, 6)]
