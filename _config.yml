@@ -81,9 +81,7 @@ theme: light
 exclude_generator:
 
 # Deployment
-## Docs: http://zespia.tw/hexo/docs/deploy.html
 deploy:
   type: github
   repository: git@github.com:MutsuGhost1/MutsuGhost1.github.io.git
   branch: master
-  message: auto-deployed
