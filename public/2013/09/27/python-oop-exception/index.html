@@ -1,0 +1,679 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python OOP Exception | MutsuGhost1's Blog</title>
+  <meta name="author" content="MutsuGhost1">
+  
+  <meta name="description" content="Python OOP
+Constructor/Destructor
+Class/Instance Members
+Access Control in Python OOP
+Inheritance
+Polymorphism
+Operator Overloading
+Function Overloading
+Object Types in Python
+Check relationship between class and instance">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Python OOP Exception"/>
+  <meta property="og:site_name" content="MutsuGhost1's Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="MutsuGhost1's Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44446906-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">MutsuGhost1's Blog</a></h1>
+  <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/todolist">ToDo</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-27T06:55:04.000Z"><a href="/2013/09/27/python-oop-exception/">9月 27 2013</a></time>
+      
+      
+  
+    <h1 class="title">Python OOP Exception</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>Python OOP</li>
+<li>Constructor/Destructor</li>
+<li>Class/Instance Members</li>
+<li>Access Control in Python OOP</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Operator Overloading</li>
+<li>Function Overloading</li>
+<li>Object Types in Python</li>
+<li>Check relationship between class and instance</li>
+</ul>
+<h2><a id="more"></a></h2>
+<h1>Python OOP</h1>
+<p>Python 語言, 本身也支援 <strong>O</strong>bject <strong>O</strong>riented <strong>P</strong>rogramming 這樣的 Programming Pradigm.<br>語法上, 是採取類似 C++ 與 Modula-3 的語法.  </p>
+<p>一個最簡單的 class definition 如下：</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">oldStyle</span>:</span>
+    <span class="keyword">pass</span></code></pre>
+<p>語法上, class definition 可以寫成:</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">DerivedClassName</span><span class="params">(BaseClass1[,BaseClass2[,…]])</span>:</span>
+    statement1
+    …
+    statementN</code></pre>
+<p>其中的 statement1 … statementN 可以是:</p>
+<ul>
+<li>Data memeber definition</li>
+<li>Member function definition</li>
+<li>Memeber class definition</li>
+</ul>
+<p>當 import module 時, python interpret 到一個 class definition 時,<br>它會將 class 內相關的 definition 都定義在此 class 所建立的 namespace 內.  </p>
+<p><strong>New Style Class v.s. Old Style Class</strong>  </p>
+<ul>
+<li>Python 2.2 之前, type 和 class 是不同的<ul>
+<li>type (list, tuple, dict … etc)</li>
+<li>class</li>
+</ul>
+</li>
+<li>Python 2.2 Unifying type and class<ul>
+<li>The obvious change is built-in types can be used to as base class</li>
+<li>沒有明確繼承其他 class 的 class definition, 稱為 Old Style Class</li>
+<li>Python 3 後, 沒有明確繼承 class 將會視為 default 繼承 object</li>
+</ul>
+</li>
+<li>Reference: <a href="http://www.python.org/download/releases/2.2.3/descrintro/" title="說明 Python 2.2 後, 整合 type and class 的文章" target="_blank"><a href="http://www.python.org/download/releases/2.2.3/descrintro/">http://www.python.org/download/releases/2.2.3/descrintro/</a></a>  </li>
+</ul>
+<p>Ex:  </p>
+<pre><code><span class="comment"># define a old style class in python 2.x</span>
+<span class="class"><span class="keyword">class</span> <span class="title">oldStyleClass</span>:</span>
+<span class="keyword">pass</span>
+<span class="comment"># define a new style class in python 2.x</span>
+<span class="class"><span class="keyword">class</span> <span class="title">newStyleClass</span> <span class="params">(object)</span>:</span>
+<span class="keyword">pass</span></code></pre>
+<hr>
+<h1>Constructor/Destructor</h1>
+<p>先前提到, 定一個最簡單的 new style class, 如下:</p>
+<pre><code><span class="comment">#define a simplest class named "Employee"</span>
+<span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+    <span class="keyword">pass</span></code></pre>
+<p>假設我們要新增一個功能, 來替 Employee 來紀錄, 目前 instance of Employee 的有效個數.<br>可以透過新增 Constructor &amp; Destructor 加上一個 class variable 來實現, 具體如下:</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+    empCount = <span class="number">0</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        Employee.empCount += <span class="number">1</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+        Employee.empCount -= <span class="number">1</span></code></pre>
+<p>也許有人會問, 在有 GC 機制的語言中, Destructor 存在的目的是?<br>通常 Destructor 的存在, 就是讓 Object 能提早釋放占用的資源.   </p>
+<hr>
+<h1>Class/Instance Memebers</h1>
+<p>接下來, 我們想替 Class 加上額外的 Memebers, 包含了:</p>
+<ul>
+<li>Instance Variable<ul>
+<li>用來表示 instance of Employee 的姓名, 命名為 name, 預設為 “anonymous” </li>
+<li>用來記錄各個 instance of Employee 的基本薪資, 命名為 base_salary, 預設為 1000</li>
+</ul>
+</li>
+<li>Static Method<ul>
+<li>定義一個 static method 能夠印出目前 # of instance of Employee, 命名為 EmployeeCount </li>
+</ul>
+</li>
+<li>Instance Method<ul>
+<li>定義一個 instance method, 能夠取得目前 instance of Employee 的總薪資, 命名為 getSalary </li>
+</ul>
+</li>
+</ul>
+<p>具體代碼如下:</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+    empCount = <span class="number">0</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1000</span>)</span>:</span>
+        Employee.empCount = <span class="number">0</span>
+        self.name = name
+        self.base_salary = base_salary
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+        Employee.empCount = <span class="number">0</span>
+
+    <span class="decorator">@staticmethod</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
+        <span class="keyword">print</span> <span class="string">"Employee Count:"</span> + str(Employee.empCount)
+
+    <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
+        <span class="keyword">return</span> self.base_salary</code></pre>
+<p>從上列代碼, 可以歸納出以下幾件事:</p>
+<ul>
+<li>定義在 class 內部, 非 method 內部的變數, 視為 class variable</li>
+<li>定義在 class 內部的 method, 預設都是 instance method, 第一個參數都是 reference to the instance, 習慣上命名為 self</li>
+<li>通常 instance variable 都直接定義在 class 定義裡, instance method body 中, 習慣上都是以 self. 當作 prefix  </li>
+<li>在 class 內部定義 static method, 請在 method 的宣告前面使用 @staticmethod, 來告訴 python interpreter 這個 method 是一個 static method, 不帶 self 參數</li>
+</ul>
+<p>接下來將展示此 class 將如何被使用:  </p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+    empCount = <span class="number">0</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1000</span>)</span>:</span>
+        Employee.empCount = <span class="number">0</span>
+        self.name = name
+        self.base_salary = base_salary
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+        Employee.empCount = <span class="number">0</span>
+
+    <span class="decorator">@staticmethod</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
+        <span class="keyword">print</span> <span class="string">"Employee Count:"</span> + str(Employee.empCount)
+
+    <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
+        <span class="keyword">return</span> self.base_salary
+
+    <span class="comment"># the method will be called when call str(new Employee())</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+        <span class="keyword">return</span> <span class="string">"Employee name:"</span> + self.name + <span class="string">" base_salary:"</span> + self.base_salary
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+   employee1 = Employee(<span class="string">"Peter"</span>)
+   <span class="keyword">print</span> employee1
+   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   Employee.EmployeeCount()
+   <span class="keyword">del</span> employee1
+   Employee.EmployeeCount()
+
+<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
+Salary=<span class="number">1000</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
+<hr>
+<h1>Access Control in Python OOP</h1>
+<p>在 Pyhon 中, 並沒有提供 Modifier 來明確的來控制 Attribute 的存取權限.<br>相反的, Python 是透過一種 Naming Convention 來告訴 User, 這個 Attribute 是 Private 的.<br>雖然如此, User 想要強制存取此 Private Attribute, 還是可以達成的.</p>
+<p>Ex:</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+   __empCount = <span class="number">0</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    <span class="comment"># the name of attribute is changed as "_Employee" + "__empCount"</span>
+    <span class="keyword">print</span> Employee._Employee__empCount
+
+<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="number">0</span></code></pre>
+<ul>
+<li>Python 中, 每個 Attribute 都是 Public 的</li>
+<li>以 &quot;<em>_“ 開頭的 Attribute, 會被做 Name Mangling, 改名為 ”</em>&quot; + ClassName + AttributeName</li>
+<li>以 &quot;__&quot; 開頭的 Attribute, 只是在習慣上被視為 Private 的, 但是仍然可強制存取 </li>
+</ul>
+<hr>
+<h1>Inheritance</h1>
+<p>如果我們想要加入一個特別的 Employee, 稱為 Manager, 可以考慮用繼承的方式達成.<br>Manager 除了本身是一個 (is a) Emplyoee 外, 還必須滿足:</p>
+<ul>
+<li>Manager 繼承了 Employee 的所有 attributes</li>
+<li>Manager 多了 bonus 的 attribute</li>
+<li>Manager 的 getSalary 結果, 必須是 base_salary + bonus 的結果</li>
+</ul>
+<p>Ex: <strong>invoke the method in the super class</strong></p>
+<pre><code><span class="comment"># demo how to invoke the method in the super class</span>
+
+<span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="params">(Employee)</span>:</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1200</span>, bonus = <span class="number">200</span>)</span>:</span>
+        super(Manager, self).__init__(name, base_salary)
+        self.bonus = bonus
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+        super(Manager, self).__del__()</code></pre>
+<p>Ex: <strong>Override the method in the super class</strong></p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="params">(Employee)</span>:</span>
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1200</span>, bonus = <span class="number">200</span>)</span>:</span>
+        super(Manager, self).__init__(name, base_salary)
+        self.bonus = bonus
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+        super(Manager, self).__del__()
+
+    <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
+        <span class="keyword">return</span> super(Manager, self).getSalary() + self.bonus
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+        <span class="keyword">return</span> <span class="string">"Manager name:"</span> + self.name + <span class="string">" base_salary:"</span> + str(self.base_salary) + \
+               <span class="string">" bonus:"</span> + str(self.bonus)
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+   manager1 = Manager(<span class="string">"Peter"</span>)
+   <span class="keyword">print</span> manager1
+   <span class="keyword">print</span> “Salary=” + str(manager1.getSalary())
+   <span class="keyword">del</span> manager1
+
+<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="label">Manager:</span> name=John base_salary=<span class="number">1200</span> bonus=<span class="number">200</span>
+Salary=<span class="number">1400</span></code></pre>
+<hr>
+<h1>Polymorphism</h1>
+<p>由於 Python 是一個 Weakly Type 的語言, 因此在變數的宣告時, 並不會明確指出特定的型別.<br>因此, 只要此變數所指向的 Object, 符合操作所需要的各項 Attribute, 則 Program 即可正常運作.  </p>
+<p>Ex:</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    list_employees = [Manager(“John”), Employee(<span class="string">"Peter"</span>)]
+    <span class="keyword">for</span> employee <span class="keyword">in</span> list_employees:
+        <span class="keyword">print</span> employee.__str__()
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="attribute">Manager</span>: <span class="string">name=John base_salary=1200 bonus=200</span>
+<span class="attribute">Employee</span>: <span class="string">name=Peter base_salary=1000</span></code></pre>
+<p><strong>事實上, Python 這樣的做法提供了更彈性的使用方式. 在撰寫特定演算法的時候,<br>只需要考慮 Object 本身能提供哪些 Attributes, 不需要考慮 Object 的繼承體系.</strong></p>
+<hr>
+<h1>Operator Overloading</h1>
+<p>Python 本身定義了一組 Built-in Operators, 讓使用者可以 Overloading 其行為.</p>
+<p>Ex:</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> <span class="params">(object)</span>:</span>
+   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x=<span class="number">0</span>, y=<span class="number">0</span>)</span>:</span>
+       self.x = x
+       self.y = y
+   <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, rhs)</span>:</span>
+       <span class="keyword">return</span> Vector(self.x + rhs.x, self.y + rhs.y)
+   <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> <span class="string">"Vector: ("</span> + str(self.x) + <span class="string">", "</span> + str(self.y) + <span class="string">")"</span>
+
+   <span class="class"><span class="keyword">class</span> <span class="title">Point</span> <span class="params">(object)</span>:</span>
+   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x=<span class="number">0</span>, y=<span class="number">0</span>)</span>:</span>
+       self.x = x
+       self.y = y
+   <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, rhs)</span>:</span>
+       <span class="keyword">return</span> Point(self.x + rhs.x, self.y + rhs.y)
+   <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> <span class="string">"Point: ("</span> + str(self.x) + <span class="string">", "</span> + str(self.y) + <span class="string">")"</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+   vec1 = Vector(<span class="number">10</span>, <span class="number">20</span>)
+   vec2 = Vector(<span class="number">90</span>, <span class="number">80</span>)
+   <span class="keyword">print</span> vec1 + vec2
+
+   p1 = Point(<span class="number">3</span>,   <span class="number">10</span>)
+   p2 = Point(-<span class="number">3</span>, -<span class="number">10</span>)
+   <span class="keyword">print</span> p1 + p2
+
+   <span class="comment"># the evaluation order is ((vec1 + p1) + p2)</span>
+   <span class="keyword">print</span> vec1 + p1 + p2
+   <span class="comment"># the evaluation order is ((p2 + vec1) + vec2)</span>
+   <span class="keyword">print</span> p2 + vec1 + vec2</code></pre>
+<p>Output:</p>
+<pre><code><span class="attribute">Vector</span>: <span class="string">(100, 100)</span>
+<span class="attribute">Point</span>: <span class="string">(0, 0)</span>
+<span class="attribute">Vector</span>: <span class="string">(10, 20)</span>
+<span class="attribute">Point</span>: <span class="string">(97, 90)</span></code></pre>
+<p>如同之前提到的, Python 中, 只要 Object 有能力 (有 Attributes) 就可以正常執行.<br>上面這個例子顯示, 既使是 vec1 + p1 或 p2 + vec1, 這樣的操作都是合法的.<br>因為 Python 只知道, 把 vec1 + p1 換成 vec1.<strong>add</strong>(p1), 只要 p1 提供足夠的能力, 能完成 <strong>add</strong> 既可.<br>此外, Python 中 Operator 的 Evaluation Order 都是從左到右, 不能被改變.</p>
+<p>Reference:</p>
+<ul>
+<li><a href="http://docs.python.org/2/library/operator.html" title="Operator Overloading" target="_blank"><a href="http://docs.python.org/2/library/operator.html">http://docs.python.org/2/library/operator.html</a></a></li>
+<li><a href="http://docs.python.org/2/reference/expressions.html#evaluation-order" title="Operator Evaluation Order" target="_blank"><a href="http://docs.python.org/2/reference/expressions.html#evaluation-order">http://docs.python.org/2/reference/expressions.html#evaluation-order</a></a></li>
+</ul>
+<hr>
+<h1>Function Overloading</h1>
+<p>Python 中, 並沒有提供 Function Overloading 的機制. 一般而言, 會透過下列方式來達成:  </p>
+<ul>
+<li>Default Arguments</li>
+<li>Variable Length Arguments With List</li>
+<li>Variable Length Arguments With Dict </li>
+</ul>
+<p>Ex: <strong>Default Arguments</strong></p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+   empCount = <span class="number">0</span>
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">""</span>, base_salary=<span class="number">1000</span>)</span>:</span>
+       self.base_salary = base_salary
+       self.name = name
+       Employee.empCount += <span class="number">1</span>
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+       Employee.empCount -= <span class="number">1</span>
+
+   <span class="decorator">@staticmethod</span>
+   <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
+       <span class="keyword">print</span> <span class="string">"Employee.empCount = "</span> + str(Employee.empCount)
+
+   <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> self.base_salary
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> <span class="string">"Employee: name="</span> + self.name + \
+              <span class="string">" base_salary="</span> + str(self.base_salary)
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+   employee1 = Employee(<span class="string">"Peter"</span>)
+   <span class="keyword">print</span> employee1
+   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   Employee.EmployeeCount()
+   <span class="keyword">del</span> employee1
+   Employee.EmployeeCount()
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
+Salary=<span class="number">1000</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
+<p>Ex: <strong>Variable Length Arguments With Tuple</strong></p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+   empCount = <span class="number">0</span>
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args)</span>:</span>
+       self.name  = “”
+       self.salary = <span class="number">1000</span>
+       <span class="keyword">if</span> <span class="number">1</span> &lt;= len(args): self.name  = args[<span class="number">0</span>]
+       <span class="keyword">if</span> <span class="number">2</span> &lt;= len(args): self.salary = args[<span class="number">1</span>]
+       Employee.__empCount += <span class="number">1</span>
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+       Employee.empCount -= <span class="number">1</span>
+
+   <span class="decorator">@staticmethod</span>
+   <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
+       <span class="keyword">print</span> <span class="string">"Employee.empCount = "</span> + str(Employee.empCount)
+
+   <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> self.base_salary
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> <span class="string">"Employee: name="</span> + self.name + \
+              <span class="string">" base_salary="</span> + str(self.base_salary)
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+   employee1 = Employee(<span class="string">"Peter"</span>)
+   <span class="keyword">print</span> employee1
+   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   Employee.EmployeeCount()
+   <span class="keyword">del</span> employee1
+   Employee.EmployeeCount()
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+   main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
+Salary=<span class="number">1000</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
+<p>Ex: <strong>Variable Length Arguments With Dict</strong></p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
+   empCount = <span class="number">0</span>
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, **args)</span>:</span>
+       self.name  = args.get(“name”, “”)
+       self.salary = args.get(“salary”, <span class="number">1000</span>)
+       Employee.__empCount += <span class="number">1</span>
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
+       Employee.empCount -= <span class="number">1</span>
+
+   <span class="decorator">@staticmethod</span>
+   <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
+       <span class="keyword">print</span> <span class="string">"Employee.empCount = "</span> + str(Employee.empCount)
+
+   <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> self.base_salary
+
+   <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
+       <span class="keyword">return</span> <span class="string">"Employee: name="</span> + self.name + \
+              <span class="string">" base_salary="</span> + str(self.base_salary)
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+   employee1 = Employee(<span class="string">"Peter"</span>)
+   <span class="keyword">print</span> employee1
+   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   Employee.EmployeeCount()
+   <span class="keyword">del</span> employee1
+   Employee.EmployeeCount()
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+   main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
+Salary=<span class="number">1000</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
+<p>此外, 要注意的一點是, 如果你強制寫了兩個相同 Signature 的 Method, 後者會覆蓋前者.  </p>
+<p>Ex:</p>
+<p>Output:</p>
+<hr>
+<h1>Object Types in Python</h1>
+<p>在 Python 中, 所有物件的型別可以分為下列 3 種:</p>
+<ol>
+<li>Class Object  <ul>
+<li>Instantiation</li>
+<li>Attribute Reference</li>
+</ul>
+</li>
+<li>Instance Object<ul>
+<li>Attribute Reference</li>
+</ul>
+</li>
+<li>Method Object<ul>
+<li></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1>Check relationship between class and instance</h1>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Software/">Software</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Python/">Python</a>, <a href="/tags/Study Group/">Study Group</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:mutsughost1.github.io/">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分類</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Software/">Software</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Blog/">Blog</a><small>1</small></li>
+  
+    <li><a href="/tags/Python/">Python</a><small>3</small></li>
+  
+    <li><a href="/tags/Software Testing/">Software Testing</a><small>1</small></li>
+  
+    <li><a href="/tags/Study Group/">Study Group</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/python-basic/">Python Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/about-this-blog/">About This Blog</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-module-package/">Python Module Package</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">最新留言</h3>
+  <ul class="entry">
+  <script type="text/javascript" src="http://mutsughost1.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">喃喃自語</h3>
+  <ul class="entry">
+  <a class="twitter-timeline" height="250" href="https://twitter.com/MutsuGhost1" data-widget-id="384199658408402944">@MutsuGhost1������</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 MutsuGhost1
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'mutsughost1';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

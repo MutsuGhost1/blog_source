@@ -1,0 +1,771 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Basic | MutsuGhost1's Blog</title>
+  <meta name="author" content="MutsuGhost1">
+  
+  <meta name="description" content="Python&amp;#39;s Folder Structure
+關於 yield
+yield 是為何而生 ?
+yield 的各種用法
+yield 的基本運作原理
+send(expression) - pass a value to generator
+throw(type[,value[,traceback]]) - raise exception inside generator
+close() - terminate the generator
+generator expression - 快速產生一個 generator object
+
+
+Reference
+
+
+Python Scope 概念
+其他
+List Comprehesion 
+Lambda expression
+Built-in Funtion map
+Built-in Funtion reduce
+Built-in Funtion filter
+Built-in Funtion zip">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Python Basic"/>
+  <meta property="og:site_name" content="MutsuGhost1's Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="MutsuGhost1's Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44446906-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">MutsuGhost1's Blog</a></h1>
+  <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/todolist">ToDo</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-29T12:45:42.000Z"><a href="/2013/09/29/python-basic/">9月 29 2013</a></time>
+      
+      
+  
+    <h1 class="title">Python Basic</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><a href="#python_folder_structure" title="Python&#39;s Folder Structure">Python&#39;s Folder Structure</a></li>
+<li><a href="#yield_about" title="關於 yield">關於 <em>yield</em></a><ul>
+<li><a href="#yield_history" title="yield 是為何而生 ?">yield 是為何而生 ?</a></li>
+<li><a href="#yield_usage" title="yield 的各種用法">yield 的各種用法</a><ul>
+<li><a href="#yield_fundamental" title="的基本運作原理">yield 的基本運作原理</a></li>
+<li><a href="#yield_send" title="send(expression)">send(expression) - pass a value to generator</a></li>
+<li><a href="#yield_throw" title="throw">throw(type[,value[,traceback]]) - raise exception inside generator</a></li>
+<li><a href="#yield_close" title="close()">close() - terminate the generator</a></li>
+<li><a href="#yield_generator_exp" title="generator expression">generator expression - 快速產生一個 generator object</a></li>
+</ul>
+</li>
+<li><a href="#yield_reference">Reference</a></li>
+</ul>
+</li>
+<li>Python Scope 概念</li>
+<li><a href="#others" title="其他">其他</a><ul>
+<li><a href="http://www.python.org/dev/peps/pep-0202/" title="PEP202" target="_blank">List Comprehesion</a> </li>
+<li><a href="#lambda_exp" title="Lambda expression">Lambda expression</a></li>
+<li><a href="#built_in_map" title="Built-in Funtion map">Built-in Funtion map</a></li>
+<li><a href="#built_in_reduce" title="Built-in Funtion reduce">Built-in Funtion reduce</a></li>
+<li><a href="#built_in_filter" title="Built-in Funtion filter">Built-in Funtion filter</a></li>
+<li><a href="#built_in_zip" title="Built-in Funtion zip">Built-in Funtion zip</a><a id="more"></a>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a name=python_folder_structure></a></p>
+<h1><em>Python&#39;s Folder Structure</em></h1>
+<p>在開始使用 Python 之前, 必須先在系統裝<a href="http://www.python.org/getit/" target="_blank">安裝 Python 的執行環境</a>, 安裝完後會發現, 預設的資料夾結構如下:</p>
+<p><img src="http://MutsuGhost1.github.io/image/python_install1.PNG" alt=""></p>
+<ul>
+<li>在 PythonXX —&gt; Lib 目錄中, 可以看到 Python Built-in Module 的 Source Code  </li>
+<li>在 PythonXX —&gt; Lib —&gt; site-packages 目錄中, 可以看到安裝的 3rd Party Package</li>
+</ul>
+<p><img src="http://MutsuGhost1.github.io/image/python_install2.PNG" alt=""></p>
+<hr>
+<p><a name=yield_about></a></p>
+<h1>關於 <em>yield</em> 用法</h1>
+<p><a name=yield_history></a></p>
+<h2>yield 是為何而生 ?</h2>
+<p>在 <a href="http://www.python.org/dev/peps/pep-0255" title="PEP255" target="_blank">PEP255</a> 中,有一段話是這麼描述的  </p>
+<blockquote>
+<p><em>When a producer function has a hard enough job that it requires<br>maintaining state between values produced, most programming languages<br>offer no pleasant and efficient solution beyond adding a callback<br>function to the producer&#39;s argument list, to be called with each value produced</em>  </p>
+</blockquote>
+<p>當一個複雜的 producer function, 為了在每次被呼叫時, 正確的 produce 出資料, 必須在 producer function<br>內實作一些複雜的 states 使得資料可以被正確產生.  </p>
+<p><a href="http://en.wikipedia.org/wiki/Fibonacci_number" title="Fibonacci Series in Wiki" target="_blank">以 Fibonacci Series 為例</a></p>
+<pre><code><span class="comment"># fib0.py produce 出 n 個 number 的 fibonacci series</span>
+<span class="function"><span class="keyword">def</span> <span class="title">fib0</span><span class="params">(end)</span>:</span>
+    a, b = <span class="number">0</span>, <span class="number">1</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(end):
+        a, b = b, a + b
+        <span class="keyword">print</span> <span class="string">"i="</span>, i, <span class="string">" a="</span>, a
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    fib0(<span class="number">10</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:  </p>
+<pre><code><span class="setting">i= <span class="value"><span class="number">0</span> a= <span class="number">1</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">1</span> a= <span class="number">1</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">2</span> a= <span class="number">2</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">3</span> a= <span class="number">3</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">4</span> a= <span class="number">5</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">5</span> a= <span class="number">8</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">6</span> a= <span class="number">13</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">7</span> a= <span class="number">21</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">8</span> a= <span class="number">34</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">9</span> a= <span class="number">55</span></span></span></code></pre>
+<p>上述 <strong>fib0.py</strong> 的做法, 只能一次 produce 出所有的 numbers, 若要做成每次呼叫才 produce 出 number,<br>必須由 programmer 定義額外的 states 來做處理, 類似的做法如下:</p>
+<pre><code><span class="comment"># fib1.py produce 出 n 個 number 的 fibonacci series</span>
+<span class="comment"># global variable to keep state</span>
+fib_state_cur = <span class="number">0</span>
+fib_state_end = <span class="number">0</span>
+fib_state_a = <span class="number">0</span>
+fib_state_b = <span class="number">1</span>
+<span class="function"><span class="keyword">def</span> <span class="title">fib1</span><span class="params">(end=-<span class="number">1</span>)</span>:</span>
+    <span class="comment"># use global variable to keep state</span>
+    <span class="keyword">global</span> fib_state_cur, fib_state_end, fib_state_a, fib_state_b
+
+    <span class="comment"># reset state for each new call</span>
+    <span class="keyword">if</span> <span class="number">0</span> &lt; end:
+        fib_state_cur = <span class="number">0</span>
+        fib_state_end = end
+        fib_state_a = <span class="number">0</span>
+        fib_state_b = <span class="number">1</span>
+
+    <span class="comment"># restore the state for each call</span>
+    start = fib_state_cur
+    end = fib_state_end
+    a, b = fib_state_a, fib_state_b
+
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end):
+        a, b = b, a + b
+        <span class="comment"># keep the state</span>
+        fib_state_cur = i+<span class="number">1</span>
+        fib_state_a, fib_state_b = a, b
+        <span class="keyword">return</span> a
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):
+        <span class="keyword">if</span> <span class="number">0</span> == i:
+            <span class="comment"># first time to initialize the number of items</span>
+            <span class="keyword">print</span> <span class="string">"i="</span>, i, <span class="string">"a="</span>, fib1(<span class="number">10</span>)
+        <span class="keyword">else</span>:
+            <span class="comment"># get the next number</span>
+            <span class="keyword">print</span> <span class="string">"i="</span>, i, <span class="string">"a="</span>, fib1()
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:  </p>
+<pre><code><span class="setting">i= <span class="value"><span class="number">0</span> a= <span class="number">1</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">1</span> a= <span class="number">1</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">2</span> a= <span class="number">2</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">3</span> a= <span class="number">3</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">4</span> a= <span class="number">5</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">5</span> a= <span class="number">8</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">6</span> a= <span class="number">13</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">7</span> a= <span class="number">21</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">8</span> a= <span class="number">34</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">9</span> a= <span class="number">55</span></span></span></code></pre>
+<p>大多數的程式語言, 針對這樣的問題在語法上並沒有直接的支援, 因此除了上述的做法外, 大多數折衷的做法都是提供<br>callback function 給producer function 當作參數, 當每次資料被 produce 出來時, 透過 callback function 來通知 consumer.  </p>
+<p>為了對類似的需求, 有更好的支援, <a href="http://www.python.org/dev/peps/pep-0255" title="PEP255" target="_blank">PEP255</a> 被提出且實現於 Python 2.3 中, 在初版 <a href="http://www.python.org/dev/peps/pep-0255" title="PEP255" target="_blank">PEP255</a> 的定義中, yield 是一個 statement.</p>
+<p>透過 yield 的支援, 可將 <strong>fib1.py</strong> 簡化為 <strong>fib2.py</strong>, 如下:</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">fib2</span><span class="params">(end)</span>:</span>
+    a, b = <span class="number">0</span>, <span class="number">1</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(end):
+        a, b = b, a + b
+        <span class="keyword">yield</span> a
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    i = <span class="number">0</span>
+    <span class="keyword">for</span> a <span class="keyword">in</span> fib2(<span class="number">10</span>):
+        <span class="keyword">print</span> <span class="string">"i="</span>, i, <span class="string">"a="</span>, a
+        i+=<span class="number">1</span>  </code></pre>
+<p>Output:  </p>
+<pre><code><span class="setting">i= <span class="value"><span class="number">0</span> a= <span class="number">1</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">1</span> a= <span class="number">1</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">2</span> a= <span class="number">2</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">3</span> a= <span class="number">3</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">4</span> a= <span class="number">5</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">5</span> a= <span class="number">8</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">6</span> a= <span class="number">13</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">7</span> a= <span class="number">21</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">8</span> a= <span class="number">34</span></span></span>
+<span class="setting">i= <span class="value"><span class="number">9</span> a= <span class="number">55</span></span></span></code></pre>
+<p>到了 Python 2.5, 針對 yield 有更進一步的 enhancement <a href="http://www.python.org/dev/peps/pep-0342/" title="PEP342" target="_blank">PEP342</a>, 使其能夠較完善的處理 <a href="http://en.wikipedia.org/wiki/Coroutine#Implementations_for_Python" title="Coroutine in Wiki" target="_blank">Coroutine</a> 這類的問題.  </p>
+<hr>
+<p><a name=yield_usage></a></p>
+<h2>yield 的各種用法</h2>
+<p>由於 <a href="http://www.python.org/dev/peps/pep-0342/" title="PEP342" target="_blank">PEP342</a> 是針對 <a href="http://www.python.org/dev/peps/pep-0255" title="PEP255" target="_blank">PEP255</a> 的 enhancement, 因此以下直接針對 <a href="http://www.python.org/dev/peps/pep-0342/" title="PEP342" target="_blank">PEP342</a> 的各項用法, 一一做個說明.<br><a href="http://www.python.org/dev/peps/pep-0255" title="PEP255" target="_blank">PEP255</a> 中, yield 是一個 statement.<br><a href="http://www.python.org/dev/peps/pep-0342/" title="PEP342" target="_blank">PEP342</a> 中, yield 是一個 expression, 因此將 yield expression 的回傳值忽略掉當成 yield statement 來討論既可.  </p>
+<p><a name=yield_fundamental></a></p>
+<h3>yield 的基本運作原理</h3>
+<p>首先, 先看看 Python 如何看待一個包含有 yield 語法的 function [1]:</p>
+<blockquote>
+<p>A function which returns an iterator. It looks like a normal function except that it contains yield statements<br>for producing a series a values usable in a for-loop or that can be retrieved one at a time with the next() function.<br>Each yield temporarily suspends processing, remembering the location execution state<br>(including local variables and pending try-statements).<br>When the generator resumes, it picks-up where it left-off  (in contrast to functions which start fresh on every invocation).  </p>
+</blockquote>
+<p>上面這句話, 我們可以拆成幾個部份來理解:  </p>
+<ol>
+<li>當一個 function 內包含了 yield 語法, 這個 function 就稱為 generator.  </li>
+<li>這個 function (generator) 被呼叫時, 回傳一個 iterator (generator object).  </li>
+<li>iterator 內執行的代碼, 既為 function 內定義的代碼.<br>唯一的差異是, 每次呼叫 next() 都會在 yield expression 處 suspend (儲存整個 context 的變數狀態)<br>並且 return 其 yield 的 value 給 next() 的 caller</li>
+<li>每次呼叫 next(), 都會從上一次結束的地方 resume (恢復整個 context 的變數狀態), 並繼續執行到下個 yield 處</li>
+<li>若呼叫 next() 時, 代碼中已無 yield expression 可 suspend, 則產生 StopIterator Exception  </li>
+</ol>
+<p>下面的代碼, 驗證了上述的說法:</p>
+<pre><code><span class="comment"># generator_demo.py  </span>
+
+<span class="comment"># 1. define a function (generator)</span>
+<span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span>
+    x = <span class="number">100</span>              <span class="comment"># 第一次呼叫 next() 將於此開始執行</span>
+    <span class="keyword">yield</span> x              <span class="comment"># 第一次 next() 呼叫後, 將 suspend 於此, 並回傳 x</span>
+    x += <span class="number">20</span>              <span class="comment"># 第二次呼叫 next() 將於此開始執行, 保有上次執行個變數內容的 context</span>
+    <span class="keyword">yield</span> x              <span class="comment"># 第二次 next() 呼叫後, 將 suspend 於此, 並回傳 x</span>
+                         <span class="comment"># 第三次呼叫 next() 將觸發 StopIterator Exception</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    <span class="keyword">print</span> type(gen)      <span class="comment"># 1. gen   型別為 &lt;type 'function'&gt;, 提供產生 generator(iterator) object</span>
+    <span class="keyword">print</span> type(gen())    <span class="comment"># 2. gen() 型別為 &lt;type 'generator'&gt;</span>
+    gen_var = gen()      
+    <span class="keyword">print</span> gen_var        <span class="comment"># gen_var 為一個 &lt;generator object gen at 0x00DE8288&gt;</span>
+    <span class="keyword">print</span> type(gen_var)  <span class="comment"># gen_var 型別為 &lt;type 'generator'&gt;</span>
+    <span class="keyword">print</span> gen_var.next() <span class="comment"># 3. 100</span>
+    <span class="keyword">print</span> gen_var.next() <span class="comment"># 4. 120</span>
+    <span class="keyword">print</span> gen_var.next() <span class="comment"># 5. raise StopIteratorException</span>
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main() </code></pre>
+<p>Output:  </p>
+<pre><code><span class="tag">&lt;<span class="title">type</span> '<span class="attribute">function</span>'&gt;</span>
+<span class="tag">&lt;<span class="title">type</span> '<span class="attribute">generator</span>'&gt;</span>
+<span class="tag">&lt;<span class="title">type</span> '<span class="attribute">generator</span>'&gt;</span>
+<span class="tag">&lt;<span class="title">generator</span> <span class="attribute">object</span> <span class="attribute">gen</span> <span class="attribute">at</span> <span class="attribute">0x00DE82B0</span>&gt;</span>
+100
+120
+Traceback (most recent call last):
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 29, in <span class="tag">&lt;<span class="title">module</span>&gt;</span>
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 26, in main
+StopIteration</code></pre>
+<p>歸納上述幾項重點:  </p>
+<ul>
+<li><strong>yield 基本上是搭配在 function 內部使用的</strong></li>
+<li>使用 yield 語法的 function, 又稱之為 generator</li>
+<li>generator 所產生的 generator object 是一個 iterator.</li>
+<li>generator 每次執行的 next() 代碼, 即為 function 內部的代碼, 差別在於<ul>
+<li>next() 執行到 yield 處即 suspend, 並回傳 yield 的 value 給 next() caller  </li>
+<li>每次執行 next() 將會從上次 suspend 處, 繼續 resume, 且保有上次 context 內的變數狀態</li>
+</ul>
+</li>
+<li>若呼叫 next() 時, 代碼中已無 yield expression 可 suspend, 則產生 StopIterator Exception</li>
+</ul>
+<p><a name=yield_send></a></p>
+<h2>send(expression) - pass a value to generator</h2>
+<p>理解完 <a href="#yield_fundamental" title="的基本運作原理">yield 的基本運作原理</a>, 就很好理解 send 這個 method 的行為.<br>send(expression) 和 next() 一樣, 是 trigger iterator 的執行, 直到遇到下一個 yield expression.<br>差異在於:  </p>
+<ul>
+<li>send(expression) 是 <a href="http://www.python.org/dev/peps/pep-0342/" title="Coroutines via Enhanced Generators" target="_blank">PEP342</a> 提出, 在 Python 2.5 實現, 用來指定 yield expression 所 evaluate 的結果  </li>
+<li>這也是為何在 Python 2.5 中, yield 從 statement 變更為 expression 的原因之一</li>
+<li>在 Python 2.3, yield 還是一個 statement  </li>
+</ul>
+<p>下列代碼說明了, send(expression) 如何指令 yield expression 的結果.</p>
+<pre><code><span class="comment"># generator_send_demo.py</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">gen2</span><span class="params">()</span>:</span>
+    x = <span class="number">100</span>                     <span class="comment"># 呼叫 next() 將於此開始執行</span>
+    y = <span class="keyword">yield</span> x                 <span class="comment"># next() 呼叫後, 將 suspend 於此, 並回傳 x</span>
+                                <span class="comment"># 呼叫 send(10) 將於此開始執行, 保有上次執行個變數內容的 context,  </span>
+                                <span class="comment"># 將 send 指定的值 assign 給 y</span>
+    x += y                      <span class="comment"># send(10) 呼叫後, 執行此 statement, </span>
+    y = <span class="keyword">yield</span> x                 <span class="comment"># send(10) 呼叫後, 將 suspend 於此, 並回傳 x</span>
+                                <span class="comment"># 呼叫 send(20) 將於此開始執行, 保有上次執行個變數內容的 context,   </span>
+                                <span class="comment"># 將 send 指定的值 assign 給 y</span>
+    x += y                      <span class="comment"># send(20) 呼叫後, 執行 statement,</span>
+    <span class="keyword">yield</span> x                     <span class="comment"># send(20) 呼叫後, 將 suspend 於此, 並回傳 x</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    gen_var2 = gen2()           <span class="comment"># 產生一個 generator object 儲存於 gen_var2</span>
+    <span class="keyword">print</span> gen_var2.next()       <span class="comment"># the same result with calling gen_var2.send(None)</span>
+    <span class="keyword">print</span> gen_var2.send(<span class="number">10</span>)     <span class="comment"># 執行 gen_var2.send()</span>
+    <span class="keyword">print</span> gen_var2.send(<span class="number">20</span>)     <span class="comment"># 執行 gen_var2.send()</span>
+    <span class="keyword">print</span> gen_var2.send(<span class="number">30</span>)     <span class="comment"># the same reslut with calling gen_var2.next(), </span>
+                                <span class="comment"># raise StopIterator Exception</span>
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main() </code></pre>
+<p>Output:  </p>
+<pre><code>100
+110
+130
+Traceback (most recent call last):
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 49, in <span class="tag">&lt;<span class="title">module</span>&gt;</span>
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 35, in main
+StopIteration</code></pre>
+<p>這邊補充幾個重點:  </p>
+<ul>
+<li>可將 y = yield x 看成右半部跟左半部兩個動作, suspend 的時候執行右半部, resume 的時候才執行左半部的 assign.  </li>
+<li>透過 generator object, 第一次呼 iterate iterator 時, 只能使用 next() or send(None), 兩者等價 </li>
+</ul>
+<p><a name=yield_throw></a></p>
+<h2>throw(type[,value[,traceback]]) - raise exception inside generator</h2>
+<p><a href="http://www.python.org/dev/peps/pep-0342/" title="Coroutines via Enhanced Generators" target="_blank">PEP342</a> 提到, 想在 generator 中, suspend 在 iterator 的點, 產生 exception, 可以透過 throw 來達成.  </p>
+<p>參考下列代碼:  </p>
+<pre><code><span class="comment"># generator_throw_demo.py</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">gen3</span><span class="params">()</span>:</span>
+    x = <span class="number">100</span>                              <span class="comment"># 呼叫 gen_var3.send(None) 將由此開始執行</span>
+    <span class="keyword">try</span>:
+        y = <span class="keyword">yield</span> x                      <span class="comment"># gen_var3.send(None) 呼叫後, 將 suspend 於此, 並回傳 x</span>
+                                         <span class="comment"># throw GeneratorExit 發生於此</span>
+        x += y
+        y = <span class="keyword">yield</span> x
+        x += y
+        <span class="keyword">yield</span> x
+<span class="keyword">except</span>:                                  <span class="comment"># 處理所有型態的 exception, 包含 GeneratorExit Exception</span>
+    <span class="keyword">pass</span>                                 <span class="comment"># pass GeneratorExit Exception 的處理</span>
+                                         <span class="comment"># 由於沒有 yield expression 了, </span>
+                                         <span class="comment"># 因此 raise StopIterator Exception</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    gen_var3 = gen3()                    <span class="comment"># 產生一個 generator object 儲存於 gen_var3</span>
+    <span class="keyword">print</span> gen_var3.send(<span class="built_in">None</span>)            <span class="comment"># the same result with calling gen_var2.next()</span>
+    <span class="keyword">print</span> gen_var3.throw(GeneratorExit)  <span class="comment"># 在 generator 內部產生一個 GeneratorExit Exception</span>
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:  </p>
+<pre><code>100
+Traceback (most recent call last):
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 47, in <span class="tag">&lt;<span class="title">module</span>&gt;</span>
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 33, in main
+StopIteration</code></pre>
+<p>此外, 由外部 trigger generator 內的 exception 後, 仍然可在內部的 exception handler 搭配 yield 繼續做處理.  </p>
+<p>參考下列代碼:  </p>
+<pre><code><span class="comment"># generator_throw_demo2.py</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">gen3</span><span class="params">()</span>:</span>
+    x = <span class="number">100</span>                               <span class="comment"># 第一次 gen_var3.send(None) 將由此開始執行</span>
+    <span class="keyword">try</span>:
+        y = <span class="keyword">yield</span> x                       <span class="comment"># 第一次 gen_var3.send(None) 呼叫後, 將 suspend 於此,  </span>
+                                          <span class="comment"># 並回傳 x</span>
+                                          <span class="comment"># throw GeneratorExit 發生於此</span>
+        x += y
+        y = <span class="keyword">yield</span> x
+        x += y
+        <span class="keyword">yield</span> x
+<span class="keyword">except</span>:                                   <span class="comment"># 處理所有型態的 exception, 包含 GeneratorExit Exception</span>
+    x +=<span class="number">10</span>                                <span class="comment"># throw GeneratorExit 發生後, 執行此 statement </span>
+    <span class="keyword">yield</span> x                               <span class="comment"># throw GeneratorExit 發生後, 將 suspend 於此, 並回傳 x</span>
+                                          <span class="comment"># 第二次 gen_var3.send(None) 由此開始執行</span>
+    x +=<span class="number">20</span>                                <span class="comment"># 第二次 gen_var3.send(None) 發生後, 執行此 statement</span>
+    <span class="keyword">yield</span> x                               <span class="comment"># 第二次 gen_var3.send(None) 發生後, 將 suspend 於此, </span>
+                                          <span class="comment"># 並回傳 x</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    gen_var3 = gen3()                     <span class="comment"># 產生一個 generator object 儲存於 gen_var3</span>
+    <span class="keyword">print</span> gen_var3.send(<span class="built_in">None</span>)             <span class="comment"># the same result with calling gen_var2.next()</span>
+    <span class="keyword">print</span> gen_var3.throw(GeneratorExit)   <span class="comment"># 在 generator 內部產生一個 GeneratorExit Exception</span>
+    <span class="keyword">print</span> gen_var3.send(<span class="built_in">None</span>)             <span class="comment"># the same result with calling gen_var2.next()</span>
+    <span class="keyword">print</span> gen_var3.send(<span class="built_in">None</span>)             <span class="comment"># the same result with calling gen_var2.next()</span></code></pre>
+<p>Output:  </p>
+<pre><code>100
+110
+130
+Traceback (most recent call last):
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 51, in <span class="tag">&lt;<span class="title">module</span>&gt;</span>
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 37, in main
+StopIteration</code></pre>
+<p><a name=yield_close></a></p>
+<h2>close() - terminate the generator</h2>
+<p><a href="http://www.python.org/dev/peps/pep-0342/" title="Coroutines via Enhanced Generators" target="_blank">PEP342</a> 提到, 當 generator object 不再使用時, 可以呼叫 close() method, 之後如果再呼叫 next() method 則會 raise StopIterator Exception.  </p>
+<p>參考下面代碼:  </p>
+<pre><code><span class="comment"># generator_close_demo.py</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">gen2</span><span class="params">()</span>:</span>
+    x = <span class="number">100</span>
+    y = <span class="keyword">yield</span> x
+    x += y
+    y = <span class="keyword">yield</span> x
+    x += y
+    <span class="keyword">yield</span> x
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    gen_var2 = gen2()
+    <span class="keyword">print</span> gen_var2.send(<span class="built_in">None</span>)
+    gen_var2.close()
+    <span class="keyword">print</span> gen_var2.send(<span class="number">10</span>)     <span class="comment"># raise StopIterator Exception, if next() is called after close()</span>
+    <span class="keyword">print</span> gen_var2.send(<span class="number">20</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code>100
+Traceback (most recent call last):
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 46, in <span class="tag">&lt;<span class="title">module</span>&gt;</span>
+  File "<span class="tag">&lt;<span class="title">module1</span>&gt;</span>", line 31, in main
+StopIteration</code></pre>
+<p><a name=yield_generator_exp></a></p>
+<h2>generator expression - 快速產生一個 generator object</h2>
+<p>除了透過定義包含 yield expression 的 function 外, 可以透過 Python 語法快速的產生 generator object.<br>引述 <a href="http://docs.python.org/2.7/glossary.html#term-generator" title="generator expression" target="_blank">Python Glossary</a> 的定義:</p>
+<blockquote>
+<p>An expression that returns an iterator. It looks like a normal expression followed by a for expression defining a loop variable, range, and an optional if expression</p>
+</blockquote>
+<p>範例如下:</p>
+<pre><code><span class="comment"># generator_expression_demo.py</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    gen_exp = ((i+<span class="number">1</span>)*(i+<span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>))  <span class="comment"># 產生一個 generator object</span>
+
+    <span class="keyword">print</span> type(gen_exp)
+    <span class="keyword">print</span> gen_exp                               <span class="comment"># 和 generator 產生出來的 object 印出來的資訊不太一樣</span>
+
+    <span class="keyword">for</span> x <span class="keyword">in</span> gen_exp:
+        <span class="keyword">print</span> x
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>Output:</p>
+<pre><code><span class="tag">&lt;<span class="title">type</span> '<span class="attribute">generator</span>'&gt;</span>
+<span class="tag">&lt;<span class="title">generator</span> <span class="attribute">object</span> &lt;<span class="attribute">genexpr</span>&gt;</span> at 0x00DE82B0&gt;
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100</code></pre>
+<p>這裡有一點要注意, generator expression 產生出來的 object 與 generator 產生出來的 object print 出來的結果有些不同.  </p>
+<ul>
+<li>print generator expression 產生的 object 會印出 &lt;generator object <strong>&lt;genexpr&gt;</strong> at 0x00DE82B0&gt;</li>
+<li>print generator 產生的 object 會印出 &lt;generator object <strong>gen</strong> at 0x00DE82B0&gt;</li>
+</ul>
+<p><a name=yield_reference></a></p>
+<h2>Reference:</h2>
+<ul>
+<li>[1] <a href="http://docs.python.org/2.7/glossary.html#term-generator" target="_blank">Definition for generator in python</a></li>
+<li>[2] <a href="http://blog.donews.com/limodou/archive/2006/09/04/1028747.aspx" target="_blank">limodou的学习记录</a></li>
+<li>[3] <a href="http://dhcmrlchtdj.github.io/sia/post/2012-11-20/python_yield.html" target="_blank">python yield 研究</a></li>
+<li>[4] <a href="http://www.python.org/dev/peps/pep-0255/" title="Simple Generators" target="_blank">PEP255</a></li>
+<li>[5] <a href="http://www.python.org/dev/peps/pep-0289/" title="Generator Expressions" target="_blank">PEP289</a></li>
+<li>[6] <a href="http://www.python.org/dev/peps/pep-0342/" title="Coroutines via Enhanced Generators" target="_blank">PEP342</a></li>
+<li>[7] <a href="http://www.jb51.net/article/15717.htm" target="_blank">Python 深入理解yield</a></li>
+</ul>
+<hr>
+<p><a name=others></a></p>
+<h1><em>其它</em></h1>
+<p><a name=lambda_exp></a></p>
+<h2>Lambda Expression</h2>
+<p>Python 中使用 Lambda Expression 的語法可以一個建立 Annonymous Function </p>
+<p>Ex:</p>
+<pre><code><span class="title">f</span> = lambda x: x ** x
+<span class="title">print</span>(f(<span class="number">1</span>))
+<span class="title">print</span>(f(<span class="number">2</span>))
+<span class="title">print</span>(f(<span class="number">3</span>))
+<span class="title">print</span>(f(<span class="number">4</span>))
+<span class="title">print</span>(f(<span class="number">5</span>))
+
+<span class="title">g</span> = lambda x, y: x * y
+<span class="title">print</span>(g(<span class="number">1</span>, <span class="number">6</span>))
+<span class="title">print</span>(g(<span class="number">2</span>, <span class="number">7</span>))
+<span class="title">print</span>(g(<span class="number">3</span>, <span class="number">8</span>))
+<span class="title">print</span>(g(<span class="number">4</span>, <span class="number">9</span>))
+<span class="title">print</span>(g(<span class="number">5</span>, <span class="number">10</span>))</code></pre>
+<p>Output:</p>
+<pre><code><span class="number">1</span>
+<span class="number">4</span>
+<span class="number">27</span>
+<span class="number">256</span>
+<span class="number">3125</span>
+<span class="number">6</span>
+<span class="number">14</span>
+<span class="number">24</span>
+<span class="number">36</span>
+<span class="number">50</span></code></pre>
+<p><a name=built_in_map></a></p>
+<h2>Built-in Function map</h2>
+<p>在探討 map function 之前, 讓我們先回憶一下國中時候學過的數學函數,<br>假設函數 f(x,y,..,z) 輸入一組 x1, y1, …, z1 參數後, 可得到一個結果 r1,<br>現在我們準備 n 組資料 [(x1, y1, …, z1), (x2, y2, …, z2), …, (xn, yn, …, zn)]<br>依序輸入給函數 f(x,y,…,z) 後,<br>可得到 n 個結果 [r1,r2, …, rn], 如下圖所示:</p>
+<p><img src="http://MutsuGhost1.github.io/image/python_map_function.PNG" alt=""></p>
+<p>事實上 map function 就是執行類似這樣的概念. map function 有兩組 input 參數:<br>1. function (對應到上述的函數 f)<br>2. 輸入 function 的參數, 參數個數必須與 function 參數匹配</p>
+<p>下列代碼展示 map function 的使用方法:</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b,c)</span>:</span>
+    <span class="keyword">return</span> a*b*c
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    lista = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
+    listb = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
+    listc = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
+    <span class="keyword">print</span> map(f, lista, listb, listc)</code></pre>
+<p>Output:  </p>
+<pre><code>[<span class="number">1</span>, <span class="number">8</span>, <span class="number">27</span>, <span class="number">64</span>, <span class="number">125</span>, <span class="number">216</span>]</code></pre>
+<p>有一點要注意的事情, 當參數是一個 sequence 時, <strong>各個 sequence 的參數不一致, 將取最長的為主, 不足補 None</strong>.<br>最後, 附上 <a href="http://docs.python.org/2/library/functions.html#map" target="_blank">Python 文件</a>上的說明:  </p>
+<p><em>map(function, iterable, …)</em>  </p>
+<blockquote>
+<p>Apply function to every item of iterable and return a list of the results.<br>If additional iterable arguments are passed, function must take that many arguments and is applied to the items from all iterables in parallel. <strong>If one iterable is shorter than another it is assumed to be extended with None items</strong>. <strong>If function is None, the identity function is assumed</strong>; if there are multiple arguments, map() returns a list consisting of tuples containing the corresponding items from all iterables (a kind of transpose operation). The iterable arguments may be a sequence or any iterable object; <strong>the result is always a list</strong>.</p>
+</blockquote>
+<p><a name=built_in_reduce></a></p>
+<h2>Built-in Function reduce</h2>
+<blockquote>
+<p>Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value</p>
+</blockquote>
+<p>Reduce 的 Pseudo Code, 類似下面這個範例:</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">reduce</span><span class="params">(function, iterable, initializer=None)</span>:</span>
+    it = iter(iterable)
+
+    <span class="keyword">if</span> initializer <span class="keyword">is</span> <span class="built_in">None</span>:
+    <span class="keyword">try</span>:
+        initializer = next(it)
+    <span class="keyword">except</span> StopIteration:
+        <span class="keyword">raise</span> TypeError(<span class="string">'reduce() of empty sequence with no initial value'</span>)
+
+    accum_value = initializer
+    <span class="keyword">for</span> x <span class="keyword">in</span> it:
+        accum_value = function(accum_value, x)
+    <span class="keyword">return</span> accum_value</code></pre>
+<p>Ex:  </p>
+<ul>
+<li>reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5)</li>
+</ul>
+<p><a name=built_in_filter></a></p>
+<h2>Built-in Function filter</h2>
+<blockquote>
+<p>Construct a list from those elements of iterable for which function returns true. iterable may be either a sequence, a container which supports iteration, or an iterator. If iterable is a string or a tuple, the result also has that type; otherwise it is always a list. I<strong>f function is None, the identity function is assumed</strong>, that is, all elements of iterable that are false are removed.</p>
+</blockquote>
+<p>Ex:  </p>
+<ul>
+<li><strong>filter(function, iterable)</strong> is equivalent to <strong>[item for item in iterable if function(item)]</strong></li>
+</ul>
+<p><a name=built_in_zip></a></p>
+<h2>Built-in Function zip</h2>
+<p>zip function 做的事情, 如下圖:</p>
+<p><img src="http://MutsuGhost1.github.io/image/python_zip_function.PNG" alt=""></p>
+<p>Ex:</p>
+<pre><code>&gt;&gt;&gt; a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]
+&gt;&gt;&gt; b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
+&gt;&gt;&gt; c = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]      # 以短的為主
+&gt;&gt;&gt; zipped = zip(a,b)
+[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]
+&gt;&gt;&gt; zip(a,c)
+[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]
+&gt;&gt;&gt; zip<span class="comment">(*zipped)         # unzip 回原來模樣
+[(1, 2, 3), (4, 5, 6)]</code></pre>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Software/">Software</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Python/">Python</a>, <a href="/tags/Study Group/">Study Group</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:mutsughost1.github.io/">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分類</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Software/">Software</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Blog/">Blog</a><small>1</small></li>
+  
+    <li><a href="/tags/Python/">Python</a><small>3</small></li>
+  
+    <li><a href="/tags/Software Testing/">Software Testing</a><small>1</small></li>
+  
+    <li><a href="/tags/Study Group/">Study Group</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/python-basic/">Python Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/about-this-blog/">About This Blog</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-module-package/">Python Module Package</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">最新留言</h3>
+  <ul class="entry">
+  <script type="text/javascript" src="http://mutsughost1.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">喃喃自語</h3>
+  <ul class="entry">
+  <a class="twitter-timeline" height="250" href="https://twitter.com/MutsuGhost1" data-widget-id="384199658408402944">@MutsuGhost1������</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 MutsuGhost1
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'mutsughost1';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

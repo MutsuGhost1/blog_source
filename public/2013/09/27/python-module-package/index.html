@@ -1,0 +1,591 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Module Package | MutsuGhost1's Blog</title>
+  <meta name="author" content="MutsuGhost1">
+  
+  <meta name="description" content="What&amp;#39;s a python module ?
+Why use modules ?
+How to use/write modules ?
+Module search Path ?
+Reload your module after applying any change ? 
+What&amp;#39;s package ?
+Why use packaes ?
+How to use packages ?
+An example to refactor a module as a package">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Python Module Package"/>
+  <meta property="og:site_name" content="MutsuGhost1's Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="MutsuGhost1's Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44446906-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">MutsuGhost1's Blog</a></h1>
+  <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/todolist">ToDo</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-27T06:54:50.000Z"><a href="/2013/09/27/python-module-package/">9月 27 2013</a></time>
+      
+      
+  
+    <h1 class="title">Python Module Package</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><a href="#what_module" title="What&#39;s a python module ?">What&#39;s a python module ?</a></li>
+<li><a href="#why_module" title="Why use modules ?">Why use modules ?</a></li>
+<li><a href="#how_module" title="How to use/write modules ?">How to use/write modules ?</a></li>
+<li><a href="#module_search_path" title="Module search Path">Module search Path ?</a></li>
+<li><a href="#reload_module" title="Reload your module after applying any change">Reload your module after applying any change ?</a> </li>
+<li><a href="#what_package" title="What&#39;s package ?">What&#39;s package ?</a></li>
+<li><a href="#why_package" title="Why use packaes ?">Why use packaes ?</a></li>
+<li><a href="#how_package" title="How to use packages ?">How to use packages ?</a></li>
+<li><a href="#package_example" title="An example to refactor a module as a package">An example to refactor a module as a package</a></li>
+</ul>
+<h2><a id="more"></a></h2>
+<p><a name=what_module></a></p>
+<h1>What&#39;s a python module ?</h1>
+<p>在 Python 中, 每一個檔案都是一個 Python Module, 通常以 py 做為其副檔名</p>
+<blockquote>
+<p>定義上, python module 個包含了 python definitions 以及 python executable statements.<br>python definitions 通常是指 variable definitions, function definitions and class definitions.  </p>
+</blockquote>
+<p>Python module 只會在第一次被 import 的時候被執行. 被 import module 會在目前執行的 global namespace 中,<br>建立一個屬於此 module 的 namespace. 在預設下, 這個 module 的 namespace 會是 module name.<br>任何人可以透過這個 module name 來存取 module 內的各項 attributes.  </p>
+<p>下面的例子即為一個 Module:</p>
+<pre><code><span class="comment"># A python module fibo.py</span>
+
+__VERSION = <span class="string">"Version 1"</span>  <span class="comment"># variable definition</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">fibo</span><span class="params">(n)</span>:</span>             <span class="comment"># function definition</span>
+    <span class="keyword">pass</span>
+
+<span class="comment"># you can define your class here</span>
+
+<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
+    <span class="keyword">pass</span>                 <span class="comment"># write executable statements</span></code></pre>
+<hr>
+<p><a name=why_module></a></p>
+<h1>Why use python modules ?</h1>
+<p>將常用的 code 整理成 module 的好處如下:</p>
+<ul>
+<li>將相關的 code 組織在同一個 module 中, 讓 code 更容易維護, 更容易讀, 更容易 re-use</li>
+<li>避免 naming conflict, 所有定義在 module 內的變數, 都屬於此 module namespace 下</li>
+</ul>
+<hr>
+<p><a name=how_module></a></p>
+<h1>How to use/write python modules ?</h1>
+<p><strong>Syntax for using a module</strong></p>
+<blockquote>
+<p><strong>import</strong> module1 [,module2[,…moduleN]]<br><strong>import</strong> module [as alias]<br><strong>from</strong> module <strong>import</strong> item1[,item2[,…itemN]]<br><strong>from</strong> module <strong>import</strong> item [as alias]  </p>
+</blockquote>
+<p><strong>一個計算 fibonacci sequence 的 python module 如下:</strong></p>
+<pre><code><span class="comment"># module fibo.py</span>
+<span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span>
+    <span class="string">""" show fibonacci sequence up to n """</span>
+    a, b = <span class="number">0</span>, <span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        <span class="keyword">print</span> b,
+        a,b = b, a+b
+
+<span class="function"><span class="keyword">def</span> <span class="title">fib2</span><span class="params">(n)</span>:</span>
+    <span class="string">""" return fibonacci sequence up to n """</span>
+    listFibo = []
+    <span class="keyword">while</span> b &lt; n:
+        listFibo.append(b)
+        a,b = b, a+b
+    <span class="keyword">return</span> listFibo</code></pre>
+<p><strong>啟動 Python Interactive Console, 並切換到 module fibo.py 所在目錄下, 並執行下列指令使用 fibo module:</strong>  </p>
+<pre><code>&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>']
+&gt;&gt;&gt; import fibo
+&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fibo']
+&gt;&gt;&gt; fibo.fib(1000)
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+&gt;&gt;&gt; fibo.fib2(100)
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</code></pre>
+<p><strong>執行 import statement 時, 實際上執行了 3 件事情:</strong></p>
+<ol>
+<li><p>Find the file of imported module (從 sys.path 去找)  </p>
+</li>
+<li><p>Compile it as byte code (if needed)  </p>
+</li>
+<li><p>Run the module&#39;s code to build the objects it defines.  </p>
+<ul>
+<li>A variable will be created in global namespace to reference the object of the module  </li>
+</ul>
+</li>
+</ol>
+<p><strong>利用 from … import … 來簡化使用 module 內的 atrribute name</strong></p>
+<p>透過 from module import item 來簡化使用 module 內的 attribute name</p>
+<pre><code>&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>']
+&gt;&gt;&gt; from fibo import fib, fib2
+&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fib', 'fib2']
+&gt;&gt;&gt; fib(1000)
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+&gt;&gt;&gt; fib2(100)
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</code></pre>
+<p><strong>事實上, from module import item 是基於 import statement 來實現的</strong></p>
+<p><strong>from fibo import fib, fib2</strong> 可以看拆解成下列幾個動作:  </p>
+<ol>
+<li>import fibo  </li>
+<li>fib = fibo.fib  </li>
+<li>fib2 = fibo.fib2  </li>
+<li>del fibo</li>
+</ol>
+<p><strong>每個 module 都會有一個 __name__ attribute, 代表這個 module 的名稱</strong></p>
+<pre><code>&gt;&gt;&gt; import fibo
+&gt;&gt;&gt; dir(fibo)
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__file__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fib', 'fib2', 'main']
+&gt;&gt;&gt; fibo.<span class="strong">__name__</span>
+'fibo'</code></pre>
+<p>當這個 python module 被當作 script 執行時, __name__ 的內容將被改為 &quot;__main__&quot;<br>這樣的做法可以讓每個 module 將特定的代碼只有在 module 被當作 script 執行時, 才會執行</p>
+<pre><code><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span>
+    a,b = <span class="number">0</span>,<span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        <span class="keyword">print</span> b,
+        a,b = b, a+b
+
+<span class="function"><span class="keyword">def</span> <span class="title">fib2</span><span class="params">(n)</span>:</span>
+    result = []
+    a,b = <span class="number">0</span>,<span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        result.append(b)
+        a, b = b, a+b
+    <span class="keyword">return</span> result
+
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
+    fib(<span class="number">1000</span>)
+    <span class="keyword">print</span> <span class="string">"\n"</span>, fib2(<span class="number">100</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()</code></pre>
+<p>在 Python Interactive Console 下執行:</p>
+<pre><code>E:<span class="command">\Temp</span><span class="command">\Python</span><span class="command">\hw</span>3<span class="command">\example</span>&gt;python.exe fibo.py
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+<span class="special">[</span>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89<span class="special">]</span></code></pre>
+<p>此時 <strong> name </strong> 將等於 &quot;<strong> main </strong>&quot;, 會跑到 main() function 去執行</p>
+<p><strong>from module import *</strong> statement</p>
+<p>如果 module 中無定義 __all__ 變數, 則將會 copy 此 module 中所有 attributes (不含__開頭之 attributes)<br>否則, 只會 copy __all__ 變數中所指定之 attributes</p>
+<p>Exampe: (imported module 中無定義 __all__ 變數)</p>
+<pre><code><span class="comment"># module fibo.py</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span>
+    a,b = <span class="number">0</span>,<span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        <span class="keyword">print</span> b,
+        a,b = b, a+b
+
+<span class="function"><span class="keyword">def</span> <span class="title">fib2</span><span class="params">(n)</span>:</span>
+    result = []
+    a,b = <span class="number">0</span>,<span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        result.append(b)
+        a, b = b, a+b
+    <span class="keyword">return</span> result</code></pre>
+<p>Output:</p>
+<pre><code>&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>']
+&gt;&gt;&gt; import fibo
+&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fibo']
+&gt;&gt;&gt; dir(fibo)
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__file__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fib', 'fib2']
+&gt;&gt;&gt; del fibo
+&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>']    
+&gt;&gt;&gt; from fibo import *
+&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fib', 'fib2']</code></pre>
+<p>Exampe: (imported module 中有定義 __all__ 變數)</p>
+<pre><code><span class="comment"># module fibo.py</span>
+
+__all__ = [<span class="string">"fib2"</span>]
+
+<span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span>
+    a,b = <span class="number">0</span>,<span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        <span class="keyword">print</span> b,
+        a,b = b, a+b
+
+<span class="function"><span class="keyword">def</span> <span class="title">fib2</span><span class="params">(n)</span>:</span>
+    result = []
+    a,b = <span class="number">0</span>,<span class="number">1</span>
+    <span class="keyword">while</span> b &lt; n:
+        result.append(b)
+        a, b = b, a+b
+    <span class="keyword">return</span> result</code></pre>
+<p>Output:</p>
+<pre><code>&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>']
+&gt;&gt;&gt; from fibo import *
+&gt;&gt;&gt; dir()
+['<span class="strong">__builtins__</span>', '<span class="strong">__doc__</span>', '<span class="strong">__name__</span>', '<span class="strong">__package__</span>', 'fib2']</code></pre>
+<hr>
+<p><a name=module_search_path></a></p>
+<h1>Module Search Path</h1>
+<p>當你寫好自己的 Module 後, 想當成 Library 可以提供其他 Python Module 來使用時,<br>必須將 Module 放到其 Search Path 中, 才能讓 Module 被正常 import 且使用.<br>一般來說, Module Search Path 是以 sys.path 來表示, 由下列成員所組成:</p>
+<ol>
+<li>Directory containing the script (目前執行之 Script 所在的目錄)</li>
+<li>PYTHONPATH (系統中的環境變數, User 可將自訂的 Module Location 填入此環境變數中)</li>
+<li>Installation Default Dependent (與平台系統相關的路徑, 安裝 Python 時, 將會自動決定)</li>
+</ol>
+<p>當被 import 的 module 無法在 sys.path 中被搜尋到, 將會產生 ImportError Exception.<br>當前執行的 script 目錄中, 若有與 Standard Library 中的 module 有相同名稱, 則會遮蔽 Standard Library 的 Module.</p>
+<hr>
+<p><a name=reload_module></a></p>
+<h1>Reload Your Module To Apply Any Modification</h1>
+<p>請記得, 每個 python interpreter session 中, 只會 import 一次 module, 因此當 module 變動時, 請執行  </p>
+<ul>
+<li>reload(module)</li>
+</ul>
+<p><img src="http://MutsuGhost1.github.io/image/python_reload_function.PNG" alt=""></p>
+<p>所有 reference 到此 module 的變數, 都將受影響</p>
+<hr>
+<p><a name=what_package></a></p>
+<h1>What&#39;s package ?</h1>
+<p>Package 由一個 Directory 所構成, 裡面包含了 Python Module 檔案, 以及一個名稱為 <strong>__ini__.py</strong> 的檔案.<br>透過 <strong>__ini__.py</strong> 檔案, Python Interpreter 才會將此 Directory 視為一個 Package.  </p>
+<p><img src="http://MutsuGhost1.github.io/image/python_package.PNG" alt=""></p>
+<p>上圖既為一個簡單的 Package, 透過 import A.B 則可 import package A 中的 module B.</p>
+<hr>
+<p><a name=why_package></a></p>
+<h1>Why use package ?</h1>
+<p>使用 Package 來組織 Python Module 的好處在於: </p>
+<ul>
+<li>可以降低 Module 間的 Coupling, 增加 Module 內的 Cohesion  </li>
+<li>使得 Module 更易於 Maintain</li>
+<li>讓 Module 更 readable  </li>
+</ul>
+<hr>
+<p><a name=how_package></a></p>
+<h1>How to use packages</h1>
+<p>透過下列幾種方法, 可以 import package 或 package 內的 module:</p>
+<ul>
+<li>import package.module [as alias]<ul>
+<li>將執行 package 內的 __init__.py 檔案, 做為 package 的初始化  </li>
+<li>建立一個新的 namespace for this module of package</li>
+<li>透過 package.module.item (or alias.item) 來存取此 module 中的各項 attributes </li>
+</ul>
+</li>
+<li>import package<ul>
+<li>僅執行 package 內的 __init__.py 檔案, 做為 package 的初始化</li>
+</ul>
+</li>
+<li>from package import module [as alias] <ul>
+<li>將執行 package 內的 __init__.py 檔案, 做為 package 的初始化</li>
+<li>從 package 中, copy 出此 module</li>
+<li>透過 module.item (or alias.item) 來存取此 module 中的各項 attributes  </li>
+</ul>
+</li>
+</ul>
+<p>假設目前有一個 sound package 其結構如下:</p>
+<pre><code>+ sound/                    # top level <span class="package"><span class="keyword">package</span>
+    <span class="title">__init__</span>.<span class="title">py</span>             # <span class="title">initialize</span> <span class="title">the</span> <span class="title">sound</span> <span class="title">package</span>
+  + <span class="title">formats</span>/                # <span class="title">sub</span>-<span class="title">package</span> <span class="title">for</span> <span class="title">file</span> <span class="title">format</span> <span class="title">converstions</span>
+      <span class="title">__init__</span>.<span class="title">py</span>
+      <span class="title">wavread</span>.<span class="title">py</span>
+      <span class="title">wavwrite</span>.<span class="title">py</span>
+      <span class="title">aifread</span>.<span class="title">py</span>
+      <span class="title">aifwrite</span>.<span class="title">py</span>
+      <span class="title">auread</span>.<span class="title">py</span>
+      <span class="title">auwrite</span>.<span class="title">py</span>
+      ...
+  + <span class="title">effects</span>/                # <span class="title">sub</span>-<span class="title">package</span> <span class="title">for</span> <span class="title">sound</span> <span class="title">effects</span>
+      <span class="title">__init__</span>.<span class="title">py</span>
+      <span class="title">echo</span>.<span class="title">py</span>
+      <span class="title">surround</span>.<span class="title">py</span>
+      <span class="title">reverse</span>.<span class="title">py</span>
+      ...
+  + <span class="title">filters</span>/                # <span class="title">sub</span>-<span class="title">package</span> <span class="title">for</span> <span class="title">filters</span>
+      <span class="title">__init__</span>.<span class="title">py</span>
+      <span class="title">equalizer</span>.<span class="title">py</span>
+      <span class="title">vocoder</span>.<span class="title">py</span>
+      <span class="title">karaoke</span>.<span class="title">py</span>
+      ...</code></pre>
+<p>使用者透過 import package.module, 可以 import package 中的某個 module,<br>Ex:</p>
+<pre><code>import sound<span class="variable">.effects</span><span class="variable">.echo</span> 
+sound<span class="variable">.effects</span><span class="variable">.echo</span><span class="variable">.echofilter</span>(input, output, delay = <span class="number">0.7</span>, atten = <span class="number">4</span>)</code></pre>
+<p>透過 from package import module, 使用者可以從特定 package 中, copy 出某個 module,<br>Ex:</p>
+<pre><code><span class="title">from</span> sound.effects
+<span class="import"><span class="keyword">import</span> echo echo.echofilter<span class="container">(<span class="title">input</span>, <span class="title">output</span>, <span class="title">delay</span> = 0.7, <span class="title">atten</span> = 4)</span></span></code></pre>
+<p>透過 from package.module import item, 使用者可以從特定 package 中的 module, copy 某個 attribute,<br>Ex:</p>
+<pre><code><span class="title">from</span> sound.effects.echo 
+<span class="import"><span class="keyword">import</span> echofilter echofilter<span class="container">(<span class="title">input</span>, <span class="title">output</span>, <span class="title">delay</span> = 0.7, <span class="title">atten</span> = 4)</span></span></code></pre>
+<p><strong>from package import *</strong> statement</p>
+<p>在實際的應用中, 使用者可能會想要一次將 package 中的 module 都 import 進 namespace 中.<br>但事實上, 這樣的做法會因為 import 某些使用者不預期的 module 而產生一些使用不預期的行為.<br>正因為如此, 針對 package 的 import * 就必須遵守下列的規則:</p>
+<ul>
+<li>若是 package 中的 __init__.py 檔案內有定義 __all__ 變數, 則會依據 __all__變數中的內容,<br>來決定要 import 哪些 sub-modules</li>
+<li>否則當__init__.py 檔案內沒有定義 __all__ 變數, 則只會執行 __init__.py 內的敘述</li>
+</ul>
+<p><strong>intra package reference</strong>  </p>
+<ul>
+<li>import module in the same package<br>The surround module, it can simply use:</li>
+</ul>
+<p>Ex:  </p>
+<pre><code># surround.py
+<span class="import"><span class="keyword">import</span> echo</span>
+<span class="title">from</span> echo <span class="import"><span class="keyword">import</span> echofilter</span></code></pre>
+<ul>
+<li>import module in the different package<br>Use absolute import to refer sub-modules of sibling package:</li>
+</ul>
+<p>Ex:</p>
+<pre><code>#vocoder.py
+<span class="title">from</span> sound.effects <span class="import"><span class="keyword">import</span> echo</span></code></pre>
+<hr>
+<p><a name=package_example></a></p>
+<h1>An example to refactor a module as a package</h1>
+<p>假設目前有一個 module phone.py, 裡面包含了 utility for Pots phone, Isdn phone and G3 phone.<br>如下:</p>
+<pre><code><span class="comment"># Phone.py</span>
+<span class="function"><span class="keyword">def</span>  <span class="title">Pots</span><span class="params">()</span>:</span>
+    <span class="keyword">print</span> “I’m Pots Phone”
+
+<span class="function"><span class="keyword">def</span> <span class="title">Isdn</span><span class="params">()</span>:</span>
+    <span class="keyword">print</span> “I’m Isdn Phone”
+
+Def G3():
+    <span class="keyword">print</span> “I’m G3 Phone”</code></pre>
+<p>事實上, 我們可以將它規劃成 package 的形式,<br>如下：  </p>
+<pre><code>+ Phone
+    <span class="command">\_</span><span class="command">\_</span>init<span class="command">\_</span><span class="command">\_</span>.py
+    Pots.py
+    Isdn.py
+    G3.py</code></pre>
+<p>透過在 __init__.py　中, 將 sub-module 中的 utility 都 copy 出來,<br>如下:</p>
+<pre><code><span class="comment"># file: __init__.py</span>
+<span class="keyword">from</span> Pots <span class="keyword">import</span> Pots    <span class="comment"># 從 Pots 這個 sub-module 中, copy Pots 這個 attribute</span>
+<span class="keyword">from</span> Isdn <span class="keyword">import</span> Isdn    <span class="comment"># 從 Isdn 這個 sub-module 中, copy Isdn 這個 attribute</span>
+<span class="keyword">from</span> G3 <span class="keyword">import</span> G3        <span class="comment"># 從 G3 這個 sub-module 中, copy G3 這個 attribute</span></code></pre>
+<p>用戶端的代碼,<br>如下:</p>
+<pre><code><span class="preprocessor"># test.py</span>
+import Phone
+
+Phone<span class="variable">.Pots</span>()
+Phone<span class="variable">.Isdn</span>()
+Phone<span class="variable">.G3</span>()</code></pre>
+<p>Output:</p>
+<pre><code>I’m Pots Phone
+I’m Isdn Phone
+I’m G3 Phone</code></pre>
+<p>這樣的設計, 不僅能夠讓使用者更容易理解這些 module, 也能降低 module maintain 上的 efforts</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Software/">Software</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Python/">Python</a>, <a href="/tags/Study Group/">Study Group</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:mutsughost1.github.io/">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分類</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Software/">Software</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Blog/">Blog</a><small>1</small></li>
+  
+    <li><a href="/tags/Python/">Python</a><small>3</small></li>
+  
+    <li><a href="/tags/Software Testing/">Software Testing</a><small>1</small></li>
+  
+    <li><a href="/tags/Study Group/">Study Group</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/python-basic/">Python Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/about-this-blog/">About This Blog</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-module-package/">Python Module Package</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">最新留言</h3>
+  <ul class="entry">
+  <script type="text/javascript" src="http://mutsughost1.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">喃喃自語</h3>
+  <ul class="entry">
+  <a class="twitter-timeline" height="250" href="https://twitter.com/MutsuGhost1" data-widget-id="384199658408402944">@MutsuGhost1������</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 MutsuGhost1
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'mutsughost1';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

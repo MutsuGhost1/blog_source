@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MutsuGhost1's Blog</title>
+  <meta name="author" content="MutsuGhost1">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="MutsuGhost1's Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="MutsuGhost1's Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44446906-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">MutsuGhost1's Blog</a></h1>
+  <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/todolist">ToDo</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-05-18T00:48:44.000Z"><a href="/2014/05/18/learning-mockito/">5月 18 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/05/18/learning-mockito/">Mockito Basic</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><h2>Learning Mockito with examples</h2>
+<ol>
+<li><strong><a href="#1">Verify some behavior (ignore any return value)</a></strong></li>
+<li><strong><a href="#2">Verify some behavior with stubbing the return value</a></strong></li>
+<li><strong><a href="#3">Verify unstubbing behavior</a></strong></li>
+<li><strong><a href="#4">Argument matcher</a></strong></li>
+<li><strong><a href="#5">Verify exact number of invocations</a></strong></li>
+<li><strong><a href="#6">Verification in order</a></strong></li>
+<li><strong><a href="#7">Finding redundant invocations</a></strong></li>
+<li><strong><a href="#8">Stubbing consecutive calls</a></strong></li>
+<li><strong><a href="#9">Stubbing with callbacks</a></strong></li>
+<li><strong><a href="#10">doReturn()|doThrow()|doAnswer()|doNoting()|doCallRealMethod() family of methods</a></strong></li>
+<li><strong><a href="#11">reset mock</a></strong></li>
+<li><strong><a href="#12">Capturing Argument</a></strong></li>
+<li><strong><a href="#13">Changing default return values of unstubbed invocations</a></strong></li>
+<li><strong><a href="#14">Inject mock/spy object into tested target</a></strong></li>
+<li><strong><a href="#15">Verify with timeout</a></strong></li>
+</ol>
+</li>
+</ul>
+<h2>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2014/05/18/learning-mockito/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-29T12:45:42.000Z"><a href="/2013/09/29/python-basic/">9月 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/29/python-basic/">Python Basic</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><a href="#python_folder_structure" title="Python&#39;s Folder Structure">Python&#39;s Folder Structure</a></li>
+<li><a href="#yield_about" title="關於 yield">關於 <em>yield</em></a><ul>
+<li><a href="#yield_history" title="yield 是為何而生 ?">yield 是為何而生 ?</a></li>
+<li><a href="#yield_usage" title="yield 的各種用法">yield 的各種用法</a><ul>
+<li><a href="#yield_fundamental" title="的基本運作原理">yield 的基本運作原理</a></li>
+<li><a href="#yield_send" title="send(expression)">send(expression) - pass a value to generator</a></li>
+<li><a href="#yield_throw" title="throw">throw(type[,value[,traceback]]) - raise exception inside generator</a></li>
+<li><a href="#yield_close" title="close()">close() - terminate the generator</a></li>
+<li><a href="#yield_generator_exp" title="generator expression">generator expression - 快速產生一個 generator object</a></li>
+</ul>
+</li>
+<li><a href="#yield_reference">Reference</a></li>
+</ul>
+</li>
+<li>Python Scope 概念</li>
+<li><a href="#others" title="其他">其他</a><ul>
+<li><a href="http://www.python.org/dev/peps/pep-0202/" title="PEP202" target="_blank">List Comprehesion</a> </li>
+<li><a href="#lambda_exp" title="Lambda expression">Lambda expression</a></li>
+<li><a href="#built_in_map" title="Built-in Funtion map">Built-in Funtion map</a></li>
+<li><a href="#built_in_reduce" title="Built-in Funtion reduce">Built-in Funtion reduce</a></li>
+<li><a href="#built_in_filter" title="Built-in Funtion filter">Built-in Funtion filter</a></li>
+<li><a href="#built_in_zip" title="Built-in Funtion zip">Built-in Funtion zip</a>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/09/29/python-basic/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-29T11:23:42.000Z"><a href="/2013/09/29/about-this-blog/">9月 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/29/about-this-blog/">About This Blog</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>這個 blog 是使用 <a href="http://zespia.tw/hexo/" title="hexo" target="_blank">hexo</a> 這套軟體產生的.<br>主要參考了以下連結:<br>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/09/29/about-this-blog/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-27T06:55:04.000Z"><a href="/2013/09/27/python-oop-exception/">9月 27 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>Python OOP</li>
+<li>Constructor/Destructor</li>
+<li>Class/Instance Members</li>
+<li>Access Control in Python OOP</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Operator Overloading</li>
+<li>Function Overloading</li>
+<li>Object Types in Python</li>
+<li>Check relationship between class and instance</li>
+</ul>
+<h2>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/09/27/python-oop-exception/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-09-27T06:54:50.000Z"><a href="/2013/09/27/python-module-package/">9月 27 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/09/27/python-module-package/">Python Module Package</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><a href="#what_module" title="What&#39;s a python module ?">What&#39;s a python module ?</a></li>
+<li><a href="#why_module" title="Why use modules ?">Why use modules ?</a></li>
+<li><a href="#how_module" title="How to use/write modules ?">How to use/write modules ?</a></li>
+<li><a href="#module_search_path" title="Module search Path">Module search Path ?</a></li>
+<li><a href="#reload_module" title="Reload your module after applying any change">Reload your module after applying any change ?</a> </li>
+<li><a href="#what_package" title="What&#39;s package ?">What&#39;s package ?</a></li>
+<li><a href="#why_package" title="Why use packaes ?">Why use packaes ?</a></li>
+<li><a href="#how_package" title="How to use packages ?">How to use packages ?</a></li>
+<li><a href="#package_example" title="An example to refactor a module as a package">An example to refactor a module as a package</a></li>
+</ul>
+<h2>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/09/27/python-module-package/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:mutsughost1.github.io/">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分類</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Software/">Software</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Blog/">Blog</a><small>1</small></li>
+  
+    <li><a href="/tags/Python/">Python</a><small>3</small></li>
+  
+    <li><a href="/tags/Software Testing/">Software Testing</a><small>1</small></li>
+  
+    <li><a href="/tags/Study Group/">Study Group</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/python-basic/">Python Basic</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/29/about-this-blog/">About This Blog</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
+      </li>
+    
+      <li>
+        <a href="/2013/09/27/python-module-package/">Python Module Package</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">最新留言</h3>
+  <ul class="entry">
+  <script type="text/javascript" src="http://mutsughost1.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">喃喃自語</h3>
+  <ul class="entry">
+  <a class="twitter-timeline" height="250" href="https://twitter.com/MutsuGhost1" data-widget-id="384199658408402944">@MutsuGhost1������</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 MutsuGhost1
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'mutsughost1';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
