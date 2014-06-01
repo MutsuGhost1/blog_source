@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Python OOP Exception | MutsuGhost1's Blog</title>
+  <title>Python OOP Exception | MutsuGhost1&#39;s Blog</title>
   <meta name="author" content="MutsuGhost1">
   
   <meta name="description" content="Python OOP
@@ -21,14 +21,14 @@ Check relationship between class and instance">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Python OOP Exception"/>
-  <meta property="og:site_name" content="MutsuGhost1's Blog"/>
+  <meta property="og:site_name" content="MutsuGhost1&#39;s Blog"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="MutsuGhost1's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="MutsuGhost1&#39;s Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
@@ -49,7 +49,7 @@ Check relationship between class and instance">
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">MutsuGhost1's Blog</a></h1>
+  <h1><a href="/">MutsuGhost1&#39;s Blog</a></h1>
   <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
@@ -59,8 +59,6 @@ Check relationship between class and instance">
     
       <li><a href="/archives">Archives</a></li>
     
-      <li><a href="/todolist">ToDo</a></li>
-    
       <li><a href="/atom.xml">RSS</a></li>
     
   </ul>
@@ -69,6 +67,18 @@ Check relationship between class and instance">
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
   
   <div class="post-content">
     <header>
@@ -96,38 +106,39 @@ Check relationship between class and instance">
 <li>Object Types in Python</li>
 <li>Check relationship between class and instance</li>
 </ul>
-<h2><a id="more"></a></h2>
-<h1>Python OOP</h1>
-<p>Python 語言, 本身也支援 <strong>O</strong>bject <strong>O</strong>riented <strong>P</strong>rogramming 這樣的 Programming Pradigm.<br>語法上, 是採取類似 C++ 與 Modula-3 的語法.  </p>
-<p>一個最簡單的 class definition 如下：</p>
+<p><a id="more"></a></p>
+<hr>
+<h1 id="Python_OOP">Python OOP</h1>
+<p>Python &#x8A9E;&#x8A00;, &#x672C;&#x8EAB;&#x4E5F;&#x652F;&#x63F4; <strong>O</strong>bject <strong>O</strong>riented <strong>P</strong>rogramming &#x9019;&#x6A23;&#x7684; Programming Pradigm.<br>&#x8A9E;&#x6CD5;&#x4E0A;, &#x662F;&#x63A1;&#x53D6;&#x985E;&#x4F3C; C++ &#x8207; Modula-3 &#x7684;&#x8A9E;&#x6CD5;.  </p>
+<p>&#x4E00;&#x500B;&#x6700;&#x7C21;&#x55AE;&#x7684; class definition &#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">oldStyle</span>:</span>
-    <span class="keyword">pass</span></code></pre>
-<p>語法上, class definition 可以寫成:</p>
-<pre><code><span class="class"><span class="keyword">class</span> <span class="title">DerivedClassName</span><span class="params">(BaseClass1[,BaseClass2[,…]])</span>:</span>
+    <span class="keyword">pass</span>
+</code></pre><p>&#x8A9E;&#x6CD5;&#x4E0A;, class definition &#x53EF;&#x4EE5;&#x5BEB;&#x6210;:</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="type">DerivedClassName</span><span class="container">(<span class="type">BaseClass1</span>[,<span class="type">BaseClass2</span>[,&#x2026;]])</span>:
     statement1
-    …
-    statementN</code></pre>
-<p>其中的 statement1 … statementN 可以是:</p>
+    &#x2026;
+    statementN</span>
+</code></pre><p>&#x5176;&#x4E2D;&#x7684; statement1 &#x2026; statementN &#x53EF;&#x4EE5;&#x662F;:</p>
 <ul>
 <li>Data memeber definition</li>
 <li>Member function definition</li>
 <li>Memeber class definition</li>
 </ul>
-<p>當 import module 時, python interpret 到一個 class definition 時,<br>它會將 class 內相關的 definition 都定義在此 class 所建立的 namespace 內.  </p>
+<p>&#x7576; import module &#x6642;, python interpret &#x5230;&#x4E00;&#x500B; class definition &#x6642;,<br>&#x5B83;&#x6703;&#x5C07; class &#x5167;&#x76F8;&#x95DC;&#x7684; definition &#x90FD;&#x5B9A;&#x7FA9;&#x5728;&#x6B64; class &#x6240;&#x5EFA;&#x7ACB;&#x7684; namespace &#x5167;.  </p>
 <p><strong>New Style Class v.s. Old Style Class</strong>  </p>
 <ul>
-<li>Python 2.2 之前, type 和 class 是不同的<ul>
-<li>type (list, tuple, dict … etc)</li>
+<li>Python 2.2 &#x4E4B;&#x524D;, type &#x548C; class &#x662F;&#x4E0D;&#x540C;&#x7684;<ul>
+<li>type (list, tuple, dict &#x2026; etc)</li>
 <li>class</li>
 </ul>
 </li>
 <li>Python 2.2 Unifying type and class<ul>
 <li>The obvious change is built-in types can be used to as base class</li>
-<li>沒有明確繼承其他 class 的 class definition, 稱為 Old Style Class</li>
-<li>Python 3 後, 沒有明確繼承 class 將會視為 default 繼承 object</li>
+<li>&#x6C92;&#x6709;&#x660E;&#x78BA;&#x7E7C;&#x627F;&#x5176;&#x4ED6; class &#x7684; class definition, &#x7A31;&#x70BA; Old Style Class</li>
+<li>Python 3 &#x5F8C;, &#x6C92;&#x6709;&#x660E;&#x78BA;&#x7E7C;&#x627F; class &#x5C07;&#x6703;&#x8996;&#x70BA; default &#x7E7C;&#x627F; object</li>
 </ul>
 </li>
-<li>Reference: <a href="http://www.python.org/download/releases/2.2.3/descrintro/" title="說明 Python 2.2 後, 整合 type and class 的文章" target="_blank"><a href="http://www.python.org/download/releases/2.2.3/descrintro/">http://www.python.org/download/releases/2.2.3/descrintro/</a></a>  </li>
+<li>Reference: <a href="http://www.python.org/download/releases/2.2.3/descrintro/" title="&#x8AAA;&#x660E; Python 2.2 &#x5F8C;, &#x6574;&#x5408; type and class &#x7684;&#x6587;&#x7AE0;" target="_blank" rel="external">http://www.python.org/download/releases/2.2.3/descrintro/</a>  </li>
 </ul>
 <p>Ex:  </p>
 <pre><code><span class="comment"># define a old style class in python 2.x</span>
@@ -135,14 +146,14 @@ Check relationship between class and instance">
 <span class="keyword">pass</span>
 <span class="comment"># define a new style class in python 2.x</span>
 <span class="class"><span class="keyword">class</span> <span class="title">newStyleClass</span> <span class="params">(object)</span>:</span>
-<span class="keyword">pass</span></code></pre>
-<hr>
-<h1>Constructor/Destructor</h1>
-<p>先前提到, 定一個最簡單的 new style class, 如下:</p>
-<pre><code><span class="comment">#define a simplest class named "Employee"</span>
+<span class="keyword">pass</span>
+</code></pre><hr>
+<h1 id="Constructor/Destructor">Constructor/Destructor</h1>
+<p>&#x5148;&#x524D;&#x63D0;&#x5230;, &#x5B9A;&#x4E00;&#x500B;&#x6700;&#x7C21;&#x55AE;&#x7684; new style class, &#x5982;&#x4E0B;:</p>
+<pre><code><span class="comment">#define a simplest class named &quot;Employee&quot;</span>
 <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
-    <span class="keyword">pass</span></code></pre>
-<p>假設我們要新增一個功能, 來替 Employee 來紀錄, 目前 instance of Employee 的有效個數.<br>可以透過新增 Constructor &amp; Destructor 加上一個 class variable 來實現, 具體如下:</p>
+    <span class="keyword">pass</span>
+</code></pre><p>&#x5047;&#x8A2D;&#x6211;&#x5011;&#x8981;&#x65B0;&#x589E;&#x4E00;&#x500B;&#x529F;&#x80FD;, &#x4F86;&#x66FF; Employee &#x4F86;&#x7D00;&#x9304;, &#x76EE;&#x524D; instance of Employee &#x7684;&#x6709;&#x6548;&#x500B;&#x6578;.<br>&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x65B0;&#x589E; Constructor &amp; Destructor &#x52A0;&#x4E0A;&#x4E00;&#x500B; class variable &#x4F86;&#x5BE6;&#x73FE;, &#x5177;&#x9AD4;&#x5982;&#x4E0B;:</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
     empCount = <span class="number">0</span>
 
@@ -150,31 +161,31 @@ Check relationship between class and instance">
         Employee.empCount += <span class="number">1</span>
 
     <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
-        Employee.empCount -= <span class="number">1</span></code></pre>
-<p>也許有人會問, 在有 GC 機制的語言中, Destructor 存在的目的是?<br>通常 Destructor 的存在, 就是讓 Object 能提早釋放占用的資源.   </p>
+        Employee.empCount -= <span class="number">1</span>
+</code></pre><p>&#x4E5F;&#x8A31;&#x6709;&#x4EBA;&#x6703;&#x554F;, &#x5728;&#x6709; GC &#x6A5F;&#x5236;&#x7684;&#x8A9E;&#x8A00;&#x4E2D;, Destructor &#x5B58;&#x5728;&#x7684;&#x76EE;&#x7684;&#x662F;?<br>&#x901A;&#x5E38; Destructor &#x7684;&#x5B58;&#x5728;, &#x5C31;&#x662F;&#x8B93; Object &#x80FD;&#x63D0;&#x65E9;&#x91CB;&#x653E;&#x5360;&#x7528;&#x7684;&#x8CC7;&#x6E90;.   </p>
 <hr>
-<h1>Class/Instance Memebers</h1>
-<p>接下來, 我們想替 Class 加上額外的 Memebers, 包含了:</p>
+<h1 id="Class/Instance_Memebers">Class/Instance Memebers</h1>
+<p>&#x63A5;&#x4E0B;&#x4F86;, &#x6211;&#x5011;&#x60F3;&#x66FF; Class &#x52A0;&#x4E0A;&#x984D;&#x5916;&#x7684; Memebers, &#x5305;&#x542B;&#x4E86;:</p>
 <ul>
 <li>Instance Variable<ul>
-<li>用來表示 instance of Employee 的姓名, 命名為 name, 預設為 “anonymous” </li>
-<li>用來記錄各個 instance of Employee 的基本薪資, 命名為 base_salary, 預設為 1000</li>
+<li>&#x7528;&#x4F86;&#x8868;&#x793A; instance of Employee &#x7684;&#x59D3;&#x540D;, &#x547D;&#x540D;&#x70BA; name, &#x9810;&#x8A2D;&#x70BA; &#x201C;anonymous&#x201D; </li>
+<li>&#x7528;&#x4F86;&#x8A18;&#x9304;&#x5404;&#x500B; instance of Employee &#x7684;&#x57FA;&#x672C;&#x85AA;&#x8CC7;, &#x547D;&#x540D;&#x70BA; base_salary, &#x9810;&#x8A2D;&#x70BA; 1000</li>
 </ul>
 </li>
 <li>Static Method<ul>
-<li>定義一個 static method 能夠印出目前 # of instance of Employee, 命名為 EmployeeCount </li>
+<li>&#x5B9A;&#x7FA9;&#x4E00;&#x500B; static method &#x80FD;&#x5920;&#x5370;&#x51FA;&#x76EE;&#x524D; # of instance of Employee, &#x547D;&#x540D;&#x70BA; EmployeeCount </li>
 </ul>
 </li>
 <li>Instance Method<ul>
-<li>定義一個 instance method, 能夠取得目前 instance of Employee 的總薪資, 命名為 getSalary </li>
+<li>&#x5B9A;&#x7FA9;&#x4E00;&#x500B; instance method, &#x80FD;&#x5920;&#x53D6;&#x5F97;&#x76EE;&#x524D; instance of Employee &#x7684;&#x7E3D;&#x85AA;&#x8CC7;, &#x547D;&#x540D;&#x70BA; getSalary </li>
 </ul>
 </li>
 </ul>
-<p>具體代碼如下:</p>
+<p>&#x5177;&#x9AD4;&#x4EE3;&#x78BC;&#x5982;&#x4E0B;:</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
     empCount = <span class="number">0</span>
 
-    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1000</span>)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">&quot;anonymous&quot;</span>, base_salary=<span class="number">1000</span>)</span>:</span>
         Employee.empCount = <span class="number">0</span>
         self.name = name
         self.base_salary = base_salary
@@ -184,22 +195,22 @@ Check relationship between class and instance">
 
     <span class="decorator">@staticmethod</span>
     <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
-        <span class="keyword">print</span> <span class="string">"Employee Count:"</span> + str(Employee.empCount)
+        <span class="keyword">print</span> <span class="string">&quot;Employee Count:&quot;</span> + str(Employee.empCount)
 
     <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
-        <span class="keyword">return</span> self.base_salary</code></pre>
-<p>從上列代碼, 可以歸納出以下幾件事:</p>
+        <span class="keyword">return</span> self.base_salary
+</code></pre><p>&#x5F9E;&#x4E0A;&#x5217;&#x4EE3;&#x78BC;, &#x53EF;&#x4EE5;&#x6B78;&#x7D0D;&#x51FA;&#x4EE5;&#x4E0B;&#x5E7E;&#x4EF6;&#x4E8B;:</p>
 <ul>
-<li>定義在 class 內部, 非 method 內部的變數, 視為 class variable</li>
-<li>定義在 class 內部的 method, 預設都是 instance method, 第一個參數都是 reference to the instance, 習慣上命名為 self</li>
-<li>通常 instance variable 都直接定義在 class 定義裡, instance method body 中, 習慣上都是以 self. 當作 prefix  </li>
-<li>在 class 內部定義 static method, 請在 method 的宣告前面使用 @staticmethod, 來告訴 python interpreter 這個 method 是一個 static method, 不帶 self 參數</li>
+<li>&#x5B9A;&#x7FA9;&#x5728; class &#x5167;&#x90E8;, &#x975E; method &#x5167;&#x90E8;&#x7684;&#x8B8A;&#x6578;, &#x8996;&#x70BA; class variable</li>
+<li>&#x5B9A;&#x7FA9;&#x5728; class &#x5167;&#x90E8;&#x7684; method, &#x9810;&#x8A2D;&#x90FD;&#x662F; instance method, &#x7B2C;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x90FD;&#x662F; reference to the instance, &#x7FD2;&#x6163;&#x4E0A;&#x547D;&#x540D;&#x70BA; self</li>
+<li>&#x901A;&#x5E38; instance variable &#x90FD;&#x76F4;&#x63A5;&#x5B9A;&#x7FA9;&#x5728; class &#x5B9A;&#x7FA9;&#x88E1;, instance method body &#x4E2D;, &#x7FD2;&#x6163;&#x4E0A;&#x90FD;&#x662F;&#x4EE5; self. &#x7576;&#x4F5C; prefix  </li>
+<li>&#x5728; class &#x5167;&#x90E8;&#x5B9A;&#x7FA9; static method, &#x8ACB;&#x5728; method &#x7684;&#x5BA3;&#x544A;&#x524D;&#x9762;&#x4F7F;&#x7528; @staticmethod, &#x4F86;&#x544A;&#x8A34; python interpreter &#x9019;&#x500B; method &#x662F;&#x4E00;&#x500B; static method, &#x4E0D;&#x5E36; self &#x53C3;&#x6578;</li>
 </ul>
-<p>接下來將展示此 class 將如何被使用:  </p>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#x5C07;&#x5C55;&#x793A;&#x6B64; class &#x5C07;&#x5982;&#x4F55;&#x88AB;&#x4F7F;&#x7528;:  </p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
     empCount = <span class="number">0</span>
 
-    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1000</span>)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">&quot;anonymous&quot;</span>, base_salary=<span class="number">1000</span>)</span>:</span>
         Employee.empCount = <span class="number">0</span>
         self.name = name
         self.base_salary = base_salary
@@ -209,73 +220,73 @@ Check relationship between class and instance">
 
     <span class="decorator">@staticmethod</span>
     <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
-        <span class="keyword">print</span> <span class="string">"Employee Count:"</span> + str(Employee.empCount)
+        <span class="keyword">print</span> <span class="string">&quot;Employee Count:&quot;</span> + str(Employee.empCount)
 
     <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
         <span class="keyword">return</span> self.base_salary
 
     <span class="comment"># the method will be called when call str(new Employee())</span>
     <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-        <span class="keyword">return</span> <span class="string">"Employee name:"</span> + self.name + <span class="string">" base_salary:"</span> + self.base_salary
+        <span class="keyword">return</span> <span class="string">&quot;Employee name:&quot;</span> + self.name + <span class="string">&quot; base_salary:&quot;</span> + self.base_salary
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-   employee1 = Employee(<span class="string">"Peter"</span>)
+   employee1 = Employee(<span class="string">&quot;Peter&quot;</span>)
    <span class="keyword">print</span> employee1
-   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   <span class="keyword">print</span> &#x201C;Salary=&#x201D; + str(employee1.getSalary())
    Employee.EmployeeCount()
    <span class="keyword">del</span> employee1
    Employee.EmployeeCount()
 
-<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
-    main()</code></pre>
-<p>Output:</p>
+<span class="keyword">if</span> <span class="string">&quot;__main__&quot;</span> == __name__:
+    main()
+</code></pre><p>Output:</p>
 <pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
 Salary=<span class="number">1000</span>
 <span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
-<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
-<hr>
-<h1>Access Control in Python OOP</h1>
-<p>在 Pyhon 中, 並沒有提供 Modifier 來明確的來控制 Attribute 的存取權限.<br>相反的, Python 是透過一種 Naming Convention 來告訴 User, 這個 Attribute 是 Private 的.<br>雖然如此, User 想要強制存取此 Private Attribute, 還是可以達成的.</p>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span>
+</code></pre><hr>
+<h1 id="Access_Control_in_Python_OOP">Access Control in Python OOP</h1>
+<p>&#x5728; Pyhon &#x4E2D;, &#x4E26;&#x6C92;&#x6709;&#x63D0;&#x4F9B; Modifier &#x4F86;&#x660E;&#x78BA;&#x7684;&#x4F86;&#x63A7;&#x5236; Attribute &#x7684;&#x5B58;&#x53D6;&#x6B0A;&#x9650;.<br>&#x76F8;&#x53CD;&#x7684;, Python &#x662F;&#x900F;&#x904E;&#x4E00;&#x7A2E; Naming Convention &#x4F86;&#x544A;&#x8A34; User, &#x9019;&#x500B; Attribute &#x662F; Private &#x7684;.<br>&#x96D6;&#x7136;&#x5982;&#x6B64;, User &#x60F3;&#x8981;&#x5F37;&#x5236;&#x5B58;&#x53D6;&#x6B64; Private Attribute, &#x9084;&#x662F;&#x53EF;&#x4EE5;&#x9054;&#x6210;&#x7684;.</p>
 <p>Ex:</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
    __empCount = <span class="number">0</span>
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-    <span class="comment"># the name of attribute is changed as "_Employee" + "__empCount"</span>
+    <span class="comment"># the name of attribute is changed as &quot;_Employee&quot; + &quot;__empCount&quot;</span>
     <span class="keyword">print</span> Employee._Employee__empCount
 
-<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
-    main()</code></pre>
-<p>Output:</p>
-<pre><code><span class="number">0</span></code></pre>
-<ul>
-<li>Python 中, 每個 Attribute 都是 Public 的</li>
-<li>以 &quot;<em>_“ 開頭的 Attribute, 會被做 Name Mangling, 改名為 ”</em>&quot; + ClassName + AttributeName</li>
-<li>以 &quot;__&quot; 開頭的 Attribute, 只是在習慣上被視為 Private 的, 但是仍然可強制存取 </li>
+<span class="keyword">if</span> <span class="string">&quot;__main__&quot;</span> == __name__:
+    main()
+</code></pre><p>Output:</p>
+<pre><code>0
+</code></pre><ul>
+<li>Python &#x4E2D;, &#x6BCF;&#x500B; Attribute &#x90FD;&#x662F; Public &#x7684;</li>
+<li>&#x4EE5; &#x201C;<em>_&#x201D; &#x958B;&#x982D;&#x7684; Attribute, &#x6703;&#x88AB;&#x505A; Name Mangling, &#x6539;&#x540D;&#x70BA; &#x201C;</em>&#x201C; + ClassName + AttributeName</li>
+<li>&#x4EE5; &#x201C;__&#x201D; &#x958B;&#x982D;&#x7684; Attribute, &#x53EA;&#x662F;&#x5728;&#x7FD2;&#x6163;&#x4E0A;&#x88AB;&#x8996;&#x70BA; Private &#x7684;, &#x4F46;&#x662F;&#x4ECD;&#x7136;&#x53EF;&#x5F37;&#x5236;&#x5B58;&#x53D6; </li>
 </ul>
 <hr>
-<h1>Inheritance</h1>
-<p>如果我們想要加入一個特別的 Employee, 稱為 Manager, 可以考慮用繼承的方式達成.<br>Manager 除了本身是一個 (is a) Emplyoee 外, 還必須滿足:</p>
+<h1 id="Inheritance">Inheritance</h1>
+<p>&#x5982;&#x679C;&#x6211;&#x5011;&#x60F3;&#x8981;&#x52A0;&#x5165;&#x4E00;&#x500B;&#x7279;&#x5225;&#x7684; Employee, &#x7A31;&#x70BA; Manager, &#x53EF;&#x4EE5;&#x8003;&#x616E;&#x7528;&#x7E7C;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#x9054;&#x6210;.<br>Manager &#x9664;&#x4E86;&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x500B; (is a) Emplyoee &#x5916;, &#x9084;&#x5FC5;&#x9808;&#x6EFF;&#x8DB3;:</p>
 <ul>
-<li>Manager 繼承了 Employee 的所有 attributes</li>
-<li>Manager 多了 bonus 的 attribute</li>
-<li>Manager 的 getSalary 結果, 必須是 base_salary + bonus 的結果</li>
+<li>Manager &#x7E7C;&#x627F;&#x4E86; Employee &#x7684;&#x6240;&#x6709; attributes</li>
+<li>Manager &#x591A;&#x4E86; bonus &#x7684; attribute</li>
+<li>Manager &#x7684; getSalary &#x7D50;&#x679C;, &#x5FC5;&#x9808;&#x662F; base_salary + bonus &#x7684;&#x7D50;&#x679C;</li>
 </ul>
 <p>Ex: <strong>invoke the method in the super class</strong></p>
 <pre><code><span class="comment"># demo how to invoke the method in the super class</span>
 
 <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="params">(Employee)</span>:</span>
 
-    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1200</span>, bonus = <span class="number">200</span>)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">&quot;anonymous&quot;</span>, base_salary=<span class="number">1200</span>, bonus = <span class="number">200</span>)</span>:</span>
         super(Manager, self).__init__(name, base_salary)
         self.bonus = bonus
 
     <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
-        super(Manager, self).__del__()</code></pre>
-<p>Ex: <strong>Override the method in the super class</strong></p>
+        super(Manager, self).__del__()
+</code></pre><p>Ex: <strong>Override the method in the super class</strong></p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="params">(Employee)</span>:</span>
 
-    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">"anonymous"</span>, base_salary=<span class="number">1200</span>, bonus = <span class="number">200</span>)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">&quot;anonymous&quot;</span>, base_salary=<span class="number">1200</span>, bonus = <span class="number">200</span>)</span>:</span>
         super(Manager, self).__init__(name, base_salary)
         self.bonus = bonus
 
@@ -286,38 +297,38 @@ Salary=<span class="number">1000</span>
         <span class="keyword">return</span> super(Manager, self).getSalary() + self.bonus
 
     <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-        <span class="keyword">return</span> <span class="string">"Manager name:"</span> + self.name + <span class="string">" base_salary:"</span> + str(self.base_salary) + \
-               <span class="string">" bonus:"</span> + str(self.bonus)
+        <span class="keyword">return</span> <span class="string">&quot;Manager name:&quot;</span> + self.name + <span class="string">&quot; base_salary:&quot;</span> + str(self.base_salary) + \
+               <span class="string">&quot; bonus:&quot;</span> + str(self.bonus)
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-   manager1 = Manager(<span class="string">"Peter"</span>)
+   manager1 = Manager(<span class="string">&quot;Peter&quot;</span>)
    <span class="keyword">print</span> manager1
-   <span class="keyword">print</span> “Salary=” + str(manager1.getSalary())
+   <span class="keyword">print</span> &#x201C;Salary=&#x201D; + str(manager1.getSalary())
    <span class="keyword">del</span> manager1
 
-<span class="keyword">if</span> <span class="string">"__main__"</span> == __name__:
-    main()</code></pre>
-<p>Output:</p>
-<pre><code><span class="label">Manager:</span> name=John base_salary=<span class="number">1200</span> bonus=<span class="number">200</span>
-Salary=<span class="number">1400</span></code></pre>
-<hr>
-<h1>Polymorphism</h1>
-<p>由於 Python 是一個 Weakly Type 的語言, 因此在變數的宣告時, 並不會明確指出特定的型別.<br>因此, 只要此變數所指向的 Object, 符合操作所需要的各項 Attribute, 則 Program 即可正常運作.  </p>
+<span class="keyword">if</span> <span class="string">&quot;__main__&quot;</span> == __name__:
+    main()
+</code></pre><p>Output:</p>
+<pre><code><span class="attribute">Manager: name</span>=<span class="string">John base_salary=1200 bonus=200
+Salary=1400</span>
+</code></pre><hr>
+<h1 id="Polymorphism">Polymorphism</h1>
+<p>&#x7531;&#x65BC; Python &#x662F;&#x4E00;&#x500B; Weakly Type &#x7684;&#x8A9E;&#x8A00;, &#x56E0;&#x6B64;&#x5728;&#x8B8A;&#x6578;&#x7684;&#x5BA3;&#x544A;&#x6642;, &#x4E26;&#x4E0D;&#x6703;&#x660E;&#x78BA;&#x6307;&#x51FA;&#x7279;&#x5B9A;&#x7684;&#x578B;&#x5225;.<br>&#x56E0;&#x6B64;, &#x53EA;&#x8981;&#x6B64;&#x8B8A;&#x6578;&#x6240;&#x6307;&#x5411;&#x7684; Object, &#x7B26;&#x5408;&#x64CD;&#x4F5C;&#x6240;&#x9700;&#x8981;&#x7684;&#x5404;&#x9805; Attribute, &#x5247; Program &#x5373;&#x53EF;&#x6B63;&#x5E38;&#x904B;&#x4F5C;.  </p>
 <p>Ex:</p>
 <pre><code><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-    list_employees = [Manager(“John”), Employee(<span class="string">"Peter"</span>)]
+    list_employees = [Manager(&#x201C;John&#x201D;), Employee(<span class="string">&quot;Peter&quot;</span>)]
     <span class="keyword">for</span> employee <span class="keyword">in</span> list_employees:
         <span class="keyword">print</span> employee.__str__()
 
-<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
-    main()</code></pre>
-<p>Output:</p>
+<span class="keyword">if</span> __name__ == <span class="string">&apos;__main__&apos;</span>:
+    main()
+</code></pre><p>Output:</p>
 <pre><code><span class="attribute">Manager</span>: <span class="string">name=John base_salary=1200 bonus=200</span>
-<span class="attribute">Employee</span>: <span class="string">name=Peter base_salary=1000</span></code></pre>
-<p><strong>事實上, Python 這樣的做法提供了更彈性的使用方式. 在撰寫特定演算法的時候,<br>只需要考慮 Object 本身能提供哪些 Attributes, 不需要考慮 Object 的繼承體系.</strong></p>
+<span class="attribute">Employee</span>: <span class="string">name=Peter base_salary=1000</span>
+</code></pre><p><strong>&#x4E8B;&#x5BE6;&#x4E0A;, Python &#x9019;&#x6A23;&#x7684;&#x505A;&#x6CD5;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x5F48;&#x6027;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;. &#x5728;&#x64B0;&#x5BEB;&#x7279;&#x5B9A;&#x6F14;&#x7B97;&#x6CD5;&#x7684;&#x6642;&#x5019;,<br>&#x53EA;&#x9700;&#x8981;&#x8003;&#x616E; Object &#x672C;&#x8EAB;&#x80FD;&#x63D0;&#x4F9B;&#x54EA;&#x4E9B; Attributes, &#x4E0D;&#x9700;&#x8981;&#x8003;&#x616E; Object &#x7684;&#x7E7C;&#x627F;&#x9AD4;&#x7CFB;.</strong></p>
 <hr>
-<h1>Operator Overloading</h1>
-<p>Python 本身定義了一組 Built-in Operators, 讓使用者可以 Overloading 其行為.</p>
+<h1 id="Operator_Overloading">Operator Overloading</h1>
+<p>Python &#x672C;&#x8EAB;&#x5B9A;&#x7FA9;&#x4E86;&#x4E00;&#x7D44; Built-in Operators, &#x8B93;&#x4F7F;&#x7528;&#x8005;&#x53EF;&#x4EE5; Overloading &#x5176;&#x884C;&#x70BA;.</p>
 <p>Ex:</p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> <span class="params">(object)</span>:</span>
    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x=<span class="number">0</span>, y=<span class="number">0</span>)</span>:</span>
@@ -326,7 +337,7 @@ Salary=<span class="number">1400</span></code></pre>
    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, rhs)</span>:</span>
        <span class="keyword">return</span> Vector(self.x + rhs.x, self.y + rhs.y)
    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-       <span class="keyword">return</span> <span class="string">"Vector: ("</span> + str(self.x) + <span class="string">", "</span> + str(self.y) + <span class="string">")"</span>
+       <span class="keyword">return</span> <span class="string">&quot;Vector: (&quot;</span> + str(self.x) + <span class="string">&quot;, &quot;</span> + str(self.y) + <span class="string">&quot;)&quot;</span>
 
    <span class="class"><span class="keyword">class</span> <span class="title">Point</span> <span class="params">(object)</span>:</span>
    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x=<span class="number">0</span>, y=<span class="number">0</span>)</span>:</span>
@@ -335,7 +346,7 @@ Salary=<span class="number">1400</span></code></pre>
    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, rhs)</span>:</span>
        <span class="keyword">return</span> Point(self.x + rhs.x, self.y + rhs.y)
    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-       <span class="keyword">return</span> <span class="string">"Point: ("</span> + str(self.x) + <span class="string">", "</span> + str(self.y) + <span class="string">")"</span>
+       <span class="keyword">return</span> <span class="string">&quot;Point: (&quot;</span> + str(self.x) + <span class="string">&quot;, &quot;</span> + str(self.y) + <span class="string">&quot;)&quot;</span>
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
    vec1 = Vector(<span class="number">10</span>, <span class="number">20</span>)
@@ -349,21 +360,21 @@ Salary=<span class="number">1400</span></code></pre>
    <span class="comment"># the evaluation order is ((vec1 + p1) + p2)</span>
    <span class="keyword">print</span> vec1 + p1 + p2
    <span class="comment"># the evaluation order is ((p2 + vec1) + vec2)</span>
-   <span class="keyword">print</span> p2 + vec1 + vec2</code></pre>
-<p>Output:</p>
+   <span class="keyword">print</span> p2 + vec1 + vec2
+</code></pre><p>Output:</p>
 <pre><code><span class="attribute">Vector</span>: <span class="string">(100, 100)</span>
 <span class="attribute">Point</span>: <span class="string">(0, 0)</span>
 <span class="attribute">Vector</span>: <span class="string">(10, 20)</span>
-<span class="attribute">Point</span>: <span class="string">(97, 90)</span></code></pre>
-<p>如同之前提到的, Python 中, 只要 Object 有能力 (有 Attributes) 就可以正常執行.<br>上面這個例子顯示, 既使是 vec1 + p1 或 p2 + vec1, 這樣的操作都是合法的.<br>因為 Python 只知道, 把 vec1 + p1 換成 vec1.<strong>add</strong>(p1), 只要 p1 提供足夠的能力, 能完成 <strong>add</strong> 既可.<br>此外, Python 中 Operator 的 Evaluation Order 都是從左到右, 不能被改變.</p>
+<span class="attribute">Point</span>: <span class="string">(97, 90)</span>
+</code></pre><p>&#x5982;&#x540C;&#x4E4B;&#x524D;&#x63D0;&#x5230;&#x7684;, Python &#x4E2D;, &#x53EA;&#x8981; Object &#x6709;&#x80FD;&#x529B; (&#x6709; Attributes) &#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x57F7;&#x884C;.<br>&#x4E0A;&#x9762;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#x986F;&#x793A;, &#x65E2;&#x4F7F;&#x662F; vec1 + p1 &#x6216; p2 + vec1, &#x9019;&#x6A23;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5408;&#x6CD5;&#x7684;.<br>&#x56E0;&#x70BA; Python &#x53EA;&#x77E5;&#x9053;, &#x628A; vec1 + p1 &#x63DB;&#x6210; vec1.<strong>add</strong>(p1), &#x53EA;&#x8981; p1 &#x63D0;&#x4F9B;&#x8DB3;&#x5920;&#x7684;&#x80FD;&#x529B;, &#x80FD;&#x5B8C;&#x6210; <strong>add</strong> &#x65E2;&#x53EF;.<br>&#x6B64;&#x5916;, Python &#x4E2D; Operator &#x7684; Evaluation Order &#x90FD;&#x662F;&#x5F9E;&#x5DE6;&#x5230;&#x53F3;, &#x4E0D;&#x80FD;&#x88AB;&#x6539;&#x8B8A;.</p>
 <p>Reference:</p>
 <ul>
-<li><a href="http://docs.python.org/2/library/operator.html" title="Operator Overloading" target="_blank"><a href="http://docs.python.org/2/library/operator.html">http://docs.python.org/2/library/operator.html</a></a></li>
-<li><a href="http://docs.python.org/2/reference/expressions.html#evaluation-order" title="Operator Evaluation Order" target="_blank"><a href="http://docs.python.org/2/reference/expressions.html#evaluation-order">http://docs.python.org/2/reference/expressions.html#evaluation-order</a></a></li>
+<li><a href="http://docs.python.org/2/library/operator.html" title="Operator Overloading" target="_blank" rel="external">http://docs.python.org/2/library/operator.html</a></li>
+<li><a href="http://docs.python.org/2/reference/expressions.html#evaluation-order" title="Operator Evaluation Order" target="_blank" rel="external">http://docs.python.org/2/reference/expressions.html#evaluation-order</a></li>
 </ul>
 <hr>
-<h1>Function Overloading</h1>
-<p>Python 中, 並沒有提供 Function Overloading 的機制. 一般而言, 會透過下列方式來達成:  </p>
+<h1 id="Function_Overloading">Function Overloading</h1>
+<p>Python &#x4E2D;, &#x4E26;&#x6C92;&#x6709;&#x63D0;&#x4F9B; Function Overloading &#x7684;&#x6A5F;&#x5236;. &#x4E00;&#x822C;&#x800C;&#x8A00;, &#x6703;&#x900F;&#x904E;&#x4E0B;&#x5217;&#x65B9;&#x5F0F;&#x4F86;&#x9054;&#x6210;:  </p>
 <ul>
 <li>Default Arguments</li>
 <li>Variable Length Arguments With List</li>
@@ -373,7 +384,7 @@ Salary=<span class="number">1400</span></code></pre>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
    empCount = <span class="number">0</span>
 
-   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">""</span>, base_salary=<span class="number">1000</span>)</span>:</span>
+   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">&quot;&quot;</span>, base_salary=<span class="number">1000</span>)</span>:</span>
        self.base_salary = base_salary
        self.name = name
        Employee.empCount += <span class="number">1</span>
@@ -383,36 +394,36 @@ Salary=<span class="number">1400</span></code></pre>
 
    <span class="decorator">@staticmethod</span>
    <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
-       <span class="keyword">print</span> <span class="string">"Employee.empCount = "</span> + str(Employee.empCount)
+       <span class="keyword">print</span> <span class="string">&quot;Employee.empCount = &quot;</span> + str(Employee.empCount)
 
    <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
        <span class="keyword">return</span> self.base_salary
 
    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-       <span class="keyword">return</span> <span class="string">"Employee: name="</span> + self.name + \
-              <span class="string">" base_salary="</span> + str(self.base_salary)
+       <span class="keyword">return</span> <span class="string">&quot;Employee: name=&quot;</span> + self.name + \
+              <span class="string">&quot; base_salary=&quot;</span> + str(self.base_salary)
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-   employee1 = Employee(<span class="string">"Peter"</span>)
+   employee1 = Employee(<span class="string">&quot;Peter&quot;</span>)
    <span class="keyword">print</span> employee1
-   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   <span class="keyword">print</span> &#x201C;Salary=&#x201D; + str(employee1.getSalary())
    Employee.EmployeeCount()
    <span class="keyword">del</span> employee1
    Employee.EmployeeCount()
 
-<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
-    main()</code></pre>
-<p>Output:</p>
+<span class="keyword">if</span> __name__ == <span class="string">&apos;__main__&apos;</span>:
+    main()
+</code></pre><p>Output:</p>
 <pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
 Salary=<span class="number">1000</span>
 <span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
-<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
-<p>Ex: <strong>Variable Length Arguments With Tuple</strong></p>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span>
+</code></pre><p>Ex: <strong>Variable Length Arguments With Tuple</strong></p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
    empCount = <span class="number">0</span>
 
    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args)</span>:</span>
-       self.name  = “”
+       self.name  = &#x201C;&#x201D;
        self.salary = <span class="number">1000</span>
        <span class="keyword">if</span> <span class="number">1</span> &lt;= len(args): self.name  = args[<span class="number">0</span>]
        <span class="keyword">if</span> <span class="number">2</span> &lt;= len(args): self.salary = args[<span class="number">1</span>]
@@ -423,37 +434,37 @@ Salary=<span class="number">1000</span>
 
    <span class="decorator">@staticmethod</span>
    <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
-       <span class="keyword">print</span> <span class="string">"Employee.empCount = "</span> + str(Employee.empCount)
+       <span class="keyword">print</span> <span class="string">&quot;Employee.empCount = &quot;</span> + str(Employee.empCount)
 
    <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
        <span class="keyword">return</span> self.base_salary
 
    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-       <span class="keyword">return</span> <span class="string">"Employee: name="</span> + self.name + \
-              <span class="string">" base_salary="</span> + str(self.base_salary)
+       <span class="keyword">return</span> <span class="string">&quot;Employee: name=&quot;</span> + self.name + \
+              <span class="string">&quot; base_salary=&quot;</span> + str(self.base_salary)
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-   employee1 = Employee(<span class="string">"Peter"</span>)
+   employee1 = Employee(<span class="string">&quot;Peter&quot;</span>)
    <span class="keyword">print</span> employee1
-   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   <span class="keyword">print</span> &#x201C;Salary=&#x201D; + str(employee1.getSalary())
    Employee.EmployeeCount()
    <span class="keyword">del</span> employee1
    Employee.EmployeeCount()
 
-<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
-   main()</code></pre>
-<p>Output:</p>
+<span class="keyword">if</span> __name__ == <span class="string">&apos;__main__&apos;</span>:
+   main()
+</code></pre><p>Output:</p>
 <pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
 Salary=<span class="number">1000</span>
 <span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
-<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
-<p>Ex: <strong>Variable Length Arguments With Dict</strong></p>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span>
+</code></pre><p>Ex: <strong>Variable Length Arguments With Dict</strong></p>
 <pre><code><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="params">(object)</span>:</span>
    empCount = <span class="number">0</span>
 
    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, **args)</span>:</span>
-       self.name  = args.get(“name”, “”)
-       self.salary = args.get(“salary”, <span class="number">1000</span>)
+       self.name  = args.get(&#x201C;name&#x201D;, &#x201C;&#x201D;)
+       self.salary = args.get(&#x201C;salary&#x201D;, <span class="number">1000</span>)
        Employee.__empCount += <span class="number">1</span>
 
    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span>
@@ -461,36 +472,36 @@ Salary=<span class="number">1000</span>
 
    <span class="decorator">@staticmethod</span>
    <span class="function"><span class="keyword">def</span> <span class="title">EmployeeCount</span><span class="params">()</span>:</span>
-       <span class="keyword">print</span> <span class="string">"Employee.empCount = "</span> + str(Employee.empCount)
+       <span class="keyword">print</span> <span class="string">&quot;Employee.empCount = &quot;</span> + str(Employee.empCount)
 
    <span class="function"><span class="keyword">def</span> <span class="title">getSalary</span><span class="params">(self)</span>:</span>
        <span class="keyword">return</span> self.base_salary
 
    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span>
-       <span class="keyword">return</span> <span class="string">"Employee: name="</span> + self.name + \
-              <span class="string">" base_salary="</span> + str(self.base_salary)
+       <span class="keyword">return</span> <span class="string">&quot;Employee: name=&quot;</span> + self.name + \
+              <span class="string">&quot; base_salary=&quot;</span> + str(self.base_salary)
 
 <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-   employee1 = Employee(<span class="string">"Peter"</span>)
+   employee1 = Employee(<span class="string">&quot;Peter&quot;</span>)
    <span class="keyword">print</span> employee1
-   <span class="keyword">print</span> “Salary=” + str(employee1.getSalary())
+   <span class="keyword">print</span> &#x201C;Salary=&#x201D; + str(employee1.getSalary())
    Employee.EmployeeCount()
    <span class="keyword">del</span> employee1
    Employee.EmployeeCount()
 
-<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
-   main()</code></pre>
-<p>Output:</p>
+<span class="keyword">if</span> __name__ == <span class="string">&apos;__main__&apos;</span>:
+   main()
+</code></pre><p>Output:</p>
 <pre><code><span class="label">Employee:</span> name=Peter base_salary=<span class="number">1000</span>
 Salary=<span class="number">1000</span>
 <span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
-<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span></code></pre>
-<p>此外, 要注意的一點是, 如果你強制寫了兩個相同 Signature 的 Method, 後者會覆蓋前者.  </p>
+<span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span>
+</code></pre><p>&#x6B64;&#x5916;, &#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x9EDE;&#x662F;, &#x5982;&#x679C;&#x4F60;&#x5F37;&#x5236;&#x5BEB;&#x4E86;&#x5169;&#x500B;&#x76F8;&#x540C; Signature &#x7684; Method, &#x5F8C;&#x8005;&#x6703;&#x8986;&#x84CB;&#x524D;&#x8005;.  </p>
 <p>Ex:</p>
 <p>Output:</p>
 <hr>
-<h1>Object Types in Python</h1>
-<p>在 Python 中, 所有物件的型別可以分為下列 3 種:</p>
+<h1 id="Object_Types_in_Python">Object Types in Python</h1>
+<p>&#x5728; Python &#x4E2D;, &#x6240;&#x6709;&#x7269;&#x4EF6;&#x7684;&#x578B;&#x5225;&#x53EF;&#x4EE5;&#x5206;&#x70BA;&#x4E0B;&#x5217; 3 &#x7A2E;:</p>
 <ol>
 <li>Class Object  <ul>
 <li>Instantiation</li>
@@ -507,7 +518,7 @@ Salary=<span class="number">1000</span>
 </li>
 </ol>
 <hr>
-<h1>Check relationship between class and instance</h1>
+<h1 id="Check_relationship_between_class_and_instance">Check relationship between class and instance</h1>
 
       
     </div>
@@ -522,7 +533,7 @@ Salary=<span class="number">1000</span>
         
   
   <div class="tags">
-    <a href="/tags/Python/">Python</a>, <a href="/tags/Study Group/">Study Group</a>
+    <a href="/tags/Python/">Python</a>, <a href="/tags/Study-Group/">Study Group</a>
   </div>
 
         
@@ -585,9 +596,9 @@ Salary=<span class="number">1000</span>
   
     <li><a href="/tags/Python/">Python</a><small>3</small></li>
   
-    <li><a href="/tags/Software Testing/">Software Testing</a><small>1</small></li>
+    <li><a href="/tags/Software-Testing/">Software Testing</a><small>1</small></li>
   
-    <li><a href="/tags/Study Group/">Study Group</a><small>3</small></li>
+    <li><a href="/tags/Study-Group/">Study Group</a><small>3</small></li>
   
   </ul>
 </div>

@@ -15,7 +15,7 @@ tags: [Python, Study Group]
 * [An example to refactor a module as a package](#package_example "An example to refactor a module as a package")
 
 <!--more-->
-- - -
+----------
 <a name=what_module></a>
 # What's a python module ? #
 
@@ -42,7 +42,7 @@ Python module 只會在第一次被 import 的時候被執行. 被 import module
     if "__main__" == __name__:
         pass                 # write executable statements
   
-- - -
+----------
 <a name=why_module></a>
 # Why use python modules ?#
  
@@ -51,7 +51,7 @@ Python module 只會在第一次被 import 的時候被執行. 被 import module
 * 將相關的 code 組織在同一個 module 中, 讓 code 更容易維護, 更容易讀, 更容易 re-use
 * 避免 naming conflict, 所有定義在 module 內的變數, 都屬於此 module namespace 下
  
-- - -
+----------
 <a name=how_module></a>
 # How to use/write python modules ?#
 
@@ -234,7 +234,7 @@ Output:
     >>> dir()
     ['__builtins__', '__doc__', '__name__', '__package__', 'fib2']
     
-- - -
+----------
 <a name=module_search_path></a>
 # Module Search Path #
 
@@ -249,7 +249,7 @@ Output:
 當被 import 的 module 無法在 sys.path 中被搜尋到, 將會產生 ImportError Exception.  
 當前執行的 script 目錄中, 若有與 Standard Library 中的 module 有相同名稱, 則會遮蔽 Standard Library 的 Module.
 
-- - -
+----------
 <a name=reload_module></a>
 # Reload Your Module To Apply Any Modification #
 
@@ -261,7 +261,7 @@ Output:
 
 所有 reference 到此 module 的變數, 都將受影響
 
-- - -
+----------
 <a name=what_package></a>
 # What's package ? #
 
@@ -272,7 +272,7 @@ Package 由一個 Directory 所構成, 裡面包含了 Python Module 檔案, 以
 
 上圖既為一個簡單的 Package, 透過 import A.B 則可 import package A 中的 module B.
 
-- - -
+----------
 <a name=why_package></a>
 # Why use package ? #
 
@@ -282,7 +282,7 @@ Package 由一個 Directory 所構成, 裡面包含了 Python Module 檔案, 以
 * 使得 Module 更易於 Maintain
 * 讓 Module 更 readable  
 
-- - -
+----------
 <a name=how_package></a>
 # How to use packages #
 
@@ -374,7 +374,7 @@ Ex:
     #vocoder.py
     from sound.effects import echo
 
-- - -
+----------
 <a name=package_example></a>
 # An example to refactor a module as a package #
 

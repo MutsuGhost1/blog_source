@@ -15,7 +15,7 @@ tags: [Python, Study Group]
 * Check relationship between class and instance
 
 <!--more-->
-- - -
+----------
 
 # Python OOP #
 
@@ -63,7 +63,7 @@ Ex:
     class newStyleClass (object):
     pass
     
-- - -
+----------
 
 # Constructor/Destructor #
 
@@ -88,7 +88,7 @@ Ex:
 也許有人會問, 在有 GC 機制的語言中, Destructor 存在的目的是?  
 通常 Destructor 的存在, 就是讓 Object 能提早釋放占用的資源.   
 
-- - -
+----------
 
 # Class/Instance Memebers #
 
@@ -172,7 +172,7 @@ Output:
     EmployeeCount: Employee.empCount = 1
     EmployeeCount: Employee.empCount = 0
 
-- - -
+----------
 
 # Access Control in Python OOP #
 
@@ -200,7 +200,7 @@ Output:
 * 以 "__" 開頭的 Attribute, 會被做 Name Mangling, 改名為 "_" + ClassName + AttributeName
 * 以 "__" 開頭的 Attribute, 只是在習慣上被視為 Private 的, 但是仍然可強制存取 
     
-- - -
+----------
 
 # Inheritance #
 
@@ -258,7 +258,7 @@ Output:
     Manager: name=John base_salary=1200 bonus=200
     Salary=1400
 
-- - -
+----------
 
 # Polymorphism #
 
@@ -284,7 +284,7 @@ Output:
 **事實上, Python 這樣的做法提供了更彈性的使用方式. 在撰寫特定演算法的時候,  
 只需要考慮 Object 本身能提供哪些 Attributes, 不需要考慮 Object 的繼承體系.**
 
-- - -
+----------
 
 # Operator Overloading #
 
@@ -341,7 +341,7 @@ Reference:
 * [http://docs.python.org/2/library/operator.html](http://docs.python.org/2/library/operator.html "Operator Overloading")
 * [http://docs.python.org/2/reference/expressions.html#evaluation-order](http://docs.python.org/2/reference/expressions.html#evaluation-order "Operator Evaluation Order")
 
-- - -
+----------
 
 # Function Overloading #
 
@@ -489,7 +489,7 @@ Ex:
 
 Output:
 
-- - -
+----------
 
 # Object Types in Python #
 
@@ -505,6 +505,6 @@ Output:
 3. Method Object
  * 
 
-- - -
+----------
 
 # Check relationship between class and instance #

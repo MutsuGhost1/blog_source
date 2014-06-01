@@ -1,7 +1,6 @@
 menu:
   Home: /
   Archives: /archives
-  ToDo: /todolist
   RSS: /atom.xml
 
 widgets: 

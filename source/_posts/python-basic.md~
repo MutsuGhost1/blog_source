@@ -22,7 +22,7 @@ tags: [Python, Study Group]
     * [Built-in Funtion filter](#built_in_filter "Built-in Funtion filter")
     * [Built-in Funtion zip](#built_in_zip "Built-in Funtion zip")
 <!--more-->
-- - -
+----------
 
 <a name=python_folder_structure></a>
 # *Python's Folder Structure* #
@@ -36,7 +36,7 @@ tags: [Python, Study Group]
 
 ![](http://MutsuGhost1.github.io/image/python_install2.PNG)
   
-- - -
+----------
 
 <a name=yield_about></a>
 # 關於 *yield* 用法 #
@@ -173,7 +173,7 @@ Output:
 
 到了 Python 2.5, 針對 yield 有更進一步的 enhancement [PEP342](http://www.python.org/dev/peps/pep-0342/ "PEP342"), 使其能夠較完善的處理 [Coroutine](http://en.wikipedia.org/wiki/Coroutine#Implementations_for_Python "Coroutine in Wiki") 這類的問題.  
 
-- - -
+----------
 <a name=yield_usage></a>
 ## yield 的各種用法 ##
 由於 [PEP342](http://www.python.org/dev/peps/pep-0342/ "PEP342") 是針對 [PEP255](http://www.python.org/dev/peps/pep-0255 "PEP255") 的 enhancement, 因此以下直接針對 [PEP342](http://www.python.org/dev/peps/pep-0342/ "PEP342") 的各項用法, 一一做個說明.  
@@ -468,7 +468,7 @@ Output:
  * [6] [PEP342](http://www.python.org/dev/peps/pep-0342/ "Coroutines via Enhanced Generators")
  * [7] [Python 深入理解yield](http://www.jb51.net/article/15717.htm)
 
-- - -
+----------
 <a name=others></a>
 # *其它* #
 

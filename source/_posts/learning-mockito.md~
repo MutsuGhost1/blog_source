@@ -21,7 +21,7 @@ tags: Software Testing
     15. **[Verify with timeout](#15)**
 
 <!--more-->
-- - -
+----------
 * ## Basic Concepts ##
     * 撰寫 Unit Test 的 3A 原則:
         1. Arrange: 
@@ -33,7 +33,7 @@ tags: Software Testing
             * Make claims about the object, its collaborators, its parameters and possibly global state.
             * In other words, verify the test result.
 
-- - -
+----------
 <a name=1></a>
 ### verify somw behavior (ignore any return value) ###
 
@@ -66,7 +66,7 @@ tags: Software Testing
     	verify(mockedList, times(2)).clear();
     }
 
-- - -
+----------
 <a name=2></a>
 ### verify some behavior with stubbing the return value ###
 
@@ -94,7 +94,7 @@ tags: Software Testing
     test02:firstfirst
     test02:firstfirst
 
-- - -
+----------
 <a name=3></a>
 ### verify unstubbing behavior ###
 
@@ -119,7 +119,7 @@ tags: Software Testing
 
     test03:null
 
-- - -
+----------
 <a name=4></a>
 ### argument matching using default matcher ###
 
@@ -153,7 +153,7 @@ tags: Software Testing
     [8]:stubbing string
     [9]:stubbing string
 
-- - -
+----------
 ### argument matching using customized matcher ###
 
     @SuppressWarnings("rawtypes")
@@ -185,7 +185,7 @@ tags: Software Testing
         verify(mockedList).addAll(listOfTwoElements());
     }
 
-- - -
+----------
 <a name=5></a>
 ### verify exact number of invocation ###
 
@@ -216,7 +216,7 @@ tags: Software Testing
     }
 
 
-- - -
+----------
 <a name=6></a>
 ### verification in order, using single mock ###
 
@@ -235,7 +235,7 @@ tags: Software Testing
         inOrder.verify(singleMock).add("two");
     }
 
-- - -
+----------
 ### verification in order, using multiple mock ###
 
     @SuppressWarnings("unchecked")
@@ -263,7 +263,7 @@ tags: Software Testing
         inOrder.verify(secondMock).add("four");
     }
 
-- - -
+----------
 <a name=7></a>
 ### finding redundant invocations ###
 
@@ -283,7 +283,7 @@ tags: Software Testing
         verifyNoMoreInteractions(mockedList);
     }
 
-- - -
+----------
 <a name=8></a>
 ### stubbing consecutive calls (iterator-style stubbing) ###
 
@@ -303,7 +303,7 @@ tags: Software Testing
         assertTrue("1".equals(mockedList.get(0)));
     }
 
-- - -
+----------
 <a name=9></a>
 ### stubbing with callbacks ###
 
@@ -328,7 +328,7 @@ tags: Software Testing
         verify(mock).asyncCall();
     }
 
-- - -
+----------
 <a name=10></a>
 ### doReturn using mock ###
 
@@ -348,7 +348,7 @@ tags: Software Testing
         verify(mockedList).get(0);
     }
 
-- - -
+----------
 ### doReturn using spy ###
 
     // doReturn using spy
@@ -367,7 +367,7 @@ tags: Software Testing
         verify(spyList).get(0);
     }
 
-- - -
+----------
 ### doThrow ###
 
     // doThrow
@@ -388,7 +388,7 @@ tags: Software Testing
         }
     }
 
-- - -
+----------
 ### doAnswer ###
 
     // rewrite case 10 using doAnswer
@@ -417,7 +417,7 @@ tags: Software Testing
     test15: answer callback
     test15: answer callback
 
-- - -
+----------
 ### doNothing ###
 
     // doNothing
@@ -441,7 +441,7 @@ tags: Software Testing
         }
     }
 
-- - -
+----------
 ### doRealCall ###
 
     private class Util2{
@@ -473,7 +473,7 @@ tags: Software Testing
         assertTrue("AB".equals(mockUtil2.AB()));
     }
 
-- - -
+----------
 <a name=11></a>
 ### reset mock ###
 
@@ -493,7 +493,7 @@ tags: Software Testing
     }
 
 
-- - -
+----------
 <a name=12></a>
 ### capturing arguments##
 
@@ -523,7 +523,7 @@ tags: Software Testing
     test19:[Hello World, two, three]
     test19:three
 
-- - -
+----------
 <a name=13></a>
 ### change the default value of unstubbed invocations (using RETURNS\_SMART\_NULLS)###
 
@@ -544,7 +544,7 @@ tags: Software Testing
         }
     }
 
-- - -
+----------
 ### change the default value of unstubbed invocations (using CALLS\_REAL\_METHODS)###
 
 	public class PartialMockObject {
@@ -597,7 +597,7 @@ tags: Software Testing
     test24: spy.m2()=PartialMockObject:m3
     test24: spy.m3()=m3 is stubbed
 
-- - -
+----------
 <a name=14></a>
 ### inject mock/spy into tested target (using constructor) ###
 
@@ -639,7 +639,7 @@ tags: Software Testing
     SUT'equals: mList =mList
     test21: end
 
-- - -
+----------
 ### inject mock/spy into tested target (using setter) ###
 
 	public class SUT2 {
@@ -701,7 +701,7 @@ tags: Software Testing
     SUT2's equals: mList2 =mList2
     test22: end
 
-- - -
+----------
 ### inject mock/spy into tested target (using field) ###
 
 	public class SUT3 {
@@ -757,7 +757,7 @@ tags: Software Testing
     SUT3's equals: mList3 =mList3
     test23: end
 
-- - -
+----------
 <a name=15></a>
 ### verify with timeout ###
 
@@ -795,7 +795,7 @@ tags: Software Testing
     }
 
 
-- - -
+----------
     
 * [Reference]
     * [1] [Mockito Official Website](http://code.google.com/p/mockito/)
