@@ -1,0 +1,33 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  RSS: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+- recent_comments
+- twitter_posts
+
+addthis:
+  enable: true
+  pubid:
+  facebook: true
+  twitter: true
+  google: true
+  pinterest: true
+
+# Miscellaneous
+google_analytics: UA-44446906-1
+favicon: /favicon.png
+

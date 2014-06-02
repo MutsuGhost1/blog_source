@@ -1,34 +1,48 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>Python Module Package | MutsuGhost1&#39;s Blog</title>
-  <meta name="author" content="MutsuGhost1">
-  
-  <meta name="description" content="What&amp;#x2019;s a python module ?
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="What&#x2019;s a python module ?
 Why use modules ?
 How to use/write modules ?
 Module search Path ?
 Reload your module after applying any change ? 
-What&amp;#x2019;s package ?
+What&#x2019;s package ?
 Why use packaes ?
-How to use packages ?
-An example to refactor a module as a package">
+How to use">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Module Package">
+<meta property="og:url" content="http://mutsughost1.github.io//2013/09/27/python-module-package/">
+<meta property="og:site_name" content="MutsuGhost1's Blog">
+<meta property="og:description" content="What&#x2019;s a python module ?
+Why use modules ?
+How to use/write modules ?
+Module search Path ?
+Reload your module after applying any change ? 
+What&#x2019;s package ?
+Why use packaes ?
+How to use">
+<meta property="og:image" content="/images/python_reload_function.PNG">
+<meta property="og:image" content="/images/python_package.PNG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Module Package">
+<meta name="twitter:description" content="What&#x2019;s a python module ?
+Why use modules ?
+How to use/write modules ?
+Module search Path ?
+Reload your module after applying any change ? 
+What&#x2019;s package ?
+Why use packaes ?
+How to use">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="Python Module Package"/>
-  <meta property="og:site_name" content="MutsuGhost1&#39;s Blog"/>
-
+    <link rel="icon" href="/favicon.png">
   
-    <meta property="og:image" content="undefined"/>
-  
-
-  <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="MutsuGhost1&#39;s Blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -44,54 +58,69 @@ An example to refactor a module as a package">
 </script>
 
 </head>
-
-
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">MutsuGhost1&#39;s Blog</a></h1>
-  <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/atom.xml">RSS</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">MutsuGhost1&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Pursue excellence, and success will follow, pants down</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/atom.xml">RSS</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://mutsughost1.github.io/"></form>
+      </div>
+    </div>
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-module-package" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/09/27/python-module-package/" class="article-date">
+  <time datetime="2013-09-27T06:54:50.000Z" itemprop="datePublished">9月 27 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
   </div>
-</div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-27T06:54:50.000Z"><a href="/2013/09/27/python-module-package/">9月 27 2013</a></time>
-      
-      
-  
-    <h1 class="title">Python Module Package</h1>
+    <h1 class="article-title" itemprop="name">
+      Python Module Package
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <ul>
 <li><a href="#what_module" title="What&#x27;s a python module ?">What&#x2019;s a python module ?</a></li>
@@ -303,13 +332,13 @@ __all__ = [<span class="string">&quot;fib2&quot;</span>]
 <ul>
 <li>reload(module)</li>
 </ul>
-<p><img src="http://MutsuGhost1.github.io/image/python_reload_function.PNG" alt=""></p>
+<p><img src="/images/python_reload_function.PNG" alt=""></p>
 <p>&#x6240;&#x6709; reference &#x5230;&#x6B64; module &#x7684;&#x8B8A;&#x6578;, &#x90FD;&#x5C07;&#x53D7;&#x5F71;&#x97FF;</p>
 <hr>
 <p><a name="what_package"></a></p>
 <h1 id="What&#x2019;s_package_?">What&#x2019;s package ?</h1>
 <p>Package &#x7531;&#x4E00;&#x500B; Directory &#x6240;&#x69CB;&#x6210;, &#x88E1;&#x9762;&#x5305;&#x542B;&#x4E86; Python Module &#x6A94;&#x6848;, &#x4EE5;&#x53CA;&#x4E00;&#x500B;&#x540D;&#x7A31;&#x70BA; <strong>__ini__.py</strong> &#x7684;&#x6A94;&#x6848;.<br>&#x900F;&#x904E; <strong>__ini__.py</strong> &#x6A94;&#x6848;, Python Interpreter &#x624D;&#x6703;&#x5C07;&#x6B64; Directory &#x8996;&#x70BA;&#x4E00;&#x500B; Package.  </p>
-<p><img src="http://MutsuGhost1.github.io/image/python_package.PNG" alt=""></p>
+<p><img src="/images/python_package.PNG" alt=""></p>
 <p>&#x4E0A;&#x5716;&#x65E2;&#x70BA;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684; Package, &#x900F;&#x904E; import A.B &#x5247;&#x53EF; import package A &#x4E2D;&#x7684; module B.</p>
 <hr>
 <p><a name="why_package"></a></p>
@@ -434,126 +463,121 @@ Phone<span class="preprocessor">.G</span>3()
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://mutsughost1.github.io/2013/09/27/python-module-package/" data-id="hkwwwzm0naba368l" class="article-share-link">Share</a>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/Software/">Software</a>
-  </div>
-
-        
-  
-  <div class="tags">
-    <a href="/tags/Python/">Python</a>, <a href="/tags/Study-Group/">Study Group</a>
-  </div>
-
-        
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-    
-    
-      <a class="addthis_button_tweet"></a>
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
-
+        <a href="http://mutsughost1.github.io/2013/09/27/python-module-package/#disqus_thread" class="article-comment-link">Comments</a>
       
-      <div class="clearfix"></div>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-Group/">Study Group</a></li></ul>
+
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/09/27/python-oop-exception/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python OOP Exception
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
 
 
-<section id="comment">
-  <h1 class="title">留言</h1>
+<section id="comments">
   <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
 </section>
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜尋">
-    <input type="hidden" name="q" value="site:mutsughost1.github.io/">
-  </form>
-</div>
-
+</section>
+        
+          <aside id="sidebar">
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Software/">Software</a><small>4</small></li>
-  
-  </ul>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/Blog/">Blog</a><small>1</small></li>
-  
-    <li><a href="/tags/Python/">Python</a><small>3</small></li>
-  
-    <li><a href="/tags/Software-Testing/">Software Testing</a><small>1</small></li>
-  
-    <li><a href="/tags/Study-Group/">Study Group</a><small>3</small></li>
-  
-  </ul>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">最新文章</h3>
-  <ul class="entry">
     
-      <li>
-        <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/29/python-basic/">Python Basic</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/29/about-this-blog/">About This Blog</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/27/python-module-package/">Python Module Package</a>
-      </li>
-    
-  </ul>
-</div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Software-Testing/">Software Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study-Group/">Study Group</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
 
-  <div class="widget tag">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Software-Testing/" style="font-size: 10.00px;">Software Testing</a><a href="/tags/Study-Group/" style="font-size: 20.00px;">Study Group</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">九月 2013</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/29/python-basic/">Python Basic</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/29/about-this-blog/">About This Blog</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/27/python-module-package/">Python Module Package</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <div class="widget tag">
   <h3 class="title">最新留言</h3>
   <ul class="entry">
   <script type="text/javascript" src="http://mutsughost1.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
   </ul>
 </div>
 
-
-  <div class="widget tag">
+  
+    <div class="widget tag">
   <h3 class="title">喃喃自語</h3>
   <ul class="entry">
   <a class="twitter-timeline" height="250" href="https://twitter.com/MutsuGhost1" data-widget-id="384199658408402944">@MutsuGhost1������</a>
@@ -562,41 +586,53 @@ Phone<span class="preprocessor">.G</span>3()
 </div>
 
 
+  
 </aside>
-    <div class="clearfix"></div>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 MutsuGhost1<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  &copy; 2014 MutsuGhost1
+    <a href="/" class="mobile-nav-link">Home</a>
   
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-<script type="text/javascript">
-var disqus_shortname = 'mutsughost1';
-
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'mutsughost1';
+  
+  var disqus_url = 'http://mutsughost1.github.io/2013/09/27/python-module-package/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
 </script>
 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
 </body>
 </html>

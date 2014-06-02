@@ -1,38 +1,134 @@
-date: 2013-09-27 14:01:21.699
-argv: c:\Program Files\nodejs\node.exe c:\Documents and Settings\Administrator\Application Data\npm\node_modules\hexo\bin\hexo server
-os: Windows_NT 5.1.2600 win32 ia32
+date: 2014-06-02 12:37:47.674
+argv: node /home/liweicheng/nvm/v0.10.28/bin/hexo g
+os: Linux 3.5.0-26-generic linux x64
 version:
-  hexo: 2.2.0
+  hexo: 2.6.1
   http_parser: 1.0
-  node: 0.10.19
+  node: 0.10.28
   v8: 3.14.5.9
   ares: 1.9.0-DEV
-  uv: 0.10.17
+  uv: 0.10.27
   zlib: 1.2.3
   modules: 11
-  openssl: 1.0.1e
+  openssl: 1.0.1g
 ---
 
-[debug] 14:01:20.740 Configuration file load successfully
-[debug] 14:01:20.745 Version info checked successfully
-[debug] 14:01:20.745 Loading the database...
-[debug] 14:01:21.584 Theme layout loaded
-[debug] 14:01:21.584 Start watching theme layout...
-[debug] 14:01:21.595 Theme configuration loaded
-[debug] 14:01:21.629 Processed: _posts/hello-world.md
-[debug] 14:01:21.646 Theme i18n loaded
-[debug] 14:01:21.653 Theme source loaded
-[debug] 14:01:21.653 Start watching theme source...
-[debug] 14:01:21.668 Cache saved
-[error] 14:01:21.681 Error: listen EADDRINUSE
-Error: listen EADDRINUSE
-    at errnoException (net.js:901:11)
-    at Server._listen2 (net.js:1039:14)
-    at listen (net.js:1061:10)
-    at Server.listen (net.js:1127:5)
-    at Function.app.listen (c:\Documents and Settings\Administrator\Application Data\npm\node_modules\hexo\node_modules\express\lib\application.js:535:24)
-    at c:\Documents and Settings\Administrator\Application Data\npm\node_modules\hexo\lib\plugins\console\server\index.js:156:9
-    at c:\Documents and Settings\Administrator\Application Data\npm\node_modules\hexo\lib\post\load.js:38:73
-    at c:\Documents and Settings\Administrator\Application Data\npm\node_modules\hexo\node_modules\watch\main.js:100:5
-    at c:\Documents and Settings\Administrator\Application Data\npm\node_modules\hexo\node_modules\watch\main.js:54:23
-    at Object.oncomplete (fs.js:107:15)
+[debug] 12:37:45.845 Processed: page.md
+[debug] 12:37:45.845 Processed: photo.md
+[debug] 12:37:45.845 Processed: post.md
+[debug] 12:37:45.846 Config file loaded
+[debug] 12:37:45.847 Version info checked successfully
+[debug] 12:37:45.871 Loading database.
+[debug] 12:37:45.898 Plugin loaded successfully: hexo-generator-feed
+[debug] 12:37:45.899 Plugin loaded successfully: hexo-local-image
+[debug] 12:37:45.915 Plugin loaded successfully: hexo-renderer-ejs
+[debug] 12:37:45.934 Plugin loaded successfully: hexo-renderer-marked
+[debug] 12:37:46.053 Plugin loaded successfully: hexo-renderer-stylus
+[debug] 12:37:46.055 Script load successfully: fancybox.js
+[debug] 12:37:46.093 Processed: Gruntfile.js
+[debug] 12:37:46.094 Processed: LICENSE
+[debug] 12:37:46.094 Processed: README.md
+[debug] 12:37:46.095 Processed: _config.yml~
+[debug] 12:37:46.095 Processed: package.json
+[debug] 12:37:46.096 Processed: scripts/fancybox.js
+[debug] 12:37:46.164 Processed: source/css/_extend.styl
+[debug] 12:37:46.164 Processed: source/css/_variables.styl
+[debug] 12:37:46.166 Processed: source/css/_partial/archive.styl
+[debug] 12:37:46.166 Processed: source/css/_partial/article.styl
+[debug] 12:37:46.166 Processed: source/css/_partial/comment.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/footer.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/header.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/highlight.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/mobile.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/sidebar-aside.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/sidebar-bottom.styl
+[debug] 12:37:46.168 Processed: source/css/_partial/sidebar.styl
+[debug] 12:37:46.168 Processed: source/css/_util/grid.styl
+[debug] 12:37:46.170 Processed: source/css/_util/mixin.styl
+[debug] 12:37:46.211 Processed: source/js/script.js
+[debug] 12:37:46.211 Processed: source/css/style.styl
+[debug] 12:37:46.212 Processed: source/css/fonts/FontAwesome.otf
+[debug] 12:37:46.213 Processed: source/css/fonts/fontawesome-webfont.eot
+[debug] 12:37:46.214 Processed: source/css/fonts/fontawesome-webfont.svg
+[debug] 12:37:46.216 Processed: source/css/fonts/fontawesome-webfont.ttf
+[debug] 12:37:46.218 Processed: source/css/fonts/fontawesome-webfont.woff
+[debug] 12:37:46.220 Processed: source/css/images/banner.jpg
+[debug] 12:37:46.222 Processed: source/fancybox/blank.gif
+[debug] 12:37:46.223 Processed: source/fancybox/fancybox_loading.gif
+[debug] 12:37:46.225 Processed: source/fancybox/fancybox_loading@2x.gif
+[debug] 12:37:46.227 Processed: source/fancybox/fancybox_overlay.png
+[debug] 12:37:46.229 Processed: source/fancybox/fancybox_sprite.png
+[debug] 12:37:46.232 Processed: source/fancybox/fancybox_sprite@2x.png
+[debug] 12:37:46.234 Processed: source/fancybox/jquery.fancybox.css
+[debug] 12:37:46.236 Processed: source/fancybox/jquery.fancybox.js
+[debug] 12:37:46.238 Processed: source/fancybox/jquery.fancybox.pack.js
+[debug] 12:37:46.241 Processed: source/fancybox/helpers/fancybox_buttons.png
+[debug] 12:37:46.244 Processed: source/fancybox/helpers/jquery.fancybox-buttons.css
+[debug] 12:37:46.247 Processed: source/fancybox/helpers/jquery.fancybox-buttons.js
+[debug] 12:37:46.267 Processed: source/fancybox/helpers/jquery.fancybox-media.js
+[debug] 12:37:46.274 Processed: source/fancybox/helpers/jquery.fancybox-thumbs.css
+[debug] 12:37:46.275 Processed: source/fancybox/helpers/jquery.fancybox-thumbs.js
+[debug] 12:37:46.282 Processed: _posts/learning-mockito.md~
+[debug] 12:37:46.284 Processed: _posts/python-basic.md~
+[debug] 12:37:46.286 Processed: _posts/python-module-package.md~
+[debug] 12:37:46.286 Processed: _posts/python-oop-exception.md~
+[debug] 12:37:46.287 Processed: _posts/images/test/python_install1.PNG
+[debug] 12:37:46.287 Processed: _posts/images/test/python_install2.PNG
+[debug] 12:37:46.287 Processed: _posts/images/test/python_map_function.PNG
+[debug] 12:37:46.288 Processed: _posts/images/test/python_package.PNG
+[debug] 12:37:46.289 Processed: _posts/images/test/python_reload_function.PNG
+[debug] 12:37:46.289 Processed: _posts/images/test/python_zip_function.PNG
+[debug] 12:37:46.294 Processed: layout/archive.ejs
+[debug] 12:37:46.295 Processed: layout/category.ejs
+[debug] 12:37:46.295 Processed: layout/index.ejs
+[debug] 12:37:46.295 Processed: layout/layout.ejs
+[debug] 12:37:46.295 Processed: layout/page.ejs
+[debug] 12:37:46.295 Processed: layout/post.ejs
+[debug] 12:37:46.295 Processed: layout/tag.ejs
+[debug] 12:37:46.295 Processed: layout/_widget/archive.ejs
+[debug] 12:37:46.296 Processed: layout/_widget/category.ejs
+[debug] 12:37:46.296 Processed: layout/_widget/recent_comments.ejs
+[debug] 12:37:46.296 Processed: layout/_widget/recent_posts.ejs
+[debug] 12:37:46.296 Processed: layout/_widget/tag.ejs
+[debug] 12:37:46.296 Processed: layout/_widget/tagcloud.ejs
+[debug] 12:37:46.296 Processed: layout/_widget/twitter_posts.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/after-footer.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/archive-post.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/archive.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/article.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/footer.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/google-analytics.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/head.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/header.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/mobile-nav.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/sidebar.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/post/category.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/post/date.ejs
+[debug] 12:37:46.296 Processed: layout/_partial/post/gallery.ejs
+[debug] 12:37:46.297 Processed: layout/_partial/post/nav.ejs
+[debug] 12:37:46.297 Processed: layout/_partial/post/tag.ejs
+[debug] 12:37:46.297 Processed: layout/_partial/post/title.ejs
+[debug] 12:37:46.307 Theme config loaded
+[debug] 12:37:46.307 Processed: _config.yml
+[debug] 12:37:46.308 Processed: languages/de.yml
+[debug] 12:37:46.308 Processed: languages/default.yml
+[debug] 12:37:46.309 Processed: languages/ru.yml
+[debug] 12:37:46.309 Processed: languages/zh-CN.yml
+[debug] 12:37:46.310 Processed: languages/zh-TW.yml
+[error] 12:37:47.669 HexoError: Process failed: _posts/about-this-blog.md
+Error: Unexpected tag "/images/test/python_install1.PNG" on line 4 in file /home/liweicheng/Github/blog_source/source/_posts/about-this-blog.md.
+    at Object.exports.throwError (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/utils.js:183:9)
+    at parseTag (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/parser.js:543:13)
+    at /home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/parser.js:638:15
+    at Object.exports.each (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/utils.js:45:11)
+    at Object.exports.parse (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/parser.js:622:9)
+    at parse (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/swig.js:349:19)
+    at precompile (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/swig.js:479:23)
+    at compile (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/swig.js:584:16)
+    at Object.render (/home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/node_modules/swig/lib/swig.js:513:17)
+    at /home/liweicheng/nvm/v0.10.28/lib/node_modules/hexo/lib/post/render.js:61:29
+
+[debug] 12:37:47.674 Processed: _posts/learning-mockito.md
+[debug] 12:37:47.674 Cache saved
+[debug] 12:37:47.675 Processed: _posts/python-basic.md
+[debug] 12:37:47.675 Processed: _posts/python-module-package.md

@@ -74,10 +74,10 @@ disqus_shortname: mutsughost1
 Plugins:
 - hexo-generator-feed
 - hexo-generator-sitemap
-
+- hexo-local-image
 
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: light
+theme: landscape
 exclude_generator:
 
 # Deployment
@@ -85,3 +85,4 @@ deploy:
   type: github
   repository: git@github.com:MutsuGhost1/MutsuGhost1.github.io.git
   branch: master
+

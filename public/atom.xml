@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Pursue excellence, and success will follow, pants down]]></subtitle>
   <link href="http://mutsughost1.github.io//atom.xml" rel="self"/>
   <link href="http://mutsughost1.github.io/"/>
-  <updated>2014-06-01T21:25:48.363Z</updated>
+  <updated>2014-06-02T05:03:29.072Z</updated>
   <id>http://mutsughost1.github.io//</id>
   <author>
     <name><![CDATA[MutsuGhost1]]></name>
@@ -16,8 +16,9 @@
     <link href="http://mutsughost1.github.io/2014/05/18/learning-mockito/"/>
     <id>http://mutsughost1.github.io/2014/05/18/learning-mockito/</id>
     <published>2014-05-18T00:48:44.000Z</published>
-    <updated>2014-06-01T21:10:37.000Z</updated>
-    <content type="html"><![CDATA[<ul>
+    <updated>2014-06-02T04:15:58.000Z</updated>
+    <content type="html"><![CDATA[<p><a name="table"></a></p>
+<ul>
 <li><h2 id="Learning_Mockito_with_examples">Learning Mockito with examples</h2>
 <ol>
 <li><strong><a href="#1">Verify some behavior (ignore any return value)</a></strong></li>
@@ -30,7 +31,7 @@
 <li><strong><a href="#8">Stubbing consecutive calls</a></strong></li>
 <li><strong><a href="#9">Stubbing with callbacks</a></strong></li>
 <li><strong><a href="#10">doReturn()|doThrow()|doAnswer()|doNoting()|doCallRealMethod() family of methods</a></strong></li>
-<li><strong><a href="#11">reset mock</a></strong></li>
+<li><strong><a href="#11">Reset mock</a></strong></li>
 <li><strong><a href="#12">Capturing Argument</a></strong></li>
 <li><strong><a href="#13">Changing default return values of unstubbed invocations</a></strong></li>
 <li><strong><a href="#14">Inject mock/spy object into tested target</a></strong></li>
@@ -65,7 +66,11 @@
 </ul>
 <hr>
 <p><a name="1"></a></p>
-<h3 id="verify_somw_behavior_(ignore_any_return_value)">verify somw behavior (ignore any return value)</h3>
+<h2 id="Verify_somw_behavior_(ignore_any_return_value)">Verify somw behavior (ignore any return value)</h2>
+<ul>
+<li>&#x5982;&#x679C;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; method, &#x4E0D;&#x9700;&#x8981;&#x7279;&#x5B9A;&#x7684; return value, &#x6216;&#x662F;&#x6C92;&#x6709; return value, &#x5247;&#x76F4;&#x63A5;&#x4F7F;&#x7528; default stubbing &#x7684;&#x884C;&#x70BA;.</li>
+<li>&#x4F7F;&#x7528; verify + times &#x4F86;&#x9A57;&#x8B49;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; method &#x662F;&#x5426;&#x6709;&#x88AB;&#x547C;&#x53EB;&#x5230;(&#x5305;&#x542B;&#x547C;&#x53EB;&#x6642;&#x53C3;&#x6578;&#x70BA;&#x4F55; &#x2026; etc), &#x4E14;&#x547C;&#x53EB;&#x4E86;&#x5E7E;&#x6B21;. </li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="literal">void</span> test01(){
 
@@ -94,9 +99,14 @@
     verify(mockedList, times(<span class="number">2</span>))<span class="built_in">.</span>add(<span class="string">&quot;one&quot;</span>);
     verify(mockedList, times(<span class="number">2</span>))<span class="built_in">.</span>clear();
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="2"></a></p>
-<h3 id="verify_some_behavior_with_stubbing_the_return_value">verify some behavior with stubbing the return value</h3>
+<h2 id="Verify_some_behavior_with_stubbing_the_return_value">Verify some behavior with stubbing the return value</h2>
+<ul>
+<li>&#x5982;&#x679C;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; method, &#x9700;&#x8981;&#x7279;&#x5B9A;&#x7684; return value, &#x5247;&#x5FC5;&#x9808;&#x6539;&#x8B8A; default stubbing &#x7684;&#x884C;&#x70BA;</li>
+<li>&#x900F;&#x904E; when(&#x2026;).thenReturn(&#x2026;) &#x4F86;&#x6539;&#x8B8A; default stubbing &#x7684;&#x884C;&#x70BA;</li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test02</span>(){
     <span class="comment">// Arrange</span>
@@ -118,9 +128,13 @@
 </code></pre><p><strong>Output:</strong></p>
 <pre><code><span class="tag">test02</span><span class="pseudo">:firstfirst</span>
 <span class="tag">test02</span><span class="pseudo">:firstfirst</span>
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="3"></a></p>
-<h3 id="verify_unstubbing_behavior">verify unstubbing behavior</h3>
+<h2 id="Verify_unstubbing_behavior">Verify unstubbing behavior</h2>
+<ul>
+<li>Default stubbing &#x7684;&#x884C;&#x70BA;, &#x56DE;&#x50B3;&#x578B;&#x5225; Object &#x5C0D;&#x61C9;&#x5230; null, primitive type &#x7684; int &#x5C0D;&#x61C9;&#x5230; 0 &#x2026; etc</li>
+</ul>
 <pre><code><span class="property">@SuppressWarnings</span>(<span class="string">&quot;unchecked&quot;</span>)
 public <span class="reserved">void</span> test03(){
     <span class="regexp">//</span> Arrange
@@ -139,9 +153,15 @@ public <span class="reserved">void</span> test03(){
 }</span>
 </code></pre><p><strong>Output:</strong></p>
 <pre><code>test03:<span class="keyword">null</span>
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="4"></a></p>
-<h3 id="argument_matching_using_default_matcher">argument matching using default matcher</h3>
+<h2 id="Argument_matching_using_default_matcher">Argument matching using default matcher</h2>
+<ul>
+<li>&#x5728;&#x66FF;&#x63DB; default stubbing &#x884C;&#x70BA;&#x6642;, &#x91DD;&#x5C0D;&#x53C3;&#x6578;&#x7684;&#x90E8;&#x4EFD;, &#x53EF;&#x5229;&#x7528; argument matching &#x7684;&#x65B9;&#x5F0F;, &#x4F86;&#x4F5C;&#x66F4;&#x5927;&#x7BC4;&#x570D;&#x7684; matching</li>
+<li>&#x5728;&#x9A57;&#x8B49;&#x88AB;&#x4F9D;&#x8CF4; method &#x88AB;&#x547C;&#x53EB;&#x5E7E;&#x6B21;&#x6642;, &#x91DD;&#x5C0D;&#x53C3;&#x6578;&#x7684;&#x90E8;&#x4EFD;, &#x53EF;&#x5229;&#x7528; argument matching &#x7684;&#x65B9;&#x5F0F;, &#x4F86;&#x4F5C;&#x66F4;&#x5927;&#x7BC4;&#x570D;&#x7684; matching</li>
+<li>anyInt() &#x662F;&#x4E00;&#x500B;&#x7CFB;&#x7D71;&#x5DF2;&#x7D93;&#x5BEB;&#x597D;&#x7684; argument matcher, &#x8868;&#x793A;&#x53C3;&#x6578;&#x70BA;&#x4EFB;&#x4F55; int</li>
+</ul>
 <pre><code><span class="comment">// Argument Matching Using Default Matcher</span>
 @SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test04</span>(){
@@ -169,8 +189,15 @@ public <span class="reserved">void</span> test03(){
 <span class="attr_selector">[7]</span><span class="pseudo">:stubbing</span> <span class="tag">string</span>
 <span class="attr_selector">[8]</span><span class="pseudo">:stubbing</span> <span class="tag">string</span>
 <span class="attr_selector">[9]</span><span class="pseudo">:stubbing</span> <span class="tag">string</span>
-</code></pre><hr>
-<h3 id="argument_matching_using_customized_matcher">argument matching using customized matcher</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="Argument_matching_using_customized_matcher">Argument matching using customized matcher</h2>
+<ul>
+<li>&#x5728;&#x66FF;&#x63DB; default stubbing &#x884C;&#x70BA;&#x6642;, &#x91DD;&#x5C0D;&#x53C3;&#x6578;&#x7684;&#x90E8;&#x4EFD;, &#x53EF;&#x5229;&#x7528; argument matching &#x7684;&#x65B9;&#x5F0F;, &#x4F86;&#x4F5C;&#x66F4;&#x5927;&#x7BC4;&#x570D;&#x7684; matching</li>
+<li>&#x5728;&#x9A57;&#x8B49;&#x88AB;&#x4F9D;&#x8CF4; method &#x88AB;&#x547C;&#x53EB;&#x5E7E;&#x6B21;&#x6642;, &#x91DD;&#x5C0D;&#x53C3;&#x6578;&#x7684;&#x90E8;&#x4EFD;, &#x53EF;&#x5229;&#x7528; argument matching &#x7684;&#x65B9;&#x5F0F;, &#x4F86;&#x4F5C;&#x66F4;&#x5927;&#x7BC4;&#x570D;&#x7684; matching</li>
+<li>listOfTwoElements() &#x662F;&#x4E00;&#x500B;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x5DF1;&#x5BEB;&#x7684; argument matcher, &#x8868;&#x793A;&#x53C3;&#x6578;&#x5FC5;&#x9808;&#x70BA; size() == 2 &#x7684; List</li>
+<li>&#x53EA;&#x8981;&#x6709;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x662F;&#x4F7F;&#x7528; argument matcher, &#x6240;&#x6709;&#x53C3;&#x6578;&#x90FD;&#x5FC5;&#x9808;&#x4F7F;&#x7528; argument matcher</li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;rawtypes&quot;</span>)
 <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">IsListOfTwoElements</span> <span class="keyword">extends</span> <span class="title">ArgumentMatcher</span>&lt;<span class="title">List</span>&gt;{</span>
     @Override
@@ -199,9 +226,13 @@ public <span class="reserved">void</span> test03(){
     <span class="comment">// Assert</span>
     verify(mockedList).addAll(listOfTwoElements());
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="5"></a></p>
-<h3 id="verify_exact_number_of_invocation">verify exact number of invocation</h3>
+<h2 id="Verify_exact_number_of_invocation">Verify exact number of invocation</h2>
+<ul>
+<li>&#x6AA2;&#x67E5;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; method, &#x88AB;&#x547C;&#x53EB;&#x4E86;&#x5E7E;&#x6B21;, &#x81F3;&#x5C11;&#x88AB;&#x547C;&#x53EB;&#x4E86;&#x5E7E;&#x6B21;, &#x6C92;&#x6709;&#x88AB;&#x547C;&#x53EB; &#x2026; &#x7B49;</li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="literal">void</span> test06(){
     <span class="comment">// Arrange</span>
@@ -227,9 +258,14 @@ public <span class="reserved">void</span> test03(){
     verify(mockedList, atLeast(<span class="number">2</span>))<span class="built_in">.</span>add(<span class="string">&quot;two&quot;</span>);
     verify(mockedList, atMost(<span class="number">5</span>))<span class="built_in">.</span>add(<span class="string">&quot;three&quot;</span>);
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="6"></a></p>
-<h3 id="verification_in_order,_using_single_mock">verification in order, using single mock</h3>
+<h2 id="Verification_in_order,_using_single_mock">Verification in order, using single mock</h2>
+<ul>
+<li>&#x4F7F;&#x7528; inOrder &#x4F86;&#x6AA2;&#x8996;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; methods &#x4E4B;&#x9593;&#x88AB;&#x547C;&#x53EB;&#x7684;&#x9806;&#x5E8F;</li>
+<li>&#x6B64;&#x4F8B;&#x91DD;&#x5C0D;&#x4E00;&#x500B; object &#x7684; methods &#x4F86;&#x4F5C;&#x9A57;&#x8B49; </li>
+</ul>
 <pre><code><span class="keyword">public</span> <span class="literal">void</span> test07(){
     <span class="comment">// Arrange</span>
     <span class="comment">// Create the mock object, even it&apos;s an interface</span>
@@ -244,8 +280,13 @@ public <span class="reserved">void</span> test03(){
     inOrder<span class="built_in">.</span>verify(singleMock)<span class="built_in">.</span>add(<span class="string">&quot;one&quot;</span>);
     inOrder<span class="built_in">.</span>verify(singleMock)<span class="built_in">.</span>add(<span class="string">&quot;two&quot;</span>);
 }
-</code></pre><hr>
-<h3 id="verification_in_order,_using_multiple_mock">verification in order, using multiple mock</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="Verification_in_order,_using_multiple_mock">Verification in order, using multiple mock</h2>
+<ul>
+<li>&#x4F7F;&#x7528; inOrder &#x4F86;&#x6AA2;&#x8996;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; methods &#x4E4B;&#x9593;&#x88AB;&#x547C;&#x53EB;&#x7684;&#x9806;&#x5E8F;</li>
+<li>&#x6B64;&#x4F8B;&#x91DD;&#x5C0D;&#x591A;&#x500B; objects &#x7684; methods &#x4F86;&#x4F5C;&#x9A57;&#x8B49; </li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="literal">void</span> test08(){
     <span class="comment">// Arrange</span>
@@ -270,9 +311,13 @@ public <span class="reserved">void</span> test03(){
     inOrder<span class="built_in">.</span>verify(firstMock)<span class="built_in">.</span>add(<span class="string">&quot;three&quot;</span>);
     inOrder<span class="built_in">.</span>verify(secondMock)<span class="built_in">.</span>add(<span class="string">&quot;four&quot;</span>);
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="7"></a></p>
-<h3 id="finding_redundant_invocations">finding redundant invocations</h3>
+<h2 id="Finding_redundant_invocations">Finding redundant invocations</h2>
+<ul>
+<li>&#x900F;&#x904E; verifyNoMoreInteraction(&#x2026;) &#x9A57;&#x8B49;, &#x662F;&#x5426;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; object &#x4E2D;, &#x6240;&#x6709;&#x88AB;&#x547C;&#x53EB;&#x7684; methods &#x90FD;&#x88AB; verify &#x904E;&#x4E86;</li>
+</ul>
 <pre><code><span class="keyword">public</span> <span class="literal">void</span> test09(){
     <span class="comment">// Arrange</span>
     <span class="comment">// Create the mock object, even it&apos;s an interface</span>
@@ -288,9 +333,14 @@ public <span class="reserved">void</span> test03(){
 
     verifyNoMoreInteractions(mockedList);
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="8"></a></p>
-<h3 id="stubbing_consecutive_calls_(iterator-style_stubbing)">stubbing consecutive calls (iterator-style stubbing)</h3>
+<h2 id="Stubbing_consecutive_calls_(iterator-style_stubbing)">Stubbing consecutive calls (iterator-style stubbing)</h2>
+<ul>
+<li>&#x4E00;&#x822C;&#x4F86;&#x8AAA;, &#x6700;&#x5F8C;&#x4E00;&#x6B21;&#x7684; stubbing &#x6703;&#x84CB;&#x904E;&#x4E4B;&#x524D;&#x7684;&#x884C;&#x70BA;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x9023;&#x7E8C;&#x5E7E;&#x6B21;&#x7684;&#x547C;&#x53EB;, &#x56DE;&#x50B3;&#x7684;&#x503C;&#x90FD;&#x4E0D;&#x4E00;&#x6A23;, &#x53EF;&#x4EE5;&#x8003;&#x616E; stubbing consecutive calls</li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="literal">void</span> test10(){
     <span class="comment">// Arrange</span>
@@ -306,9 +356,14 @@ public <span class="reserved">void</span> test03(){
     assertTrue(<span class="string">&quot;0&quot;</span><span class="built_in">.</span><span class="keyword">equals</span>(mockedList<span class="built_in">.</span>get(<span class="number">0</span>)));
     assertTrue(<span class="string">&quot;1&quot;</span><span class="built_in">.</span><span class="keyword">equals</span>(mockedList<span class="built_in">.</span>get(<span class="number">0</span>)));
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="9"></a></p>
-<h3 id="stubbing_with_callbacks">stubbing with callbacks</h3>
+<h2 id="Stubbing_with_callbacks">Stubbing with callbacks</h2>
+<ul>
+<li>&#x7576;&#x547C;&#x53EB;&#x5230;&#x67D0;&#x500B;&#x88AB;&#x4F9D;&#x8CF4;&#x7684; method &#x6642;, &#x4F60;&#x60F3;&#x8981;&#x57F7;&#x884C;&#x4E00;&#x6BB5;&#x7279;&#x5B9A;&#x7684;&#x4EE3;&#x78BC;, &#x53EF;&#x4EE5;&#x8003;&#x616E; when(&#x2026;).thenAnswer(&#x2026;)</li>
+<li>&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x7528;&#x4F86;&#x6A21;&#x64EC; callback &#x884C;&#x70BA;</li>
+</ul>
 <pre><code><span class="comment">// stubbing with callback</span>
 <span class="comment">//   it can be used to simulate the response callback</span>
 <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test11</span>(){
@@ -329,9 +384,14 @@ public <span class="reserved">void</span> test03(){
     assertTrue(mock.asyncCall());
     verify(mock).asyncCall();
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="10"></a></p>
-<h3 id="doReturn_using_mock">doReturn using mock</h3>
+<h2 id="doReturn_using_mock">doReturn using mock</h2>
+<ul>
+<li>&#x60F3;&#x66FF;&#x63DB;&#x6389; default stubbing, &#x53E6;&#x4E00;&#x7A2E;&#x9078;&#x64C7;&#x65B9;&#x5F0F;&#x662F; doReturn(&#x2026;).when(&#x2026;).someMethod(&#x2026;)</li>
+<li>&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x7279;&#x5225;&#x9069;&#x5408; spy, &#x56E0;&#x70BA; spy &#x9810;&#x8A2D;&#x884C;&#x70BA;&#x662F;&#x547C;&#x53EB; real method, &#x6709;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x554F;&#x984C;</li>
+</ul>
 <pre><code><span class="comment">// doReturn using mock</span>
 <span class="keyword">public</span> <span class="literal">void</span> test12(){
     <span class="comment">// Arrange</span>
@@ -347,8 +407,13 @@ public <span class="reserved">void</span> test03(){
     assertTrue(<span class="string">&quot;one&quot;</span><span class="built_in">.</span><span class="keyword">equals</span>(mockedList<span class="built_in">.</span>get(<span class="number">0</span>)));
     verify(mockedList)<span class="built_in">.</span>get(<span class="number">0</span>);
 }
-</code></pre><hr>
-<h3 id="doReturn_using_spy">doReturn using spy</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="doReturn_using_spy">doReturn using spy</h2>
+<ul>
+<li>&#x60F3;&#x66FF;&#x63DB;&#x6389; default stubbing, &#x53E6;&#x4E00;&#x7A2E;&#x9078;&#x64C7;&#x65B9;&#x5F0F;&#x662F; doReturn(&#x2026;).when(&#x2026;).someMethod(&#x2026;)</li>
+<li>&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x7279;&#x5225;&#x9069;&#x5408; spy, &#x56E0;&#x70BA; spy &#x9810;&#x8A2D;&#x884C;&#x70BA;&#x662F;&#x547C;&#x53EB; real method, &#x6709;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x554F;&#x984C;</li>
+</ul>
 <pre><code><span class="comment">// doReturn using spy</span>
 <span class="keyword">public</span> <span class="literal">void</span> test13(){
     <span class="comment">// Arrange</span>
@@ -364,8 +429,12 @@ public <span class="reserved">void</span> test03(){
     assertTrue(<span class="string">&quot;one&quot;</span><span class="built_in">.</span><span class="keyword">equals</span>(spyList<span class="built_in">.</span>get(<span class="number">0</span>)));
     verify(spyList)<span class="built_in">.</span>get(<span class="number">0</span>);
 }
-</code></pre><hr>
-<h3 id="doThrow">doThrow</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="doThrow">doThrow</h2>
+<ul>
+<li>&#x8B93; method &#x88AB;&#x547C;&#x53EB;&#x6642;, &#x4E1F;&#x51FA;&#x7279;&#x5B9A;&#x7684; Exception</li>
+</ul>
 <pre><code><span class="comment">// doThrow</span>
 @SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test14</span>(){
@@ -383,8 +452,13 @@ public <span class="reserved">void</span> test03(){
         <span class="comment"><span class="xmlDocTag">///</span> pass</span>
     }
 }
-</code></pre><hr>
-<h3 id="doAnswer">doAnswer</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="doAnswer">doAnswer</h2>
+<ul>
+<li>when(&#x2026;).thenAnswer(&#x2026;) &#x7684;&#x53E6;&#x4E00;&#x7A2E;&#x66FF;&#x4EE3;&#x65B9;&#x6848;</li>
+<li>&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x7528;&#x4F86;&#x6A21;&#x64EC; callback &#x884C;&#x70BA;</li>
+</ul>
 <pre><code><span class="comment">// rewrite case 10 using doAnswer</span>
 <span class="annotation">@SuppressWarnings</span>(<span class="string">&quot;rawtypes&quot;</span>)
 <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test15</span>(){
@@ -408,8 +482,12 @@ public <span class="reserved">void</span> test03(){
 </code></pre><p><strong>Output:</strong></p>
 <pre><code><span class="attribute">test15</span>: <span class="string">answer callback</span>
 <span class="attribute">test15</span>: <span class="string">answer callback</span>
-</code></pre><hr>
-<h3 id="doNothing">doNothing</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="doNothing">doNothing</h2>
+<ul>
+<li>&#x4F7F;&#x7528; stubbing consecutive calls &#x6642;, &#x8B93;&#x7B2C;&#x4E00;&#x6B21; method call &#x4E0D;&#x4F5C;&#x4EFB;&#x4F55;&#x4E8B;&#x60C5;</li>
+</ul>
 <pre><code><span class="comment">// doNothing</span>
 <span class="comment">// it&apos;s rarely to use doNothing, the following is an example</span>
 <span class="annotation">@SuppressWarnings</span>(<span class="string">&quot;unchecked&quot;</span>)
@@ -430,8 +508,13 @@ public <span class="reserved">void</span> test03(){
 
     }
 }
-</code></pre><hr>
-<h3 id="doRealCall">doRealCall</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="doRealCall">doRealCall</h2>
+<ul>
+<li>&#x66FF;&#x63DB;&#x6389; default stubbing &#x884C;&#x70BA;, &#x8B93; mock object &#x547C;&#x53EB;&#x5176;&#x771F;&#x6B63;&#x7684; method</li>
+<li>&#x5FC5;&#x9808;&#x70BA; concrete class </li>
+</ul>
 <pre><code><span class="keyword">private</span> <span class="keyword">class</span> Util2{
     <span class="keyword">public</span> String <span class="title">A</span>(){
         <span class="keyword">return</span> <span class="string">&quot;A&quot;</span>;
@@ -460,9 +543,13 @@ public <span class="reserved">void</span> test03(){
     when(mockUtil2.AB()).thenCallRealMethod();
     assertTrue(<span class="string">&quot;AB&quot;</span>.equals(mockUtil2.AB()));
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="11"></a></p>
-<h3 id="reset_mock">reset mock</h3>
+<h2 id="Reset_mock">Reset mock</h2>
+<ul>
+<li>&#x5C07; mock object &#x8A2D;&#x7F6E;&#x70BA;&#x521D;&#x59CB;&#x72C0;&#x614B;</li>
+</ul>
 <pre><code><span class="comment">// reset mock</span>
 @SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="literal">void</span> test18(){
@@ -477,9 +564,13 @@ public <span class="reserved">void</span> test03(){
     <span class="comment">// Assert</span>
     verify(mockedList, never())<span class="built_in">.</span>get(<span class="number">0</span>);
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="12"></a></p>
-<h3 id="capturing_arguments">capturing arguments</h3>
+<h2 id="Capturing_arguments">Capturing arguments</h2>
+<ul>
+<li>&#x5C07; method invocation &#x6642;&#x7684;&#x53C3;&#x6578; capture &#x4E0B;&#x4F86;, &#x7528;&#x65BC;&#x5F8C;&#x7E8C;&#x7684;&#x6BD4;&#x5C0D;</li>
+</ul>
 <pre><code><span class="comment">// capturing arguments for further assertions</span>
 @SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="literal">void</span> test19(){
@@ -503,9 +594,14 @@ public <span class="reserved">void</span> test03(){
 </code></pre><p><strong>Output:</strong></p>
 <pre><code>test19:[Hello World, <span class="constant">two</span>, <span class="constant">three</span>]
 test19:<span class="constant">three</span>
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="13"></a></p>
-<h3 id="change_the_default_value_of_unstubbed_invocations_(using_RETURNS_SMART_NULLS)">change the default value of unstubbed invocations (using RETURNS_SMART_NULLS)</h3>
+<h2 id="Change_the_default_value_of_unstubbed_invocations_(using_RETURNS_SMART_NULLS)">Change the default value of unstubbed invocations (using RETURNS_SMART_NULLS)</h2>
+<ul>
+<li>&#x5C07;&#x6240;&#x6709; default stubbing &#x884C;&#x70BA;&#x4E2D;, &#x56DE;&#x50B3; null &#x7269;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;, &#x6539;&#x70BA;&#x50B3;&#x4E00;&#x500B;&#x7279;&#x6B8A;&#x7269;&#x4EF6;, &#x4E00;&#x65E6;&#x88AB;&#x547C;&#x53EB;, &#x5C07;&#x5F15;&#x767C; SmartNullPointerException</li>
+<li>&#x53EF;&#x4EE5;&#x8B93; Developer &#x5F88;&#x6E05;&#x695A;&#x77E5;&#x9053;, &#x9019;&#x500B; NullPointerException &#x662F;&#x56E0;&#x70BA;&#x5FD8;&#x4E86; Mock &#x5C0E;&#x81F4;&#x7684;</li>
+</ul>
 <pre><code><span class="comment">// change the default value of unstubbed invocations</span>
 <span class="comment">//   use RETURNS_SMART_NULLS to know which null pointer exception</span>
 <span class="comment">//   is caused by unstubing</span>
@@ -522,8 +618,13 @@ test19:<span class="constant">three</span>
 
     }
 }
-</code></pre><hr>
-<h3 id="change_the_default_value_of_unstubbed_invocations_(using_CALLS_REAL_METHODS)">change the default value of unstubbed invocations (using CALLS_REAL_METHODS)</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="Change_the_default_value_of_unstubbed_invocations_(using_CALLS_REAL_METHODS)">Change the default value of unstubbed invocations (using CALLS_REAL_METHODS)</h2>
+<ul>
+<li>&#x5C07;&#x6240;&#x6709; default stubbing &#x7684;&#x884C;&#x70BA;, &#x90FD;&#x6539;&#x6210; real method calls</li>
+<li>&#x7B49;&#x65BC; spy ???</li>
+</ul>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> PartialMockObject {
     <span class="keyword">public</span> String <span class="title">m1</span>(){
         <span class="keyword">return</span> <span class="string">&quot;PartialMockObject:&quot;</span> + <span class="string">&quot;m1&quot;</span>;
@@ -571,9 +672,14 @@ test19:<span class="constant">three</span>
 <span class="attribute">test24</span>: <span class="string">spy.m1()=PartialMockObject:m1</span>
 <span class="attribute">test24</span>: <span class="string">spy.m2()=PartialMockObject:m3</span>
 <span class="attribute">test24</span>: <span class="string">spy.m3()=m3 is stubbed</span>
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="14"></a></p>
-<h3 id="inject_mock/spy_into_tested_target_(using_constructor)">inject mock/spy into tested target (using constructor)</h3>
+<h2 id="Inject_mock/spy_into_tested_target_(using_constructor)">Inject mock/spy into tested target (using constructor)</h2>
+<ul>
+<li>&#x91DD;&#x5C0D; SUT &#x4E2D;, &#x7279;&#x5B9A;&#x7684; fields &#x505A; Dependency Injection</li>
+<li>&#x53EA;&#x8981; Constructor &#x53C3;&#x6578;&#x578B;&#x5225;&#x4E00;&#x81F4;&#x65E2;&#x53EF;</li>
+</ul>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> SUT {
     List&lt;String&gt; mList;
 
@@ -609,8 +715,13 @@ SUT3&apos;</span>s <span class="function"><span class="keyword">constructor</spa
 SUT<span class="string">&apos;equals: (SUT)obj).mList =mList
 SUT&apos;</span><span class="keyword">equals</span>: mList =mList
 test21: <span class="keyword">end</span>
-</code></pre><hr>
-<h3 id="inject_mock/spy_into_tested_target_(using_setter)">inject mock/spy into tested target (using setter)</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="Inject_mock/spy_into_tested_target_(using_setter)">Inject mock/spy into tested target (using setter)</h2>
+<ul>
+<li>&#x91DD;&#x5C0D; SUT &#x4E2D;, &#x7279;&#x5B9A;&#x7684; fields &#x505A; Dependency Injection</li>
+<li>&#x53EA;&#x8981; setter &#x53C3;&#x6578;&#x578B;&#x5225;&#x4E00;&#x81F4;&#x65E2;&#x53EF;</li>
+</ul>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> SUT2 {
     List&lt;String&gt; mList2;
 
@@ -667,8 +778,13 @@ SUT3&apos;</span>s <span class="function"><span class="keyword">constructor</spa
 <span class="title">SUT2</span>&apos;<span class="title">s</span> <span class="title">equals</span>:</span> (SUT2)obj).mList2 =mList2
 SUT2<span class="string">&apos;s equals: mList2 =mList2
 test22: end</span>
-</code></pre><hr>
-<h3 id="inject_mock/spy_into_tested_target_(using_field)">inject mock/spy into tested target (using field)</h3>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
+<h2 id="Inject_mock/spy_into_tested_target_(using_field)">Inject mock/spy into tested target (using field)</h2>
+<ul>
+<li>&#x91DD;&#x5C0D; SUT &#x4E2D;, &#x7279;&#x5B9A;&#x7684; fields &#x505A; Dependency Injection</li>
+<li>&#x53EA;&#x8981;&#x6B04;&#x4F4D;&#x578B;&#x5225;/&#x540D;&#x7A31;&#x4E00;&#x81F4;&#x5373;&#x53EF;</li>
+</ul>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> SUT3 {
     List&lt;String&gt; mList3;
 
@@ -719,9 +835,14 @@ SUT3&apos;</span>s <span class="function"><span class="keyword">constructor</spa
 <span class="title">SUT3</span>&apos;<span class="title">s</span> <span class="title">equals</span>:</span> (SUT3)obj).mList3 =mList3
 SUT3<span class="string">&apos;s equals: mList3 =mList3
 test23: end</span>
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <p><a name="15"></a></p>
-<h3 id="verify_with_timeout">verify with timeout</h3>
+<h2 id="Verify_with_timeout">Verify with timeout</h2>
+<ul>
+<li>&#x6307;&#x5B9A; verify &#x7684; timeout &#x6642;&#x9593;, &#x9019;&#x7279;&#x5225;&#x9069;&#x5408;&#x65BC;&#x7B49;&#x5F85; async &#x7684;&#x7D50;&#x679C;</li>
+<li>&#x4E00;&#x65E6;&#x7D50;&#x679C;&#x6210;&#x7ACB;, verify &#x5C31;&#x6703;&#x7D50;&#x675F;, &#x4E0D;&#x6703; blocking &#x5230;&#x6642;&#x9593;&#x7D50;&#x675F;&#x624D;&#x9A57;&#x8B49;&#x7D50;&#x679C;</li>
+</ul>
 <pre><code>@SuppressWarnings(<span class="string">&quot;unchecked&quot;</span>)
 <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test25</span>(){
     <span class="comment">// Arrange</span>
@@ -754,7 +875,8 @@ test23: end</span>
     elapsed = end - start;
     assertTrue(elapsed &gt; <span class="number">2000</span>);
 }
-</code></pre><hr>
+</code></pre><p><a href="#table">&#x56DE;&#x76EE;&#x9304;</a></p>
+<hr>
 <ul>
 <li>[Reference]<ul>
 <li>[1] <a href="http://code.google.com/p/mockito/" target="_blank" rel="external">Mockito Official Website</a></li>
@@ -770,7 +892,7 @@ test23: end</span>
     <link href="http://mutsughost1.github.io/2013/09/29/python-basic/"/>
     <id>http://mutsughost1.github.io/2013/09/29/python-basic/</id>
     <published>2013-09-29T12:45:42.000Z</published>
-    <updated>2014-06-01T21:10:47.000Z</updated>
+    <updated>2014-06-02T04:59:55.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><a href="#python_folder_structure" title="Python&#x27;s Folder Structure">Python&#x2019;s Folder Structure</a></li>
 <li><a href="#yield_about" title="&#x95DC;&#x65BC; yield">&#x95DC;&#x65BC; <em>yield</em></a><ul>
@@ -802,12 +924,12 @@ test23: end</span>
 <p><a name="python_folder_structure"></a></p>
 <h1 id="Python&#x2019;s_Folder_Structure"><em>Python&#x2019;s Folder Structure</em></h1>
 <p>&#x5728;&#x958B;&#x59CB;&#x4F7F;&#x7528; Python &#x4E4B;&#x524D;, &#x5FC5;&#x9808;&#x5148;&#x5728;&#x7CFB;&#x7D71;&#x88DD;<a href="http://www.python.org/getit/" target="_blank" rel="external">&#x5B89;&#x88DD; Python &#x7684;&#x57F7;&#x884C;&#x74B0;&#x5883;</a>, &#x5B89;&#x88DD;&#x5B8C;&#x5F8C;&#x6703;&#x767C;&#x73FE;, &#x9810;&#x8A2D;&#x7684;&#x8CC7;&#x6599;&#x593E;&#x7D50;&#x69CB;&#x5982;&#x4E0B;:</p>
-<p><img src="http://MutsuGhost1.github.io/image/python_install1.PNG" alt=""></p>
+<p><img src="/images/python_install1.PNG" alt=""></p>
 <ul>
 <li>&#x5728; PythonXX &#x2014;&gt; Lib &#x76EE;&#x9304;&#x4E2D;, &#x53EF;&#x4EE5;&#x770B;&#x5230; Python Built-in Module &#x7684; Source Code  </li>
 <li>&#x5728; PythonXX &#x2014;&gt; Lib &#x2014;&gt; site-packages &#x76EE;&#x9304;&#x4E2D;, &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5B89;&#x88DD;&#x7684; 3rd Party Package</li>
 </ul>
-<p><img src="http://MutsuGhost1.github.io/image/python_install2.PNG" alt=""></p>
+<p><img src="/images/python_install2.PNG" alt=""></p>
 <hr>
 <p><a name="yield_about"></a></p>
 <h1 id="&#x95DC;&#x65BC;_yield_&#x7528;&#x6CD5;">&#x95DC;&#x65BC; <em>yield</em> &#x7528;&#x6CD5;</h1>
@@ -1211,7 +1333,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 </code></pre><p><a name="built_in_map"></a></p>
 <h2 id="Built-in_Function_map">Built-in Function map</h2>
 <p>&#x5728;&#x63A2;&#x8A0E; map function &#x4E4B;&#x524D;, &#x8B93;&#x6211;&#x5011;&#x5148;&#x56DE;&#x61B6;&#x4E00;&#x4E0B;&#x570B;&#x4E2D;&#x6642;&#x5019;&#x5B78;&#x904E;&#x7684;&#x6578;&#x5B78;&#x51FD;&#x6578;,<br>&#x5047;&#x8A2D;&#x51FD;&#x6578; f(x,y,..,z) &#x8F38;&#x5165;&#x4E00;&#x7D44; x1, y1, &#x2026;, z1 &#x53C3;&#x6578;&#x5F8C;, &#x53EF;&#x5F97;&#x5230;&#x4E00;&#x500B;&#x7D50;&#x679C; r1,<br>&#x73FE;&#x5728;&#x6211;&#x5011;&#x6E96;&#x5099; n &#x7D44;&#x8CC7;&#x6599; [(x1, y1, &#x2026;, z1), (x2, y2, &#x2026;, z2), &#x2026;, (xn, yn, &#x2026;, zn)]<br>&#x4F9D;&#x5E8F;&#x8F38;&#x5165;&#x7D66;&#x51FD;&#x6578; f(x,y,&#x2026;,z) &#x5F8C;,<br>&#x53EF;&#x5F97;&#x5230; n &#x500B;&#x7D50;&#x679C; [r1,r2, &#x2026;, rn], &#x5982;&#x4E0B;&#x5716;&#x6240;&#x793A;:</p>
-<p><img src="http://MutsuGhost1.github.io/image/python_map_function.PNG" alt=""></p>
+<p><img src="/images/python_map_function.PNG" alt=""></p>
 <p>&#x4E8B;&#x5BE6;&#x4E0A; map function &#x5C31;&#x662F;&#x57F7;&#x884C;&#x985E;&#x4F3C;&#x9019;&#x6A23;&#x7684;&#x6982;&#x5FF5;. map function &#x6709;&#x5169;&#x7D44; input &#x53C3;&#x6578;:  </p>
 <ol>
 <li>function (&#x5C0D;&#x61C9;&#x5230;&#x4E0A;&#x8FF0;&#x7684;&#x51FD;&#x6578; f)  </li>
@@ -1268,7 +1390,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 <p><a name="built_in_zip"></a></p>
 <h2 id="Built-in_Function_zip">Built-in Function zip</h2>
 <p>zip function &#x505A;&#x7684;&#x4E8B;&#x60C5;, &#x5982;&#x4E0B;&#x5716;:</p>
-<p><img src="http://MutsuGhost1.github.io/image/python_zip_function.PNG" alt=""></p>
+<p><img src="/images/python_zip_function.PNG" alt=""></p>
 <p>Ex:</p>
 <pre><code><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]
 <span class="prompt">&gt;&gt;&gt; </span>b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
@@ -1289,8 +1411,9 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
     <link href="http://mutsughost1.github.io/2013/09/29/about-this-blog/"/>
     <id>http://mutsughost1.github.io/2013/09/29/about-this-blog/</id>
     <published>2013-09-29T11:23:42.000Z</published>
-    <updated>2014-06-01T20:53:04.000Z</updated>
-    <content type="html"><![CDATA[<p>&#x9019;&#x500B; blog &#x662F;&#x4F7F;&#x7528; <a href="http://zespia.tw/hexo/" title="hexo" target="_blank" rel="external">hexo</a> &#x9019;&#x5957;&#x8EDF;&#x9AD4;&#x7522;&#x751F;&#x7684;.<br>&#x4E3B;&#x8981;&#x53C3;&#x8003;&#x4E86;&#x4EE5;&#x4E0B;&#x9023;&#x7D50;:<br><a id="more"></a></p>
+    <updated>2014-06-02T04:57:13.000Z</updated>
+    <content type="html"><![CDATA[<p>&#x9019;&#x500B; blog &#x662F;&#x4F7F;&#x7528; <a href="http://zespia.tw/hexo/" title="hexo" target="_blank" rel="external">hexo</a> &#x9019;&#x5957;&#x8EDF;&#x9AD4;&#x7522;&#x751F;&#x7684;.<br>&#x4E3B;&#x8981;&#x53C3;&#x8003;&#x4E86;&#x4EE5;&#x4E0B;&#x9023;&#x7D50;:</p>
+<p><a id="more"></a></p>
 <ol>
 <li><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">hexo &#x7CFB;&#x5217;&#x6559;&#x7A0B;</a>  </li>
 <li><a href="http://code.kpman.cc/2013/04/28/%E5%AE%A2%E8%A3%BD%E5%8C%96hexo-light-theme/" target="_blank" rel="external">&#x81EA;&#x8A02; RSS &#x8207;&#x65B0;&#x589E; Disqus &#x7559;&#x8A00;&#x677F;</a>  <ul>
@@ -1299,6 +1422,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 </li>
 <li><a href="http://www.authormedia.com/how-to-add-a-twitter-widget-to-your-sidebar/" target="_blank" rel="external">&#x65B0;&#x589E; Twitter Widget</a>  </li>
 <li><a href="http://zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">&#x7522;&#x751F; SiteMap</a></li>
+<li><a href="http://zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">&#x5D4C;&#x5165;&#x5716;&#x7247;</a></li>
 </ol>
 <p>&#x6B64;&#x5916;, &#x70BA;&#x4E86;&#x8B93; Website &#x80FD;&#x5920;&#x5229;&#x7528; Google &#x505A;&#x7AD9;&#x5167;&#x641C;&#x5C0B;  </p>
 <ol>
@@ -1322,21 +1446,22 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
     <link href="http://mutsughost1.github.io/2013/09/27/python-oop-exception/"/>
     <id>http://mutsughost1.github.io/2013/09/27/python-oop-exception/</id>
     <published>2013-09-27T06:55:04.000Z</published>
-    <updated>2014-06-01T21:11:07.000Z</updated>
+    <updated>2014-06-02T03:00:35.000Z</updated>
     <content type="html"><![CDATA[<ul>
-<li>Python OOP</li>
-<li>Constructor/Destructor</li>
-<li>Class/Instance Members</li>
-<li>Access Control in Python OOP</li>
-<li>Inheritance</li>
-<li>Polymorphism</li>
-<li>Operator Overloading</li>
-<li>Function Overloading</li>
-<li>Object Types in Python</li>
+<li><a href="#python_oop" title="Python OOP">Python OOP</a></li>
+<li><a href="#constructor_destructor" title="Constructor/Destructor">Constructor/Destructor</a></li>
+<li><a href="#class_instance_members" title="Class/Instance Members">Class/Instance Members</a></li>
+<li><a href="#access_control" title="Access Control in Python OOP">Access Control in Python OOP</a></li>
+<li><a href="#inheritance" title="Inheritance">Inheritance</a></li>
+<li><a href="#polymorphism" title="Polymorphism">Polymorphism</a></li>
+<li><a href="#operator_overloading" title="Operator Overloading">Operator Overloading</a></li>
+<li><a href="#function_overloading" title="Function Overloading">Function Overloading</a></li>
+<li><a href="#object_types_python" title="Object Types in Python">Object Types in Python</a></li>
 <li>Check relationship between class and instance</li>
 </ul>
 <p><a id="more"></a></p>
 <hr>
+<p><a name="python_oop"></a></p>
 <h1 id="Python_OOP">Python OOP</h1>
 <p>Python &#x8A9E;&#x8A00;, &#x672C;&#x8EAB;&#x4E5F;&#x652F;&#x63F4; <strong>O</strong>bject <strong>O</strong>riented <strong>P</strong>rogramming &#x9019;&#x6A23;&#x7684; Programming Pradigm.<br>&#x8A9E;&#x6CD5;&#x4E0A;, &#x662F;&#x63A1;&#x53D6;&#x985E;&#x4F3C; C++ &#x8207; Modula-3 &#x7684;&#x8A9E;&#x6CD5;.  </p>
 <p>&#x4E00;&#x500B;&#x6700;&#x7C21;&#x55AE;&#x7684; class definition &#x5982;&#x4E0B;&#xFF1A;</p>
@@ -1377,6 +1502,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 <span class="class"><span class="keyword">class</span> <span class="title">newStyleClass</span> <span class="params">(object)</span>:</span>
 <span class="keyword">pass</span>
 </code></pre><hr>
+<p><a name="constructor_destructor"></a></p>
 <h1 id="Constructor/Destructor">Constructor/Destructor</h1>
 <p>&#x5148;&#x524D;&#x63D0;&#x5230;, &#x5B9A;&#x4E00;&#x500B;&#x6700;&#x7C21;&#x55AE;&#x7684; new style class, &#x5982;&#x4E0B;:</p>
 <pre><code><span class="comment">#define a simplest class named &quot;Employee&quot;</span>
@@ -1393,6 +1519,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
         Employee.empCount -= <span class="number">1</span>
 </code></pre><p>&#x4E5F;&#x8A31;&#x6709;&#x4EBA;&#x6703;&#x554F;, &#x5728;&#x6709; GC &#x6A5F;&#x5236;&#x7684;&#x8A9E;&#x8A00;&#x4E2D;, Destructor &#x5B58;&#x5728;&#x7684;&#x76EE;&#x7684;&#x662F;?<br>&#x901A;&#x5E38; Destructor &#x7684;&#x5B58;&#x5728;, &#x5C31;&#x662F;&#x8B93; Object &#x80FD;&#x63D0;&#x65E9;&#x91CB;&#x653E;&#x5360;&#x7528;&#x7684;&#x8CC7;&#x6E90;.   </p>
 <hr>
+<p><a name="class_instance_members"></a></p>
 <h1 id="Class/Instance_Memebers">Class/Instance Memebers</h1>
 <p>&#x63A5;&#x4E0B;&#x4F86;, &#x6211;&#x5011;&#x60F3;&#x66FF; Class &#x52A0;&#x4E0A;&#x984D;&#x5916;&#x7684; Memebers, &#x5305;&#x542B;&#x4E86;:</p>
 <ul>
@@ -1474,6 +1601,7 @@ Salary=<span class="number">1000</span>
 <span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">1</span>
 <span class="label">EmployeeCount:</span> Employee<span class="preprocessor">.empCount</span> = <span class="number">0</span>
 </code></pre><hr>
+<p><a name="access_control"></a></p>
 <h1 id="Access_Control_in_Python_OOP">Access Control in Python OOP</h1>
 <p>&#x5728; Pyhon &#x4E2D;, &#x4E26;&#x6C92;&#x6709;&#x63D0;&#x4F9B; Modifier &#x4F86;&#x660E;&#x78BA;&#x7684;&#x4F86;&#x63A7;&#x5236; Attribute &#x7684;&#x5B58;&#x53D6;&#x6B0A;&#x9650;.<br>&#x76F8;&#x53CD;&#x7684;, Python &#x662F;&#x900F;&#x904E;&#x4E00;&#x7A2E; Naming Convention &#x4F86;&#x544A;&#x8A34; User, &#x9019;&#x500B; Attribute &#x662F; Private &#x7684;.<br>&#x96D6;&#x7136;&#x5982;&#x6B64;, User &#x60F3;&#x8981;&#x5F37;&#x5236;&#x5B58;&#x53D6;&#x6B64; Private Attribute, &#x9084;&#x662F;&#x53EF;&#x4EE5;&#x9054;&#x6210;&#x7684;.</p>
 <p>Ex:</p>
@@ -1494,6 +1622,7 @@ Salary=<span class="number">1000</span>
 <li>&#x4EE5; &#x201C;__&#x201D; &#x958B;&#x982D;&#x7684; Attribute, &#x53EA;&#x662F;&#x5728;&#x7FD2;&#x6163;&#x4E0A;&#x88AB;&#x8996;&#x70BA; Private &#x7684;, &#x4F46;&#x662F;&#x4ECD;&#x7136;&#x53EF;&#x5F37;&#x5236;&#x5B58;&#x53D6; </li>
 </ul>
 <hr>
+<p><a name="inheritance"></a></p>
 <h1 id="Inheritance">Inheritance</h1>
 <p>&#x5982;&#x679C;&#x6211;&#x5011;&#x60F3;&#x8981;&#x52A0;&#x5165;&#x4E00;&#x500B;&#x7279;&#x5225;&#x7684; Employee, &#x7A31;&#x70BA; Manager, &#x53EF;&#x4EE5;&#x8003;&#x616E;&#x7528;&#x7E7C;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#x9054;&#x6210;.<br>Manager &#x9664;&#x4E86;&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x500B; (is a) Emplyoee &#x5916;, &#x9084;&#x5FC5;&#x9808;&#x6EFF;&#x8DB3;:</p>
 <ul>
@@ -1541,6 +1670,7 @@ Salary=<span class="number">1000</span>
 <pre><code><span class="attribute">Manager: name</span>=<span class="string">John base_salary=1200 bonus=200
 Salary=1400</span>
 </code></pre><hr>
+<p><a name="polymorphism"></a></p>
 <h1 id="Polymorphism">Polymorphism</h1>
 <p>&#x7531;&#x65BC; Python &#x662F;&#x4E00;&#x500B; Weakly Type &#x7684;&#x8A9E;&#x8A00;, &#x56E0;&#x6B64;&#x5728;&#x8B8A;&#x6578;&#x7684;&#x5BA3;&#x544A;&#x6642;, &#x4E26;&#x4E0D;&#x6703;&#x660E;&#x78BA;&#x6307;&#x51FA;&#x7279;&#x5B9A;&#x7684;&#x578B;&#x5225;.<br>&#x56E0;&#x6B64;, &#x53EA;&#x8981;&#x6B64;&#x8B8A;&#x6578;&#x6240;&#x6307;&#x5411;&#x7684; Object, &#x7B26;&#x5408;&#x64CD;&#x4F5C;&#x6240;&#x9700;&#x8981;&#x7684;&#x5404;&#x9805; Attribute, &#x5247; Program &#x5373;&#x53EF;&#x6B63;&#x5E38;&#x904B;&#x4F5C;.  </p>
 <p>Ex:</p>
@@ -1556,6 +1686,7 @@ Salary=1400</span>
 <span class="attribute">Employee</span>: <span class="string">name=Peter base_salary=1000</span>
 </code></pre><p><strong>&#x4E8B;&#x5BE6;&#x4E0A;, Python &#x9019;&#x6A23;&#x7684;&#x505A;&#x6CD5;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x5F48;&#x6027;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;. &#x5728;&#x64B0;&#x5BEB;&#x7279;&#x5B9A;&#x6F14;&#x7B97;&#x6CD5;&#x7684;&#x6642;&#x5019;,<br>&#x53EA;&#x9700;&#x8981;&#x8003;&#x616E; Object &#x672C;&#x8EAB;&#x80FD;&#x63D0;&#x4F9B;&#x54EA;&#x4E9B; Attributes, &#x4E0D;&#x9700;&#x8981;&#x8003;&#x616E; Object &#x7684;&#x7E7C;&#x627F;&#x9AD4;&#x7CFB;.</strong></p>
 <hr>
+<p><a name="operator_overloading"></a></p>
 <h1 id="Operator_Overloading">Operator Overloading</h1>
 <p>Python &#x672C;&#x8EAB;&#x5B9A;&#x7FA9;&#x4E86;&#x4E00;&#x7D44; Built-in Operators, &#x8B93;&#x4F7F;&#x7528;&#x8005;&#x53EF;&#x4EE5; Overloading &#x5176;&#x884C;&#x70BA;.</p>
 <p>Ex:</p>
@@ -1602,6 +1733,7 @@ Salary=1400</span>
 <li><a href="http://docs.python.org/2/reference/expressions.html#evaluation-order" title="Operator Evaluation Order" target="_blank" rel="external">http://docs.python.org/2/reference/expressions.html#evaluation-order</a></li>
 </ul>
 <hr>
+<p><a name="function_overloading"></a></p>
 <h1 id="Function_Overloading">Function Overloading</h1>
 <p>Python &#x4E2D;, &#x4E26;&#x6C92;&#x6709;&#x63D0;&#x4F9B; Function Overloading &#x7684;&#x6A5F;&#x5236;. &#x4E00;&#x822C;&#x800C;&#x8A00;, &#x6703;&#x900F;&#x904E;&#x4E0B;&#x5217;&#x65B9;&#x5F0F;&#x4F86;&#x9054;&#x6210;:  </p>
 <ul>
@@ -1729,6 +1861,7 @@ Salary=<span class="number">1000</span>
 <p>Ex:</p>
 <p>Output:</p>
 <hr>
+<p><a name="object_types_python"></a></p>
 <h1 id="Object_Types_in_Python">Object Types in Python</h1>
 <p>&#x5728; Python &#x4E2D;, &#x6240;&#x6709;&#x7269;&#x4EF6;&#x7684;&#x578B;&#x5225;&#x53EF;&#x4EE5;&#x5206;&#x70BA;&#x4E0B;&#x5217; 3 &#x7A2E;:</p>
 <ol>
@@ -1758,7 +1891,7 @@ Salary=<span class="number">1000</span>
     <link href="http://mutsughost1.github.io/2013/09/27/python-module-package/"/>
     <id>http://mutsughost1.github.io/2013/09/27/python-module-package/</id>
     <published>2013-09-27T06:54:50.000Z</published>
-    <updated>2014-06-01T21:10:58.000Z</updated>
+    <updated>2014-06-02T05:00:19.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><a href="#what_module" title="What&#x27;s a python module ?">What&#x2019;s a python module ?</a></li>
 <li><a href="#why_module" title="Why use modules ?">Why use modules ?</a></li>
@@ -1969,13 +2102,13 @@ __all__ = [<span class="string">&quot;fib2&quot;</span>]
 <ul>
 <li>reload(module)</li>
 </ul>
-<p><img src="http://MutsuGhost1.github.io/image/python_reload_function.PNG" alt=""></p>
+<p><img src="/images/python_reload_function.PNG" alt=""></p>
 <p>&#x6240;&#x6709; reference &#x5230;&#x6B64; module &#x7684;&#x8B8A;&#x6578;, &#x90FD;&#x5C07;&#x53D7;&#x5F71;&#x97FF;</p>
 <hr>
 <p><a name="what_package"></a></p>
 <h1 id="What&#x2019;s_package_?">What&#x2019;s package ?</h1>
 <p>Package &#x7531;&#x4E00;&#x500B; Directory &#x6240;&#x69CB;&#x6210;, &#x88E1;&#x9762;&#x5305;&#x542B;&#x4E86; Python Module &#x6A94;&#x6848;, &#x4EE5;&#x53CA;&#x4E00;&#x500B;&#x540D;&#x7A31;&#x70BA; <strong>__ini__.py</strong> &#x7684;&#x6A94;&#x6848;.<br>&#x900F;&#x904E; <strong>__ini__.py</strong> &#x6A94;&#x6848;, Python Interpreter &#x624D;&#x6703;&#x5C07;&#x6B64; Directory &#x8996;&#x70BA;&#x4E00;&#x500B; Package.  </p>
-<p><img src="http://MutsuGhost1.github.io/image/python_package.PNG" alt=""></p>
+<p><img src="/images/python_package.PNG" alt=""></p>
 <p>&#x4E0A;&#x5716;&#x65E2;&#x70BA;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684; Package, &#x900F;&#x904E; import A.B &#x5247;&#x53EF; import package A &#x4E2D;&#x7684; module B.</p>
 <hr>
 <p><a name="why_package"></a></p>

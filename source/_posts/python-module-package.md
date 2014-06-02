@@ -257,7 +257,7 @@ Output:
 
 * reload(module)
 
-![](http://MutsuGhost1.github.io/image/python_reload_function.PNG)
+![](/images/python_reload_function.PNG)
 
 所有 reference 到此 module 的變數, 都將受影響
 
@@ -268,7 +268,7 @@ Output:
 Package 由一個 Directory 所構成, 裡面包含了 Python Module 檔案, 以及一個名稱為 **\_\_ini\_\_.py** 的檔案.  
 透過 **\_\_ini\_\_.py** 檔案, Python Interpreter 才會將此 Directory 視為一個 Package.  
 
-![](http://MutsuGhost1.github.io/image/python_package.PNG)
+![](/images/python_package.PNG)
 
 上圖既為一個簡單的 Package, 透過 import A.B 則可 import package A 中的 module B.
 

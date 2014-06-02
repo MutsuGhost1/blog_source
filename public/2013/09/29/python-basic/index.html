@@ -1,47 +1,41 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>Python Basic | MutsuGhost1&#39;s Blog</title>
-  <meta name="author" content="MutsuGhost1">
-  
-  <meta name="description" content="Python&amp;#x2019;s Folder Structure
-&amp;#x95DC;&amp;#x65BC; yield
-yield &amp;#x662F;&amp;#x70BA;&amp;#x4F55;&amp;#x800C;&amp;#x751F; ?
-yield &amp;#x7684;&amp;#x5404;&amp;#x7A2E;&amp;#x7528;&amp;#x6CD5;
-yield &amp;#x7684;&amp;#x57FA;&amp;#x672C;&amp;#x904B;&amp;#x4F5C;&amp;#x539F;&amp;#x7406;
-send(expression) - pass a value to generator
-throw(type[,value[,traceback]]) - raise exception inside generator
-close() - terminate the generator
-generator expression - &amp;#x5FEB;&amp;#x901F;&amp;#x7522;&amp;#x751F;&amp;#x4E00;&amp;#x500B; generator object
-
-
-Reference
-
-
-Python Scope &amp;#x6982;&amp;#x5FF5;
-&amp;#x5176;&amp;#x4ED6;
-List Comprehesion 
-Lambda expression
-Built-in Funtion map
-Built-in Funtion reduce
-Built-in Funtion filter
-Built-in Funtion zip">
-  
-  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="Python Basic"/>
-  <meta property="og:site_name" content="MutsuGhost1&#39;s Blog"/>
-
+  <meta name="description" content="Python&#x2019;s Folder Structure
+&#x95DC;&#x65BC; yield
+yield &#x662F;&#x70BA;&#x4F55;&#x800C;&#x751F; ?
+yield &#x7684;&#x5404;&#x7A2E;&#x7528;&#x6CD5;
+yield &#x7684;&#x57FA;&#x672C;&#x904B;&#x4F5C;&">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Basic">
+<meta property="og:url" content="http://mutsughost1.github.io//2013/09/29/python-basic/">
+<meta property="og:site_name" content="MutsuGhost1's Blog">
+<meta property="og:description" content="Python&#x2019;s Folder Structure
+&#x95DC;&#x65BC; yield
+yield &#x662F;&#x70BA;&#x4F55;&#x800C;&#x751F; ?
+yield &#x7684;&#x5404;&#x7A2E;&#x7528;&#x6CD5;
+yield &#x7684;&#x57FA;&#x672C;&#x904B;&#x4F5C;&">
+<meta property="og:image" content="/images/python_install1.PNG">
+<meta property="og:image" content="/images/python_install2.PNG">
+<meta property="og:image" content="/images/python_map_function.PNG">
+<meta property="og:image" content="/images/python_zip_function.PNG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Basic">
+<meta name="twitter:description" content="Python&#x2019;s Folder Structure
+&#x95DC;&#x65BC; yield
+yield &#x662F;&#x70BA;&#x4F55;&#x800C;&#x751F; ?
+yield &#x7684;&#x5404;&#x7A2E;&#x7528;&#x6CD5;
+yield &#x7684;&#x57FA;&#x672C;&#x904B;&#x4F5C;&">
   
-    <meta property="og:image" content="undefined"/>
   
-
-  <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="MutsuGhost1&#39;s Blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -57,54 +51,69 @@ Built-in Funtion zip">
 </script>
 
 </head>
-
-
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">MutsuGhost1&#39;s Blog</a></h1>
-  <h2><a href="/">Pursue excellence, and success will follow, pants down</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/atom.xml">RSS</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">MutsuGhost1&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Pursue excellence, and success will follow, pants down</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/atom.xml">RSS</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://mutsughost1.github.io/"></form>
+      </div>
+    </div>
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-basic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/09/29/python-basic/" class="article-date">
+  <time datetime="2013-09-29T12:45:42.000Z" itemprop="datePublished">9月 29 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
   </div>
-</div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-09-29T12:45:42.000Z"><a href="/2013/09/29/python-basic/">9月 29 2013</a></time>
-      
-      
-  
-    <h1 class="title">Python Basic</h1>
+    <h1 class="article-title" itemprop="name">
+      Python Basic
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <ul>
 <li><a href="#python_folder_structure" title="Python&#x27;s Folder Structure">Python&#x2019;s Folder Structure</a></li>
@@ -137,12 +146,12 @@ Built-in Funtion zip">
 <p><a name="python_folder_structure"></a></p>
 <h1 id="Python&#x2019;s_Folder_Structure"><em>Python&#x2019;s Folder Structure</em></h1>
 <p>&#x5728;&#x958B;&#x59CB;&#x4F7F;&#x7528; Python &#x4E4B;&#x524D;, &#x5FC5;&#x9808;&#x5148;&#x5728;&#x7CFB;&#x7D71;&#x88DD;<a href="http://www.python.org/getit/" target="_blank" rel="external">&#x5B89;&#x88DD; Python &#x7684;&#x57F7;&#x884C;&#x74B0;&#x5883;</a>, &#x5B89;&#x88DD;&#x5B8C;&#x5F8C;&#x6703;&#x767C;&#x73FE;, &#x9810;&#x8A2D;&#x7684;&#x8CC7;&#x6599;&#x593E;&#x7D50;&#x69CB;&#x5982;&#x4E0B;:</p>
-<p><img src="http://MutsuGhost1.github.io/image/python_install1.PNG" alt=""></p>
+<p><img src="/images/python_install1.PNG" alt=""></p>
 <ul>
 <li>&#x5728; PythonXX &#x2014;&gt; Lib &#x76EE;&#x9304;&#x4E2D;, &#x53EF;&#x4EE5;&#x770B;&#x5230; Python Built-in Module &#x7684; Source Code  </li>
 <li>&#x5728; PythonXX &#x2014;&gt; Lib &#x2014;&gt; site-packages &#x76EE;&#x9304;&#x4E2D;, &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5B89;&#x88DD;&#x7684; 3rd Party Package</li>
 </ul>
-<p><img src="http://MutsuGhost1.github.io/image/python_install2.PNG" alt=""></p>
+<p><img src="/images/python_install2.PNG" alt=""></p>
 <hr>
 <p><a name="yield_about"></a></p>
 <h1 id="&#x95DC;&#x65BC;_yield_&#x7528;&#x6CD5;">&#x95DC;&#x65BC; <em>yield</em> &#x7528;&#x6CD5;</h1>
@@ -546,7 +555,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 </code></pre><p><a name="built_in_map"></a></p>
 <h2 id="Built-in_Function_map">Built-in Function map</h2>
 <p>&#x5728;&#x63A2;&#x8A0E; map function &#x4E4B;&#x524D;, &#x8B93;&#x6211;&#x5011;&#x5148;&#x56DE;&#x61B6;&#x4E00;&#x4E0B;&#x570B;&#x4E2D;&#x6642;&#x5019;&#x5B78;&#x904E;&#x7684;&#x6578;&#x5B78;&#x51FD;&#x6578;,<br>&#x5047;&#x8A2D;&#x51FD;&#x6578; f(x,y,..,z) &#x8F38;&#x5165;&#x4E00;&#x7D44; x1, y1, &#x2026;, z1 &#x53C3;&#x6578;&#x5F8C;, &#x53EF;&#x5F97;&#x5230;&#x4E00;&#x500B;&#x7D50;&#x679C; r1,<br>&#x73FE;&#x5728;&#x6211;&#x5011;&#x6E96;&#x5099; n &#x7D44;&#x8CC7;&#x6599; [(x1, y1, &#x2026;, z1), (x2, y2, &#x2026;, z2), &#x2026;, (xn, yn, &#x2026;, zn)]<br>&#x4F9D;&#x5E8F;&#x8F38;&#x5165;&#x7D66;&#x51FD;&#x6578; f(x,y,&#x2026;,z) &#x5F8C;,<br>&#x53EF;&#x5F97;&#x5230; n &#x500B;&#x7D50;&#x679C; [r1,r2, &#x2026;, rn], &#x5982;&#x4E0B;&#x5716;&#x6240;&#x793A;:</p>
-<p><img src="http://MutsuGhost1.github.io/image/python_map_function.PNG" alt=""></p>
+<p><img src="/images/python_map_function.PNG" alt=""></p>
 <p>&#x4E8B;&#x5BE6;&#x4E0A; map function &#x5C31;&#x662F;&#x57F7;&#x884C;&#x985E;&#x4F3C;&#x9019;&#x6A23;&#x7684;&#x6982;&#x5FF5;. map function &#x6709;&#x5169;&#x7D44; input &#x53C3;&#x6578;:  </p>
 <ol>
 <li>function (&#x5C0D;&#x61C9;&#x5230;&#x4E0A;&#x8FF0;&#x7684;&#x51FD;&#x6578; f)  </li>
@@ -603,7 +612,7 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 <p><a name="built_in_zip"></a></p>
 <h2 id="Built-in_Function_zip">Built-in Function zip</h2>
 <p>zip function &#x505A;&#x7684;&#x4E8B;&#x60C5;, &#x5982;&#x4E0B;&#x5716;:</p>
-<p><img src="http://MutsuGhost1.github.io/image/python_zip_function.PNG" alt=""></p>
+<p><img src="/images/python_zip_function.PNG" alt=""></p>
 <p>Ex:</p>
 <pre><code><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]
 <span class="prompt">&gt;&gt;&gt; </span>b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]
@@ -617,126 +626,126 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 </code></pre>
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://mutsughost1.github.io/2013/09/29/python-basic/" data-id="xksub1mr1hryjwc6" class="article-share-link">Share</a>
       
-        
-  
-  <div class="categories">
-    <a href="/categories/Software/">Software</a>
-  </div>
-
-        
-  
-  <div class="tags">
-    <a href="/tags/Python/">Python</a>, <a href="/tags/Study-Group/">Study Group</a>
-  </div>
-
-        
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-    
-    
-      <a class="addthis_button_tweet"></a>
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
-
+        <a href="http://mutsughost1.github.io/2013/09/29/python-basic/#disqus_thread" class="article-comment-link">Comments</a>
       
-      <div class="clearfix"></div>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Study-Group/">Study Group</a></li></ul>
+
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/05/18/learning-mockito/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Mockito Basic
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/09/29/about-this-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">About This Blog</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-<section id="comment">
-  <h1 class="title">留言</h1>
+<section id="comments">
   <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
 </section>
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜尋">
-    <input type="hidden" name="q" value="site:mutsughost1.github.io/">
-  </form>
-</div>
-
+</section>
+        
+          <aside id="sidebar">
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Software/">Software</a><small>4</small></li>
-  
-  </ul>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/Blog/">Blog</a><small>1</small></li>
-  
-    <li><a href="/tags/Python/">Python</a><small>3</small></li>
-  
-    <li><a href="/tags/Software-Testing/">Software Testing</a><small>1</small></li>
-  
-    <li><a href="/tags/Study-Group/">Study Group</a><small>3</small></li>
-  
-  </ul>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">最新文章</h3>
-  <ul class="entry">
     
-      <li>
-        <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/29/python-basic/">Python Basic</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/29/about-this-blog/">About This Blog</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
-      </li>
-    
-      <li>
-        <a href="/2013/09/27/python-module-package/">Python Module Package</a>
-      </li>
-    
-  </ul>
-</div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Software-Testing/">Software Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study-Group/">Study Group</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
 
-  <div class="widget tag">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 10.00px;">Blog</a><a href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/Software-Testing/" style="font-size: 10.00px;">Software Testing</a><a href="/tags/Study-Group/" style="font-size: 20.00px;">Study Group</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">九月 2013</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/05/18/learning-mockito/">Mockito Basic</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/29/python-basic/">Python Basic</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/29/about-this-blog/">About This Blog</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/27/python-oop-exception/">Python OOP Exception</a>
+          </li>
+        
+          <li>
+            <a href="/2013/09/27/python-module-package/">Python Module Package</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <div class="widget tag">
   <h3 class="title">最新留言</h3>
   <ul class="entry">
   <script type="text/javascript" src="http://mutsughost1.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
   </ul>
 </div>
 
-
-  <div class="widget tag">
+  
+    <div class="widget tag">
   <h3 class="title">喃喃自語</h3>
   <ul class="entry">
   <a class="twitter-timeline" height="250" href="https://twitter.com/MutsuGhost1" data-widget-id="384199658408402944">@MutsuGhost1������</a>
@@ -745,41 +754,53 @@ print(g(<span class="number">5</span>, <span class="number">10</span>))
 </div>
 
 
+  
 </aside>
-    <div class="clearfix"></div>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 MutsuGhost1<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  &copy; 2014 MutsuGhost1
+    <a href="/" class="mobile-nav-link">Home</a>
   
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-<script type="text/javascript">
-var disqus_shortname = 'mutsughost1';
-
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'mutsughost1';
+  
+  var disqus_url = 'http://mutsughost1.github.io/2013/09/29/python-basic/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
 </script>
 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
 </body>
 </html>

@@ -3,8 +3,9 @@
   "version": "2.6.1",
   "private": true,
   "dependencies": {
+    "hexo-local-image": "0.0.2",
     "hexo-renderer-ejs": "*",
-    "hexo-renderer-stylus": "*",
-    "hexo-renderer-marked": "*"
+    "hexo-renderer-marked": "*",
+    "hexo-renderer-stylus": "*"
   }
 }

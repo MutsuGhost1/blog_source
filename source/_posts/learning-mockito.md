@@ -2,7 +2,7 @@ title: Mockito Basic
 date: 2014-05-18 08:48:44
 tags: Software Testing
 ---
-
+<a name=table></a>
 * ## Learning Mockito with examples ##
     1.  **[Verify some behavior (ignore any return value)](#1)**
     2.  **[Verify some behavior with stubbing the return value](#2)**
@@ -14,7 +14,7 @@ tags: Software Testing
     8.  **[Stubbing consecutive calls](#8)**
     9.  **[Stubbing with callbacks](#9)**
     10. **[doReturn()|doThrow()|doAnswer()|doNoting()|doCallRealMethod() family of methods](#10)**
-    11. **[reset mock](#11)**
+    11. **[Reset mock](#11)**
     12. **[Capturing Argument](#12)**
     13. **[Changing default return values of unstubbed invocations](#13)**
     14. **[Inject mock/spy object into tested target](#14)**
@@ -35,7 +35,10 @@ tags: Software Testing
 
 - - -
 <a name=1></a>
-### verify somw behavior (ignore any return value) ###
+## Verify somw behavior (ignore any return value)
+* 如果被依賴的 method, 不需要特定的 return value, 或是沒有 return value, 則直接使用 default stubbing 的行為.
+* 使用 verify + times 來驗證被依賴的 method 是否有被呼叫到(包含呼叫時參數為何 ... etc), 且呼叫了幾次. 
+
 
     @SuppressWarnings("unchecked")
     public void test01(){
@@ -66,9 +69,13 @@ tags: Software Testing
     	verify(mockedList, times(2)).clear();
     }
 
+[回目錄](#table)
 - - -
 <a name=2></a>
-### verify some behavior with stubbing the return value ###
+## Verify some behavior with stubbing the return value
+* 如果被依賴的 method, 需要特定的 return value, 則必須改變 default stubbing 的行為
+* 透過 when(...).thenReturn(...) 來改變 default stubbing 的行為
+
 
     @SuppressWarnings("unchecked")
     public void test02(){
@@ -94,9 +101,12 @@ tags: Software Testing
     test02:firstfirst
     test02:firstfirst
 
+[回目錄](#table)
 - - -
 <a name=3></a>
-### verify unstubbing behavior ###
+## Verify unstubbing behavior
+* Default stubbing 的行為, 回傳型別 Object 對應到 null, primitive type 的 int 對應到 0 ... etc
+
 
     @SuppressWarnings("unchecked")
     public void test03(){
@@ -119,9 +129,14 @@ tags: Software Testing
 
     test03:null
 
+[回目錄](#table)
 - - -
 <a name=4></a>
-### argument matching using default matcher ###
+## Argument matching using default matcher  
+* 在替換 default stubbing 行為時, 針對參數的部份, 可利用 argument matching 的方式, 來作更大範圍的 matching
+* 在驗證被依賴 method 被呼叫幾次時, 針對參數的部份, 可利用 argument matching 的方式, 來作更大範圍的 matching
+* anyInt() 是一個系統已經寫好的 argument matcher, 表示參數為任何 int
+
 
     // Argument Matching Using Default Matcher
     @SuppressWarnings("unchecked")
@@ -153,8 +168,14 @@ tags: Software Testing
     [8]:stubbing string
     [9]:stubbing string
 
+[回目錄](#table)
 - - -
-### argument matching using customized matcher ###
+## Argument matching using customized matcher  
+* 在替換 default stubbing 行為時, 針對參數的部份, 可利用 argument matching 的方式, 來作更大範圍的 matching
+* 在驗證被依賴 method 被呼叫幾次時, 針對參數的部份, 可利用 argument matching 的方式, 來作更大範圍的 matching
+* listOfTwoElements() 是一個使用者自己寫的 argument matcher, 表示參數必須為 size() == 2 的 List
+* 只要有一個參數是使用 argument matcher, 所有參數都必須使用 argument matcher
+
 
     @SuppressWarnings("rawtypes")
     private class IsListOfTwoElements extends ArgumentMatcher<List>{
@@ -185,9 +206,12 @@ tags: Software Testing
         verify(mockedList).addAll(listOfTwoElements());
     }
 
+[回目錄](#table)
 - - -
 <a name=5></a>
-### verify exact number of invocation ###
+## Verify exact number of invocation
+* 檢查被依賴的 method, 被呼叫了幾次, 至少被呼叫了幾次, 沒有被呼叫 ... 等
+
 
     @SuppressWarnings("unchecked")
     public void test06(){
@@ -215,10 +239,13 @@ tags: Software Testing
         verify(mockedList, atMost(5)).add("three");
     }
 
-
+[回目錄](#table)
 - - -
 <a name=6></a>
-### verification in order, using single mock ###
+## Verification in order, using single mock
+* 使用 inOrder 來檢視被依賴的 methods 之間被呼叫的順序
+* 此例針對一個 object 的 methods 來作驗證 
+
 
     public void test07(){
         // Arrange
@@ -235,8 +262,12 @@ tags: Software Testing
         inOrder.verify(singleMock).add("two");
     }
 
+[回目錄](#table)
 - - -
-### verification in order, using multiple mock ###
+## Verification in order, using multiple mock
+* 使用 inOrder 來檢視被依賴的 methods 之間被呼叫的順序
+* 此例針對多個 objects 的 methods 來作驗證 
+
 
     @SuppressWarnings("unchecked")
     public void test08(){
@@ -263,9 +294,12 @@ tags: Software Testing
         inOrder.verify(secondMock).add("four");
     }
 
+[回目錄](#table)
 - - -
 <a name=7></a>
-### finding redundant invocations ###
+## Finding redundant invocations
+* 透過 verifyNoMoreInteraction(...) 驗證, 是否被依賴的 object 中, 所有被呼叫的 methods 都被 verify 過了
+
 
     public void test09(){
         // Arrange
@@ -283,9 +317,13 @@ tags: Software Testing
         verifyNoMoreInteractions(mockedList);
     }
 
+[回目錄](#table)
 - - -
 <a name=8></a>
-### stubbing consecutive calls (iterator-style stubbing) ###
+## Stubbing consecutive calls (iterator-style stubbing)
+* 一般來說, 最後一次的 stubbing 會蓋過之前的行為
+* 如果你想要連續幾次的呼叫, 回傳的值都不一樣, 可以考慮 stubbing consecutive calls
+
 
     @SuppressWarnings("unchecked")
     public void test10(){
@@ -303,9 +341,13 @@ tags: Software Testing
         assertTrue("1".equals(mockedList.get(0)));
     }
 
+[回目錄](#table)
 - - -
 <a name=9></a>
-### stubbing with callbacks ###
+## Stubbing with callbacks
+* 當呼叫到某個被依賴的 method 時, 你想要執行一段特定的代碼, 可以考慮 when(...).thenAnswer(...)
+* 這種方式通常可以用來模擬 callback 行為
+
 
     // stubbing with callback
     //   it can be used to simulate the response callback
@@ -328,9 +370,13 @@ tags: Software Testing
         verify(mock).asyncCall();
     }
 
+[回目錄](#table)
 - - -
 <a name=10></a>
-### doReturn using mock ###
+## doReturn using mock
+* 想替換掉 default stubbing, 另一種選擇方式是 doReturn(...).when(...).someMethod(...)
+* 這種方式特別適合 spy, 因為 spy 預設行為是呼叫 real method, 有可能造成問題
+
 
     // doReturn using mock
     public void test12(){
@@ -348,8 +394,12 @@ tags: Software Testing
         verify(mockedList).get(0);
     }
 
+[回目錄](#table)
 - - -
-### doReturn using spy ###
+## doReturn using spy  
+* 想替換掉 default stubbing, 另一種選擇方式是 doReturn(...).when(...).someMethod(...)
+* 這種方式特別適合 spy, 因為 spy 預設行為是呼叫 real method, 有可能造成問題
+
 
     // doReturn using spy
     public void test13(){
@@ -367,8 +417,11 @@ tags: Software Testing
         verify(spyList).get(0);
     }
 
+[回目錄](#table)
 - - -
-### doThrow ###
+## doThrow
+* 讓 method 被呼叫時, 丟出特定的 Exception
+
 
     // doThrow
     @SuppressWarnings("unchecked")
@@ -388,8 +441,12 @@ tags: Software Testing
         }
     }
 
+[回目錄](#table)
 - - -
-### doAnswer ###
+## doAnswer
+* when(...).thenAnswer(...) 的另一種替代方案
+* 這種方式通常可以用來模擬 callback 行為
+
 
     // rewrite case 10 using doAnswer
     @SuppressWarnings("rawtypes")
@@ -417,8 +474,11 @@ tags: Software Testing
     test15: answer callback
     test15: answer callback
 
+[回目錄](#table)
 - - -
-### doNothing ###
+## doNothing
+* 使用 stubbing consecutive calls 時, 讓第一次 method call 不作任何事情
+
 
     // doNothing
     // it's rarely to use doNothing, the following is an example
@@ -441,8 +501,12 @@ tags: Software Testing
         }
     }
 
+[回目錄](#table)
 - - -
-### doRealCall ###
+## doRealCall
+* 替換掉 default stubbing 行為, 讓 mock object 呼叫其真正的 method
+* 必須為 concrete class 
+
 
     private class Util2{
         public String A(){
@@ -473,9 +537,12 @@ tags: Software Testing
         assertTrue("AB".equals(mockUtil2.AB()));
     }
 
+[回目錄](#table)
 - - -
 <a name=11></a>
-### reset mock ###
+## Reset mock
+* 將 mock object 設置為初始狀態
+
 
     // reset mock
     @SuppressWarnings("unchecked")
@@ -492,10 +559,12 @@ tags: Software Testing
         verify(mockedList, never()).get(0);
     }
 
-
+[回目錄](#table)
 - - -
 <a name=12></a>
-### capturing arguments##
+## Capturing arguments
+* 將 method invocation 時的參數 capture 下來, 用於後續的比對
+
 
     // capturing arguments for further assertions
     @SuppressWarnings("unchecked")
@@ -523,9 +592,13 @@ tags: Software Testing
     test19:[Hello World, two, three]
     test19:three
 
+[回目錄](#table)
 - - -
 <a name=13></a>
-### change the default value of unstubbed invocations (using RETURNS\_SMART\_NULLS)###
+## Change the default value of unstubbed invocations (using RETURNS\_SMART\_NULLS)
+* 將所有 default stubbing 行為中, 回傳 null 物件的方式, 改為傳一個特殊物件, 一旦被呼叫, 將引發 SmartNullPointerException
+* 可以讓 Developer 很清楚知道, 這個 NullPointerException 是因為忘了 Mock 導致的
+ 
 
     // change the default value of unstubbed invocations
     //   use RETURNS_SMART_NULLS to know which null pointer exception
@@ -544,8 +617,12 @@ tags: Software Testing
         }
     }
 
+[回目錄](#table)
 - - -
-### change the default value of unstubbed invocations (using CALLS\_REAL\_METHODS)###
+## Change the default value of unstubbed invocations (using CALLS\_REAL\_METHODS)
+* 將所有 default stubbing 的行為, 都改成 real method calls
+* 等於 spy ???
+
 
 	public class PartialMockObject {
 	    public String m1(){
@@ -597,9 +674,13 @@ tags: Software Testing
     test24: spy.m2()=PartialMockObject:m3
     test24: spy.m3()=m3 is stubbed
 
+[回目錄](#table)
 - - -
 <a name=14></a>
-### inject mock/spy into tested target (using constructor) ###
+## Inject mock/spy into tested target (using constructor)
+* 針對 SUT 中, 特定的 fields 做 Dependency Injection
+* 只要 Constructor 參數型別一致既可
+
 
     public class SUT {
 	    List<String> mList;
@@ -639,8 +720,12 @@ tags: Software Testing
     SUT'equals: mList =mList
     test21: end
 
+[回目錄](#table)
 - - -
-### inject mock/spy into tested target (using setter) ###
+## Inject mock/spy into tested target (using setter)  
+* 針對 SUT 中, 特定的 fields 做 Dependency Injection
+* 只要 setter 參數型別一致既可
+
 
 	public class SUT2 {
 	    List<String> mList2;
@@ -701,8 +786,12 @@ tags: Software Testing
     SUT2's equals: mList2 =mList2
     test22: end
 
+[回目錄](#table)
 - - -
-### inject mock/spy into tested target (using field) ###
+## Inject mock/spy into tested target (using field)
+* 針對 SUT 中, 特定的 fields 做 Dependency Injection
+* 只要欄位型別/名稱一致即可
+
 
 	public class SUT3 {
 	    List<String> mList3;
@@ -757,9 +846,13 @@ tags: Software Testing
     SUT3's equals: mList3 =mList3
     test23: end
 
+[回目錄](#table)
 - - -
 <a name=15></a>
-### verify with timeout ###
+## Verify with timeout
+* 指定 verify 的 timeout 時間, 這特別適合於等待 async 的結果
+* 一旦結果成立, verify 就會結束, 不會 blocking 到時間結束才驗證結果
+
 
     @SuppressWarnings("unchecked")
     public void test25(){
@@ -794,7 +887,7 @@ tags: Software Testing
         assertTrue(elapsed > 2000);
     }
 
-
+[回目錄](#table)
 - - -
     
 * [Reference]

@@ -3,20 +3,20 @@ date: 2013-09-27 14:55:04
 categories: Software
 tags: [Python, Study Group]
 ---
-* Python OOP
-* Constructor/Destructor
-* Class/Instance Members
-* Access Control in Python OOP
-* Inheritance
-* Polymorphism
-* Operator Overloading
-* Function Overloading
-* Object Types in Python
+* [Python OOP](#python_oop "Python OOP")
+* [Constructor/Destructor](#constructor_destructor "Constructor/Destructor")
+* [Class/Instance Members](#class_instance_members "Class/Instance Members")
+* [Access Control in Python OOP](#access_control "Access Control in Python OOP")
+* [Inheritance](#inheritance "Inheritance")
+* [Polymorphism](#polymorphism "Polymorphism")
+* [Operator Overloading](#operator_overloading "Operator Overloading")
+* [Function Overloading](#function_overloading "Function Overloading")
+* [Object Types in Python](#object_types_python "Object Types in Python")
 * Check relationship between class and instance
 
 <!--more-->
 - - -
-
+<a name=python_oop></a>
 # Python OOP #
 
 Python 語言, 本身也支援 **O**bject **O**riented **P**rogramming 這樣的 Programming Pradigm.  
@@ -64,7 +64,7 @@ Ex:
     pass
     
 - - -
-
+<a name=constructor_destructor></a>
 # Constructor/Destructor #
 
 先前提到, 定一個最簡單的 new style class, 如下:
@@ -89,7 +89,7 @@ Ex:
 通常 Destructor 的存在, 就是讓 Object 能提早釋放占用的資源.   
 
 - - -
-
+<a name=class_instance_members></a>
 # Class/Instance Memebers #
 
 接下來, 我們想替 Class 加上額外的 Memebers, 包含了:
@@ -155,12 +155,12 @@ Ex:
             return "Employee name:" + self.name + " base_salary:" + self.base_salary
 
     def main():
-       employee1 = Employee("Peter")
-       print employee1
-       print “Salary=” + str(employee1.getSalary())
-       Employee.EmployeeCount()
-       del employee1
-       Employee.EmployeeCount()
+       employee1 = Employee("Peter")
+       print employee1
+       print “Salary=” + str(employee1.getSalary())
+       Employee.EmployeeCount()
+       del employee1
+       Employee.EmployeeCount()
 
     if "__main__" == __name__:
         main()
@@ -173,7 +173,7 @@ Output:
     EmployeeCount: Employee.empCount = 0
 
 - - -
-
+<a name=access_control></a>
 # Access Control in Python OOP #
 
 在 Pyhon 中, 並沒有提供 Modifier 來明確的來控制 Attribute 的存取權限.  
@@ -183,7 +183,7 @@ Output:
 Ex:
 
     class Employee (object):
-       __empCount = 0
+       __empCount = 0
     
     def main():
         # the name of attribute is changed as "_Employee" + "__empCount"
@@ -201,7 +201,7 @@ Output:
 * 以 "__" 開頭的 Attribute, 只是在習慣上被視為 Private 的, 但是仍然可強制存取 
     
 - - -
-
+<a name=inheritance></a>
 # Inheritance #
 
 如果我們想要加入一個特別的 Employee, 稱為 Manager, 可以考慮用繼承的方式達成. 
@@ -245,10 +245,10 @@ Ex: **Override the method in the super class**
                    " bonus:" + str(self.bonus)
 
     def main():
-       manager1 = Manager("Peter")
-       print manager1
-       print “Salary=” + str(manager1.getSalary())
-       del manager1
+       manager1 = Manager("Peter")
+       print manager1
+       print “Salary=” + str(manager1.getSalary())
+       del manager1
 
     if "__main__" == __name__:
         main()
@@ -259,7 +259,7 @@ Output:
     Salary=1400
 
 - - -
-
+<a name=polymorphism></a>
 # Polymorphism #
 
 由於 Python 是一個 Weakly Type 的語言, 因此在變數的宣告時, 並不會明確指出特定的型別.  
@@ -268,12 +268,12 @@ Output:
 Ex:
 
     def main():
-        list_employees = [Manager(“John”), Employee("Peter")]
+        list_employees = [Manager(“John”), Employee("Peter")]
         for employee in list_employees:
-            print employee.__str__()
+            print employee.__str__()
 
     if __name__ == '__main__':
-        main()
+        main()
     
 Output:
     
@@ -285,7 +285,7 @@ Output:
 只需要考慮 Object 本身能提供哪些 Attributes, 不需要考慮 Object 的繼承體系.**
 
 - - -
-
+<a name=operator_overloading></a>
 # Operator Overloading #
 
 Python 本身定義了一組 Built-in Operators, 讓使用者可以 Overloading 其行為.
@@ -293,36 +293,36 @@ Python 本身定義了一組 Built-in Operators, 讓使用者可以 Overloading 
 Ex:
 
     class Vector (object):
-       def __init__(self, x=0, y=0):
-           self.x = x
-           self.y = y
-       def __add__(self, rhs):
-           return Vector(self.x + rhs.x, self.y + rhs.y)
-       def __str__(self):
-           return "Vector: (" + str(self.x) + ", " + str(self.y) + ")"
+       def __init__(self, x=0, y=0):
+           self.x = x
+           self.y = y
+       def __add__(self, rhs):
+           return Vector(self.x + rhs.x, self.y + rhs.y)
+       def __str__(self):
+           return "Vector: (" + str(self.x) + ", " + str(self.y) + ")"
 
        class Point (object):
-       def __init__(self, x=0, y=0):
-           self.x = x
-           self.y = y
-       def __add__(self, rhs):
-           return Point(self.x + rhs.x, self.y + rhs.y)
-       def __str__(self):
-           return "Point: (" + str(self.x) + ", " + str(self.y) + ")"
+       def __init__(self, x=0, y=0):
+           self.x = x
+           self.y = y
+       def __add__(self, rhs):
+           return Point(self.x + rhs.x, self.y + rhs.y)
+       def __str__(self):
+           return "Point: (" + str(self.x) + ", " + str(self.y) + ")"
     
     def main():
-       vec1 = Vector(10, 20)
-       vec2 = Vector(90, 80)
-       print vec1 + vec2
+       vec1 = Vector(10, 20)
+       vec2 = Vector(90, 80)
+       print vec1 + vec2
 
-       p1 = Point(3,   10)
-       p2 = Point(-3, -10)
-       print p1 + p2
+       p1 = Point(3,   10)
+       p2 = Point(-3, -10)
+       print p1 + p2
     
        # the evaluation order is ((vec1 + p1) + p2)
-       print vec1 + p1 + p2
+       print vec1 + p1 + p2
        # the evaluation order is ((p2 + vec1) + vec2)
-       print p2 + vec1 + vec2
+       print p2 + vec1 + vec2
     
 Output:
 
@@ -342,7 +342,7 @@ Reference:
 * [http://docs.python.org/2/reference/expressions.html#evaluation-order](http://docs.python.org/2/reference/expressions.html#evaluation-order "Operator Evaluation Order")
 
 - - -
-
+<a name=function_overloading></a>
 # Function Overloading #
 
 Python 中, 並沒有提供 Function Overloading 的機制. 一般而言, 會透過下列方式來達成:  
@@ -354,34 +354,34 @@ Python 中, 並沒有提供 Function Overloading 的機制. 一般而言, 會透
 Ex: **Default Arguments**
 
     class Employee (object):
-       empCount = 0
+       empCount = 0
 
-       def __init__(self, name="", base_salary=1000):
-           self.base_salary = base_salary
-           self.name = name
-           Employee.empCount += 1
+       def __init__(self, name="", base_salary=1000):
+           self.base_salary = base_salary
+           self.name = name
+           Employee.empCount += 1
 
-       def __del__(self):
-           Employee.empCount -= 1
+       def __del__(self):
+           Employee.empCount -= 1
 
-       @staticmethod
-       def EmployeeCount():
-           print "Employee.empCount = " + str(Employee.empCount)
+       @staticmethod
+       def EmployeeCount():
+           print "Employee.empCount = " + str(Employee.empCount)
 
-       def getSalary(self):
-           return self.base_salary
+       def getSalary(self):
+           return self.base_salary
 
-       def __str__(self):
-           return "Employee: name=" + self.name + \
-                  " base_salary=" + str(self.base_salary)
+       def __str__(self):
+           return "Employee: name=" + self.name + \
+                  " base_salary=" + str(self.base_salary)
     
     def main():
-       employee1 = Employee("Peter")
-       print employee1
-       print “Salary=” + str(employee1.getSalary())
-       Employee.EmployeeCount()
-       del employee1
-       Employee.EmployeeCount()
+       employee1 = Employee("Peter")
+       print employee1
+       print “Salary=” + str(employee1.getSalary())
+       Employee.EmployeeCount()
+       del employee1
+       Employee.EmployeeCount()
 
     if __name__ == '__main__':
         main()
@@ -397,39 +397,39 @@ Output:
 Ex: **Variable Length Arguments With Tuple**
     
     class Employee (object):
-       empCount = 0
+       empCount = 0
     
-       def __init__(self, *args):
-           self.name  = “”
-           self.salary = 1000
-           if 1 <= len(args): self.name  = args[0]
-           if 2 <= len(args): self.salary = args[1]
-           Employee.__empCount += 1
+       def __init__(self, *args):
+           self.name  = “”
+           self.salary = 1000
+           if 1 <= len(args): self.name  = args[0]
+           if 2 <= len(args): self.salary = args[1]
+           Employee.__empCount += 1
     
-       def __del__(self):
-           Employee.empCount -= 1
+       def __del__(self):
+           Employee.empCount -= 1
     
-       @staticmethod
-       def EmployeeCount():
-           print "Employee.empCount = " + str(Employee.empCount)
+       @staticmethod
+       def EmployeeCount():
+           print "Employee.empCount = " + str(Employee.empCount)
     
-       def getSalary(self):
-           return self.base_salary
+       def getSalary(self):
+           return self.base_salary
     
-       def __str__(self):
-           return "Employee: name=" + self.name + \
-                  " base_salary=" + str(self.base_salary)
+       def __str__(self):
+           return "Employee: name=" + self.name + \
+                  " base_salary=" + str(self.base_salary)
     
     def main():
-       employee1 = Employee("Peter")
-       print employee1
-       print “Salary=” + str(employee1.getSalary())
-       Employee.EmployeeCount()
-       del employee1
-       Employee.EmployeeCount()
+       employee1 = Employee("Peter")
+       print employee1
+       print “Salary=” + str(employee1.getSalary())
+       Employee.EmployeeCount()
+       del employee1
+       Employee.EmployeeCount()
 
     if __name__ == '__main__':
-       main()
+       main()
     
 Output:
 
@@ -442,37 +442,37 @@ Output:
 Ex: **Variable Length Arguments With Dict**
 
     class Employee (object):
-       empCount = 0
+       empCount = 0
     
-       def __init__(self, **args):
-           self.name  = args.get(“name”, “”)
-           self.salary = args.get(“salary”, 1000)
-           Employee.__empCount += 1
+       def __init__(self, **args):
+           self.name  = args.get(“name”, “”)
+           self.salary = args.get(“salary”, 1000)
+           Employee.__empCount += 1
     
-       def __del__(self):
-           Employee.empCount -= 1
+       def __del__(self):
+           Employee.empCount -= 1
     
-       @staticmethod
-       def EmployeeCount():
-           print "Employee.empCount = " + str(Employee.empCount)
+       @staticmethod
+       def EmployeeCount():
+           print "Employee.empCount = " + str(Employee.empCount)
     
-       def getSalary(self):
-           return self.base_salary
+       def getSalary(self):
+           return self.base_salary
     
-       def __str__(self):
-           return "Employee: name=" + self.name + \
-                  " base_salary=" + str(self.base_salary)
+       def __str__(self):
+           return "Employee: name=" + self.name + \
+                  " base_salary=" + str(self.base_salary)
 
     def main():
-       employee1 = Employee("Peter")
-       print employee1
-       print “Salary=” + str(employee1.getSalary())
-       Employee.EmployeeCount()
-       del employee1
-       Employee.EmployeeCount()
+       employee1 = Employee("Peter")
+       print employee1
+       print “Salary=” + str(employee1.getSalary())
+       Employee.EmployeeCount()
+       del employee1
+       Employee.EmployeeCount()
     
     if __name__ == '__main__':
-       main()
+       main()
 
 Output:
 
@@ -490,7 +490,7 @@ Ex:
 Output:
 
 - - -
-
+<a name=object_types_python></a>
 # Object Types in Python #
 
 

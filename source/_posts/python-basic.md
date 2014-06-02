@@ -28,13 +28,13 @@ tags: [Python, Study Group]
 # *Python's Folder Structure* #
 在開始使用 Python 之前, 必須先在系統裝[安裝 Python 的執行環境](http://www.python.org/getit/), 安裝完後會發現, 預設的資料夾結構如下:
 
-![](http://MutsuGhost1.github.io/image/python_install1.PNG)
+![](/images/python_install1.PNG)
 
 
 * 在 PythonXX --> Lib 目錄中, 可以看到 Python Built-in Module 的 Source Code  
 * 在 PythonXX --> Lib --> site-packages 目錄中, 可以看到安裝的 3rd Party Package
 
-![](http://MutsuGhost1.github.io/image/python_install2.PNG)
+![](/images/python_install2.PNG)
   
 - - -
 
@@ -513,7 +513,7 @@ Output:
 依序輸入給函數 f(x,y,...,z) 後,  
 可得到 n 個結果 [r1,r2, ..., rn], 如下圖所示:
 
-![](http://MutsuGhost1.github.io/image/python_map_function.PNG)
+![](/images/python_map_function.PNG)
 
 事實上 map function 就是執行類似這樣的概念. map function 有兩組 input 參數:  
 1. function (對應到上述的函數 f)  
@@ -581,7 +581,7 @@ Ex:
 
 zip function 做的事情, 如下圖:
 
-![](http://MutsuGhost1.github.io/image/python_zip_function.PNG)
+![](/images/python_zip_function.PNG)
 
 Ex:
     
