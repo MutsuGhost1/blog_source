@@ -85,4 +85,6 @@ exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: github 
+  repository: git@github.com:MutsuGhost1/MutsuGhost1.github.io.git
+  branch: master
