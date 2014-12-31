@@ -3,26 +3,6 @@ date: 2013-09-29 20:45:42
 categories: Software
 tags: [Python, Study Group]
 ---
-* [Python's Folder Structure](#python_folder_structure "Python's Folder Structure")
-* [關於 *yield*](#yield_about "關於 yield")
-    *  [yield 是為何而生 ?](#yield_history "yield 是為何而生 ?")
-    *  [yield 的各種用法](#yield_usage "yield 的各種用法")
-        *  [yield 的基本運作原理](#yield_fundamental "的基本運作原理")
-        *  [send(expression) - pass a value to generator](#yield_send "send(expression)")
-        *  [throw(type[,value[,traceback]]) - raise exception inside generator](#yield_throw "throw")
-        *  [close() - terminate the generator](#yield_close "close()")
-        *  [generator expression - 快速產生一個 generator object](#yield_generator_exp "generator expression")
-    *  [Reference](#yield_reference)
-* Python Scope 概念
-* [其他](#others "其他")
-    * [List Comprehesion](http://www.python.org/dev/peps/pep-0202/ "PEP202") 
-    * [Lambda expression](#lambda_exp "Lambda expression")
-    * [Built-in Funtion map](#built_in_map "Built-in Funtion map")
-    * [Built-in Funtion reduce](#built_in_reduce "Built-in Funtion reduce")
-    * [Built-in Funtion filter](#built_in_filter "Built-in Funtion filter")
-    * [Built-in Funtion zip](#built_in_zip "Built-in Funtion zip")
-<!--more-->
-- - -
 
 <a name=python_folder_structure></a>
 # *Python's Folder Structure* #
@@ -30,12 +10,13 @@ tags: [Python, Study Group]
 
 ![](/images/python_install1.PNG)
 
-
+<!--more-->
 * 在 PythonXX --> Lib 目錄中, 可以看到 Python Built-in Module 的 Source Code  
 * 在 PythonXX --> Lib --> site-packages 目錄中, 可以看到安裝的 3rd Party Package
 
 ![](/images/python_install2.PNG)
-  
+
+
 - - -
 
 <a name=yield_about></a>

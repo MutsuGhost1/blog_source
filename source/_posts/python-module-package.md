@@ -4,18 +4,6 @@ categories: Software
 tags: [Python, Study Group]
 ---
 
-* [What's a python module ?](#what_module "What's a python module ?")
-* [Why use modules ?](#why_module "Why use modules ?")
-* [How to use/write modules ?](#how_module "How to use/write modules ?")
-* [Module search Path ?](#module_search_path "Module search Path")
-* [Reload your module after applying any change ?](#reload_module "Reload your module after applying any change") 
-* [What's package ?](#what_package "What's package ?")
-* [Why use packaes ?](#why_package "Why use packaes ?")
-* [How to use packages ?](#how_package "How to use packages ?")
-* [An example to refactor a module as a package](#package_example "An example to refactor a module as a package")
-
-<!--more-->
-- - -
 <a name=what_module></a>
 # What's a python module ? #
 
@@ -27,6 +15,9 @@ tags: [Python, Study Group]
 Python module 只會在第一次被 import 的時候被執行. 被 import module 會在目前執行的 global namespace 中,  
 建立一個屬於此 module 的 namespace. 在預設下, 這個 module 的 namespace 會是 module name.  
 任何人可以透過這個 module name 來存取 module 內的各項 attributes.  
+
+<!--more-->
+
 
 下面的例子即為一個 Module:
 

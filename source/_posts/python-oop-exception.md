@@ -3,19 +3,7 @@ date: 2013-09-27 14:55:04
 categories: Software
 tags: [Python, Study Group]
 ---
-* [Python OOP](#python_oop "Python OOP")
-* [Constructor/Destructor](#constructor_destructor "Constructor/Destructor")
-* [Class/Instance Members](#class_instance_members "Class/Instance Members")
-* [Access Control in Python OOP](#access_control "Access Control in Python OOP")
-* [Inheritance](#inheritance "Inheritance")
-* [Polymorphism](#polymorphism "Polymorphism")
-* [Operator Overloading](#operator_overloading "Operator Overloading")
-* [Function Overloading](#function_overloading "Function Overloading")
-* [Object Types in Python](#object_types_python "Object Types in Python")
-* Check relationship between class and instance
 
-<!--more-->
-- - -
 <a name=python_oop></a>
 # Python OOP #
 
@@ -26,6 +14,8 @@ Python 語言, 本身也支援 **O**bject **O**riented **P**rogramming 這樣的
     
     class oldStyle:
         pass
+
+<!--more-->
 
 語法上, class definition 可以寫成:
 
