@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'hexo-admin' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'hexo-admin', null ]
+6 verbose cache add name=undefined spec="hexo-admin" args=["hexo-admin",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'hexo-admin',
+7 verbose parsed url   path: 'hexo-admin',
+7 verbose parsed url   href: 'hexo-admin' }
+8 silly lockFile 78701cdf-hexo-admin hexo-admin
+9 verbose lock hexo-admin C:\Documents and Settings\Administrator\Application Data\npm-cache\78701cdf-hexo-admin.lock
+10 silly lockFile 78701cdf-hexo-admin hexo-admin
+11 silly lockFile 78701cdf-hexo-admin hexo-admin
+12 verbose addNamed [ 'hexo-admin', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 90aa3ba8-hexo-admin hexo-admin@
+15 verbose lock hexo-admin@ C:\Documents and Settings\Administrator\Application Data\npm-cache\90aa3ba8-hexo-admin.lock
+16 silly addNameRange { name: 'hexo-admin', range: '*', hasData: false }
+17 verbose request where is /hexo-admin
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id ef3d3679fd797084
+20 verbose url raw /hexo-admin
+21 verbose url resolving [ 'https://registry.npmjs.org/', './hexo-admin' ]
+22 verbose url resolved https://registry.npmjs.org/hexo-admin
+23 verbose request where is https://registry.npmjs.org/hexo-admin
+24 info trying registry request attempt 1 at 22:01:42
+25 http GET https://registry.npmjs.org/hexo-admin
+26 http 200 https://registry.npmjs.org/hexo-admin
+27 silly registry.get cb [ 200,
+27 silly registry.get   { date: 'Fri, 30 Jan 2015 14:01:38 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     etag: '"73SDRQL0LUNSKM0OH4UU7WBFD"',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=60',
+27 silly registry.get     'content-length': '6030',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-hk93-HKG',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1422626497.743581,VS0,VE715',
+27 silly registry.get     vary: 'Accept',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 silly addNameRange number 2 { name: 'hexo-admin', range: '*', hasData: true }
+29 silly addNameRange versions [ 'hexo-admin', [ '0.1.2', '0.1.3', '0.2.0' ] ]
+30 verbose addNamed [ 'hexo-admin', '0.2.0' ]
+31 verbose addNamed [ '0.2.0', '0.2.0' ]
+32 silly lockFile 331cb302-hexo-admin-0-2-0 hexo-admin@0.2.0
+33 verbose lock hexo-admin@0.2.0 C:\Documents and Settings\Administrator\Application Data\npm-cache\331cb302-hexo-admin-0-2-0.lock
+34 silly lockFile 65d04712--hexo-admin-hexo-admin-0-2-0-tgz https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+35 verbose lock https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz C:\Documents and Settings\Administrator\Application Data\npm-cache\65d04712--hexo-admin-hexo-admin-0-2-0-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz',
+36 verbose addRemoteTarball   '36cc2ff8f147efd765b2cb916e98cfadc65e641e' ]
+37 info retry fetch attempt 1 at 22:01:43
+38 verbose fetch to= C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\npm-4200-MnUqBKjK\registry.npmjs.org\hexo-admin\-\hexo-admin-0.2.0.tgz
+39 http GET https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+40 http 503 https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+41 error fetch failed https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+42 info retry will retry, error on last attempt: Error: 503 Service Unavailable
+43 info retry fetch attempt 2 at 22:01:53
+44 verbose fetch to= C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\npm-4200-MnUqBKjK\registry.npmjs.org\hexo-admin\-\hexo-admin-0.2.0.tgz
+45 http GET https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+46 http 503 https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+47 error fetch failed https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+48 info retry will retry, error on last attempt: Error: 503 Service Unavailable
+49 info retry fetch attempt 3 at 22:02:53
+50 verbose fetch to= C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\npm-4200-MnUqBKjK\registry.npmjs.org\hexo-admin\-\hexo-admin-0.2.0.tgz
+51 http GET https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+52 http 503 https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+53 error fetch failed https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+54 silly lockFile 65d04712--hexo-admin-hexo-admin-0-2-0-tgz https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+55 silly lockFile 65d04712--hexo-admin-hexo-admin-0-2-0-tgz https://registry.npmjs.org/hexo-admin/-/hexo-admin-0.2.0.tgz
+56 silly lockFile 331cb302-hexo-admin-0-2-0 hexo-admin@0.2.0
+57 silly lockFile 331cb302-hexo-admin-0-2-0 hexo-admin@0.2.0
+58 silly lockFile 90aa3ba8-hexo-admin hexo-admin@
+59 silly lockFile 90aa3ba8-hexo-admin hexo-admin@
+60 error Error: 503 Service Unavailable
+60 error     at WriteStream.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\fetch.js:58:12)
+60 error     at WriteStream.emit (events.js:117:20)
+60 error     at evalmachine.<anonymous>:1610:14
+60 error     at c:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:102:5
+60 error     at Object.oncomplete (evalmachine.<anonymous>:108:15)
+61 error If you need help, you may report this *entire* log,
+61 error including the npm and node versions, at:
+61 error     <http://github.com/npm/npm/issues>
+62 error System Windows_NT 5.1.2600
+63 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "hexo-admin"
+64 error cwd e:\GitHub\blog_source
+65 error node -v v0.10.35
+66 error npm -v 1.4.28
+67 verbose exit [ 1, true ]
